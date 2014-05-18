@@ -2,12 +2,37 @@ package system.decision.support.logic;
 
 import system.decision.support.logic.operations.LogicalOperation;
 
+import javax.persistence.*;
+
+
+@Entity
+@Table(name="predicates")
 public class Predicate implements IPredicate{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "logical_operation_id")
     private LogicalOperation logicalOperation;
-    private InferenceResult firesOnTrue;
-    private InferenceResult firesOnFalse;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fires_on_true_id")
+    private Predicate firesOnTrue;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fires_on_false_id")
+    private Predicate firesOnFalse;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "conclusion_id")
+    private Conclusion conclusion;
+
+    public Predicate() {  }
 
     public String getName() {
         return name;
@@ -25,11 +50,11 @@ public class Predicate implements IPredicate{
         return logicalOperation;
     }
 
-    public void setFiresOnTrue(InferenceResult predicate) {
+    public void setFiresOnTrue(Predicate predicate) {
         this.firesOnTrue = predicate;
     }
 
-    public void setFiresOnFalse(InferenceResult predicate) {
+    public void setFiresOnFalse(Predicate predicate) {
         this.firesOnFalse = predicate;
     }
 
@@ -41,8 +66,31 @@ public class Predicate implements IPredicate{
         return explanation;
     }
 
-    @Override
-    public String getInferenceResult() {
-        return null;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setLogicalOperation(LogicalOperation logicalOperation) {
+        this.logicalOperation = logicalOperation;
+    }
+
+    public Predicate getFiresOnTrue() {
+        return firesOnTrue;
+    }
+
+    public Predicate getFiresOnFalse() {
+        return firesOnFalse;
+    }
+
+    public Conclusion getConclusion() {
+        return conclusion;
+    }
+
+    public void setConclusion(Conclusion conclusion) {
+        this.conclusion = conclusion;
     }
 }

@@ -1,5 +1,7 @@
 package system.drilling.model.parameters;
 
+import javax.persistence.Inheritance;
+import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.List;
 

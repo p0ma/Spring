@@ -1,5 +1,6 @@
 package com.springapp.mvc;
 
+import com.springapp.mvc.context.configuration.ApplicationConfiguration1;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,8 +18,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(classes={MyConfiguration.class})
-//@ContextConfiguration("file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml")
+@ContextConfiguration(classes={ApplicationConfiguration1.class})
 public class AppTests {
     private MockMvc mockMvc;
 

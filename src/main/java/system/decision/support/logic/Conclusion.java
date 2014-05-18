@@ -1,10 +1,23 @@
 package system.decision.support.logic;
 
-public class Conclusion implements InferenceResult {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "conclusions")
+public class Conclusion{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "message", nullable = false)
     private String message;
 
     public Conclusion() {}
+
+    public Conclusion(String message) {
+        this.message = message;
+    }
 
     public String getMessage() {
         return message;
@@ -12,10 +25,5 @@ public class Conclusion implements InferenceResult {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    @Override
-    public String getInferenceResult() {
-        return message;
     }
 }

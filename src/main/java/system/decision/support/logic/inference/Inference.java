@@ -1,7 +1,6 @@
 package system.decision.support.logic.inference;
 
 import system.decision.support.logic.Explanation;
-import system.decision.support.logic.InferenceResult;
 
 import java.util.LinkedList;
 import java.util.List;

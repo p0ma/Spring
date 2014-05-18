@@ -17,7 +17,7 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>
-                com.springapp.mvc.MyConfiguration
+                com.springapp.mvc.context.configuration.ApplicationConfiguration1
             </param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>

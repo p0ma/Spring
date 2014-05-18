@@ -3,13 +3,24 @@ package system.drilling.model.parameters;
 import system.drilling.model.IModel;
 import system.drilling.model.Model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "parameter_name", discriminatorType = DiscriminatorType.STRING)
 public abstract class Parameter implements IParameter {
 
     protected Double value;
+
+    @Transient
     protected IModel model;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     public Parameter() {
         value = new Double(0);
@@ -47,6 +58,7 @@ public abstract class Parameter implements IParameter {
         return model;
     }
 
+    @Transient
     protected List<IParameterListener> parameterListeners = new ArrayList<IParameterListener>();
 
     protected void notifyListeners(Object object, Object oldValue, Object newValue) {

@@ -16,18 +16,17 @@ public class InferenceMachine {
 
     public Conclusion doInference(IPredicate predicate) {
         inference = new Inference();
-        InferenceResult inferenceResult = predicate;
         Explanation explanation;
         for (; ; ) {
-            if(inferenceResult == null) return new Conclusion();
+            if(predicate == null) return new Conclusion();
             explanation = predicate.fire();
-            inferenceResult = explanation.getTo();
-            if (inferenceResult instanceof Conclusion) {
+            predicate = explanation.getTo();
+            if (predicate.getConclusion() != null) {
                 inference.addInferenceLink(explanation);
-                return (Conclusion) inferenceResult;
+                return predicate.getConclusion();
             } else {
-                if (inferenceResult instanceof Predicate) {
-                    predicate = (Predicate) inferenceResult;
+                if (predicate instanceof Predicate) {
+                    predicate = (Predicate) predicate;
                     inference.addInferenceLink(explanation);
                 }
             }

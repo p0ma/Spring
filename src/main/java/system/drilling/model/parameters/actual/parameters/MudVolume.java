@@ -6,10 +6,19 @@ import system.drilling.model.parameters.CrossComputingException;
 import system.drilling.model.parameters.Function;
 import system.drilling.model.well.Well;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 @Component
+@Entity
+@Table(name = "mud_volume_parameter")
+@DiscriminatorValue("mud_volume")
 public class MudVolume extends Function {
 
     @Autowired
+    @Transient
     private Well well;
 
     public MudVolume() {

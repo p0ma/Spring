@@ -6,7 +6,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Component;
 import system.decision.support.logic.Conclusion;
-import system.decision.support.logic.InferenceResult;
 import system.decision.support.logic.inference.Inference;
 import system.decision.support.logic.inference.InferenceMachine;
 import system.decision.support.logic.operations.GreaterEqual;
@@ -61,14 +60,14 @@ public class Main {
         );
         predicate1.setName("Volume2 Check");
 
-        IPredicate predicate2 = new Predicate(
+        Predicate predicate2 = new Predicate(
                 new GreaterEqual(model.getParameter(Volume1.class), model.getParameter(MudVolume.class))
         );
         predicate2.setName("Volume1 Check");
 
-        Conclusion conclusion1 = new Conclusion();
-        conclusion1.setMessage("Method1 is acceptable");
-        predicate2.setFiresOnFalse(conclusion1);
+        Predicate predicate3 = new Predicate();
+        predicate3.setConclusion((new Conclusion("Method1 is acceptable")));
+        predicate2.setFiresOnFalse(predicate3);
         predicate1.setFiresOnFalse(predicate2);
 
         InferenceMachine inferenceMachine = new InferenceMachine();
