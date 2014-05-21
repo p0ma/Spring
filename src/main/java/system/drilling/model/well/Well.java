@@ -1,23 +1,65 @@
 package system.drilling.model.well;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import javax.persistence.*;
+import java.util.*;
+
 
 @Component
+@Entity
 public class Well {
-    private List<PipeSection> pipeSections;
 
-    @Autowired
-    private Casing casing;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = PipeSection.class)
+    private List<PipeSection> pipeSections = new LinkedList<PipeSection>();
 
     public Well() {
-
     }
 
-    public Object getValue() {
-        return (Double) (casing.getHeight() * casing.getWidth());
+    /*public double getInnerVolume() {
+        double innerVolume = 0;
+        Collections.sort(pipeSections, new Comparator<PipeSection>() {
+            @Override
+            public int compare(PipeSection o1, PipeSection o2) {
+                if (o1.getOrderNumber() == o2.getOrderNumber())
+                    return 0;
+                else if (o1.getOrderNumber() > o2.getOrderNumber())
+                    return 1;
+                else
+                    return -1;
+            }
+
+            @Override
+            public boolean equals(Object obj) {
+                return false;
+            }
+        });
+        for (PipeSection pipeSection : pipeSections) {
+            innerVolume += pipeSection.getInnerVolume();
+        }
+        return innerVolume;
+    }*/
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<PipeSection> getPipeSections() {
+        return pipeSections;
+    }
+
+    public void setPipeSections(List<PipeSection> pipeSections) {
+        this.pipeSections = pipeSections;
     }
 
     /*public void ComputeMudVolume()

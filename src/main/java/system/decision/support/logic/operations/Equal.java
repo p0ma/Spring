@@ -7,13 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="equal_logical_operation")
 @DiscriminatorValue("equal_logical")
 public class Equal extends LogicalOperation{
-
-    public Equal(IComparable operand1, IComparable operand2) {
-        super(operand1, operand2);
-    }
 
     @Override
     public boolean getResult() {

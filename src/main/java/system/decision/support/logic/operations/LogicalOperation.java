@@ -6,7 +6,7 @@ import system.drilling.model.parameters.Parameter;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "logical_operation_name", discriminatorType = DiscriminatorType.STRING)
 public abstract class LogicalOperation {
 
@@ -21,6 +21,8 @@ public abstract class LogicalOperation {
     @OneToOne(targetEntity = Parameter.class)
     @JoinColumn(name = "operand2_id")
     protected IComparable operand2;
+
+    public LogicalOperation() {}
 
     public LogicalOperation(IComparable operand1, IComparable operand2) {
         this.operand1 = operand1;

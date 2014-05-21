@@ -1,11 +1,30 @@
 package system.drilling.model.well;
 
+import javax.persistence.*;
+
+@Entity
 public class PipeSection {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = PipeType.class)
+    @JoinColumn(name = "pipe_type")
     private PipeType pipeType;
+
     private double length;
+
+    private int orderNumber;
 
     public PipeSection() {
 
+    }
+
+    public PipeSection(PipeType pipeType, double length, int orderNumber) {
+        setPipeType(pipeType);
+        setLength(length);
+        setOrderNumber(orderNumber);
     }
 
     public PipeType getPipeType() {
@@ -20,8 +39,28 @@ public class PipeSection {
         return length;
     }
 
-    public void setLength(float length) {
-        this.length = length;
+    public void setLength(double length) {
+        if(length > 0) this.length = length;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    public double getInnerVolume() {
+        return pipeType.getInnerDiameter() * length;
     }
 
 

@@ -1,7 +1,7 @@
 package system.drilling.model.parameters;
 
-import system.drilling.model.IModel;
-import system.drilling.model.Model;
+import system.drilling.model.IParametersModel;
+import system.drilling.model.ParametersModel;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,14 +9,14 @@ import java.util.List;
 
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "parameter_name", discriminatorType = DiscriminatorType.STRING)
 public abstract class Parameter implements IParameter {
 
     protected Double value;
 
     @Transient
-    protected IModel model;
+    protected IParametersModel model;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -50,11 +50,11 @@ public abstract class Parameter implements IParameter {
     }
 
     @Override
-    public final void setModel(Model model) {
-        this.model = model;
+    public final void setModel(ParametersModel parametersModel) {
+        this.model = parametersModel;
     }
 
-    public final IModel getModel() {
+    public final IParametersModel getModel() {
         return model;
     }
 

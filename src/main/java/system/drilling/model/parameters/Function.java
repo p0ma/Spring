@@ -1,14 +1,11 @@
 package system.drilling.model.parameters;
 
-import javax.persistence.Inheritance;
-import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Function extends Parameter implements IParameterListener {
 
     private boolean finalResult;
-    protected boolean isInitialized = false;
     protected boolean calculating = false;
 
     private List<Class<?>> parameters = new ArrayList<Class<?>>();
@@ -21,11 +18,12 @@ public abstract class Function extends Parameter implements IParameterListener {
         super(value);
     }
 
-    protected abstract void function() throws CrossComputingException;
+    protected abstract Double function() throws CrossComputingException;
 
     public final void calculate() throws CrossComputingException {
         calculating = true;
-        function();
+        setValue(
+        function());
         calculating = false;
         finalResult = true;
     }

@@ -7,13 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="less_than_logical_operation")
 @DiscriminatorValue("less_than")
 public class LessThan extends LogicalOperation{
-
-    public LessThan(IComparable operand1, IComparable operand2) {
-        super(operand1, operand2);
-    }
 
     @Override
     public boolean getResult() {

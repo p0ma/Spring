@@ -1,27 +1,54 @@
 package system.drilling.model.well;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 public class PipeType {
-    private double innerDiam;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private double outerDiameter;
     private double thickness;
 
-    public PipeType(double innerDiam, double thickness) {
-        this.innerDiam = innerDiam;
-        this.thickness = thickness;
+    public PipeType() {
     }
 
-    public double getInnerDiam() {
-        return innerDiam;
+    public PipeType(double outerDiameter, double thickness) {
+        setOuterDiameter(outerDiameter);
+        setThickness(thickness);
     }
 
-    public void setInnerDiam(float innerDiam) {
-        this.innerDiam = innerDiam;
+    public double getOuterDiameter() {
+        return outerDiameter;
+    }
+
+    public void setOuterDiameter(double outerDiameter) {
+        if(outerDiameter > thickness) this.outerDiameter = outerDiameter;
     }
 
     public double getThickness() {
         return thickness;
     }
 
-    public void setThickness(float thickness) {
-        this.thickness = thickness;
+    public void setThickness(double thickness) {
+        if(thickness < outerDiameter) this.thickness = thickness;
+    }
+
+    public double getInnerDiameter() {
+        return outerDiameter - thickness;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -19,7 +19,7 @@ import java.util.Properties;
 
 
 @Configuration
-@ComponentScan(basePackages = {"com.springapp.mvc.*", "system.drilling.service", "system.drilling.repositories"})
+@ComponentScan(basePackages = {"com.springapp.mvc.*", "system.*"})
 @EnableWebMvc
 @ImportResource("classpath:mvc-dispatcher-servlet.xml")
 @PropertySource("classpath:application.properties")
