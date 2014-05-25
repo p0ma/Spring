@@ -4,6 +4,7 @@ import com.springapp.mvc.context.provider.ApplicationContextProvider;
 import org.springframework.context.ApplicationContext;
 import system.drilling.model.parameters.*;
 import system.drilling.model.parameters.Parameter;
+import system.drilling.model.well.MyValidationException;
 
 import javax.persistence.*;
 import java.util.HashMap;
@@ -16,7 +17,7 @@ public class ParametersModel implements IParametersModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany(targetEntity = Parameter.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(targetEntity = Parameter.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private Map<String, IParameter> parameterMap = new HashMap<String, IParameter>();
 
     @Transient
@@ -24,6 +25,33 @@ public class ParametersModel implements IParametersModel {
 
     @Transient
     private ApplicationContext modelContext;
+
+    public void initParameters() {
+        for(Map.Entry<String, Parameter> entry : modelContext.getBeansOfType(Parameter.class).entrySet())
+        {
+            IParameter parameter = getParameter(entry.getValue().getClass());
+            if(parameter == null) {
+                addParameter(entry.getValue().getClass());
+            }
+        }
+    }
+
+    public Map<String, Map<String, IParameter>> getParametersByGroups() {
+        Map<String, Map<String, IParameter>> map = new HashMap<String, Map<String, IParameter>>();
+        Map<String, IParameter> map2 = getParameterMap();
+        Map<String, IParameter> map3;
+        for(Map.Entry<String, IParameter> entry : map2.entrySet() ) {
+            map3 = map.get(entry.getValue().getGroupName());
+            if(map3 == null) {
+                map3 = new HashMap<String, IParameter>();
+
+            }
+
+            map3.put(entry.getKey(), entry.getValue());
+            map.put(entry.getValue().getGroupName(), map3);
+        }
+        return map;
+    }
 
     public boolean isChanged() {
         return changed;
@@ -84,6 +112,10 @@ public class ParametersModel implements IParametersModel {
         }
     }
 
+    public Parameter getParameter(String key) {
+        return (Parameter)this.parameterMap.get(key);
+    }
+
     public Double getParameterValue(Class<?> key) {
         try {
             return getParameterValue(key.getSimpleName());
@@ -104,13 +136,13 @@ public class ParametersModel implements IParametersModel {
         return this;
     }
 
-    public ParametersModel setParameterValue(String key, Double value) {
-        parameterMap.get(key).setValue(value);
+    public ParametersModel setParameterValue(String key, Double value) throws MyValidationException{
+        parameterMap.get(key).setParameterValue(value);
         setChanged(true);
         return this;
     }
 
-    public ParametersModel setParameterValue(Class<?> key, Double value) {
+    public ParametersModel setParameterValue(Class<?> key, Double value) throws MyValidationException{
         try {
             setParameterValue(key.getSimpleName(), value);
         } catch (NullPointerException e) {

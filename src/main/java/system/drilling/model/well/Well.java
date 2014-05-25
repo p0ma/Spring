@@ -1,7 +1,10 @@
 package system.drilling.model.well;
 
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.springframework.stereotype.Component;
+import system.drilling.repositories.exceptions.PipeSectionNotFoundException;
 
 import javax.persistence.*;
 import java.util.*;
@@ -15,7 +18,8 @@ public class Well {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = PipeSection.class)
+    @Cascade(value = {CascadeType.ALL})
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = PipeSection.class, orphanRemoval = true)
     private List<PipeSection> pipeSections = new LinkedList<PipeSection>();
 
     public Well() {
@@ -60,6 +64,15 @@ public class Well {
 
     public void setPipeSections(List<PipeSection> pipeSections) {
         this.pipeSections = pipeSections;
+    }
+
+    public void removePipeSection(PipeSection pipeSection) {
+        for(PipeSection p : pipeSections) {
+            if(p.getId().equals(pipeSection.getId())) {
+                pipeSections.remove(p);
+                break;
+            }
+        }
     }
 
     /*public void ComputeMudVolume()

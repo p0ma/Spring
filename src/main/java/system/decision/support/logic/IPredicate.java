@@ -8,6 +8,6 @@ public interface IPredicate {
     public void setFiresOnFalse(Predicate predicate);
     public Conclusion getConclusion();
     public void setConclusion(Conclusion conclusion);
-    public Explanation fire();
+    public Predicate fire();
     public void setName(String name);
 }

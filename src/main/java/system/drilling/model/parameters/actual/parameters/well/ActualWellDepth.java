@@ -1,6 +1,9 @@
 package system.drilling.model.parameters.actual.parameters.well;
 
+import com.springapp.mvc.context.provider.ApplicationContextProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import system.drilling.model.parameters.CrossComputingException;
@@ -11,6 +14,7 @@ import system.drilling.service.WellService;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Transient;
 
 @Component
@@ -18,6 +22,13 @@ import javax.persistence.Transient;
 @Entity
 @DiscriminatorValue("actual_well_depth")
 public class ActualWellDepth extends Function {
+
+    public ActualWellDepth() {
+        ApplicationContext applicationContext = ApplicationContextProvider.getApplicationContext();
+        if(applicationContext != null)   {
+            wellService = applicationContext.getBean(WellService.class);
+        }
+    }
 
     @Transient
     @Autowired
@@ -31,5 +42,15 @@ public class ActualWellDepth extends Function {
             depth += pipeSection.getLength();
         }
         return new Double(depth);
+    }
+
+    @Override
+    public void setupParameterName() {
+        setParameterName("Actual well depth");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Well");
     }
 }

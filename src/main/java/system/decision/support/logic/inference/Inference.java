@@ -17,8 +17,9 @@ public class Inference {
     public String getInferenceDetails() {
         StringBuilder stringBuilder = new StringBuilder(500);
         for(Explanation explanation : inferenceChain) {
+            stringBuilder.append("<br>");
             stringBuilder.append(explanation.getExplanation());
-            stringBuilder.append("\n");
+            stringBuilder.append("<br>");
         }
         return stringBuilder.toString();
     }

@@ -28,13 +28,13 @@ public class ParametersModelService {
         }
     }
 
-    @Transactional(rollbackFor = system.drilling.repositories.exceptions.ParametersModelNotFoundException.class)
-    public ParametersModel delete(Long personId) throws ParametersModelNotFoundException {
+    @Transactional(rollbackFor = ParametersModelNotFoundException.class)
+    public ParametersModel delete(Long parametersModelId) throws ParametersModelNotFoundException {
 
-        ParametersModel deleted = parametersModelRepository.findOne(personId);
+        ParametersModel deleted = parametersModelRepository.findOne(parametersModelId);
 
         if (deleted == null) {
-            throw new ParametersModelNotFoundException();
+            throw new ParametersModelNotFoundException("No parameters model with id " + parametersModelId + " has been found. Nothing to delete.");
         }
 
         parametersModelRepository.delete(deleted);
@@ -57,7 +57,7 @@ public class ParametersModelService {
         ParametersModel person = parametersModelRepository.findOne(updated.getId());
 
         if (person == null) {
-            throw new ParametersModelNotFoundException();
+            throw new ParametersModelNotFoundException("No parameters model with id " + updated.getId() + " has been found. Nothing to update.");
         }
 
         parametersModelRepository.save(updated);

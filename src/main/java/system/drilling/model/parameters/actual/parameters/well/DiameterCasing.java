@@ -12,4 +12,13 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("diameter_casing")
 public class DiameterCasing extends Parameter {
+    @Override
+    public void setupParameterName() {
+        setParameterName("Diameter casing");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Well");
+    }
 }

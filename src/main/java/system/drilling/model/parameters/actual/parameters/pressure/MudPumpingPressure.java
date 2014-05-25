@@ -12,4 +12,13 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("mud_pumping_pressure")
 public class MudPumpingPressure extends Parameter {
+    @Override
+    public void setupParameterName() {
+        setParameterName("Mud pumping pressure");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Pressure");
+    }
 }

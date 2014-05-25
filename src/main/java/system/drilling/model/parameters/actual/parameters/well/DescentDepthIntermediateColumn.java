@@ -13,4 +13,14 @@ import javax.persistence.Entity;
 @DiscriminatorValue("descent_depth_intermediate_column")
 public class DescentDepthIntermediateColumn extends Parameter {
 
+    @Override
+    public void setupParameterName() {
+        setParameterName("Descent depth intermediate column");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Well");
+    }
+
 }

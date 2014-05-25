@@ -2,6 +2,7 @@ package system.drilling.model.parameters;
 
 import system.drilling.model.IParametersModel;
 import system.drilling.model.ParametersModel;
+import system.drilling.model.well.MyValidationException;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,24 +11,79 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "parameter_name", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "parameter_name", discriminatorType = DiscriminatorType.STRING, length = 50)
 public abstract class Parameter implements IParameter {
 
     protected Double value;
 
+    public Double getParameterValue() {
+        return value;
+    }
+
     @Transient
     protected IParametersModel model;
+
+    @Transient
+    private String groupName;
+
+    @Transient
+    private String parameterName;
+
+    @Override
+    public String getGroupName() {
+        return groupName;
+    }
+
+    protected void setupGroupName() {
+        setGroupName("Parameters");
+    }
+
+    protected void setupParameterName() {
+        setParameterName("Parameter");
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public void setParameterName(String parameterName) {
+        this.parameterName = parameterName;
+    }
+
+    @Override
+    public String getParameterName() {
+        return parameterName;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    private final void init() {
+        setupGroupName();
+        setupParameterName();
+    }
+
     public Parameter() {
+        init();
         value = new Double(0);
     }
 
     public Parameter(Double value) {
+        init();
         this.value = value;
+    }
+
+    public void setParameterValue(Double value) throws MyValidationException {
+         setValue(value);
     }
 
     public void setValue(Double value) {
@@ -89,10 +145,5 @@ public abstract class Parameter implements IParameter {
         }catch (CrossComputingException e) {
             return -2;
         }
-    }
-
-    @Override
-    public String getName() {
-        return this.getClass().getSimpleName();
     }
 }

@@ -12,4 +12,13 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("drill_pipe_inner_pressure")
 public class DrillPipeInnerPressure extends Parameter {
+    @Override
+    public void setupParameterName() {
+        setParameterName("Drill pipe inner pressure");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Pressure");
+    }
 }

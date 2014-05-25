@@ -4,21 +4,42 @@ import system.drilling.model.parameters.IComparable;
 import system.drilling.model.parameters.Parameter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "logical_operation_name", discriminatorType = DiscriminatorType.STRING)
 public abstract class LogicalOperation {
 
+    public static List<LogicalOperation> getLogicalOperations() {
+        List<LogicalOperation> list = new ArrayList<LogicalOperation>();
+        list.add(new Equal());
+        list.add(new GreaterEqual());
+        list.add(new GreaterThan());
+        list.add(new LessEqual());
+        list.add(new LessThan());
+        return list;
+    }
+
+    public static LogicalOperation getLogicalOperation(String signature) {
+        for(LogicalOperation logicalOperation : getLogicalOperations()) {
+            if(logicalOperation.getLogicalOperationSignature().equals(signature)) {
+                return logicalOperation;
+            }
+        }
+        return new Equal();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(targetEntity = Parameter.class)
+    @OneToOne(targetEntity = ExpressionWrapper.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @JoinColumn(name = "operand1_id")
     protected IComparable operand1;
 
-    @OneToOne(targetEntity = Parameter.class)
+    @OneToOne(targetEntity = ExpressionWrapper.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @JoinColumn(name = "operand2_id")
     protected IComparable operand2;
 
@@ -32,7 +53,7 @@ public abstract class LogicalOperation {
     public abstract boolean getResult();
 
     public String getLogicalOperationName() {
-        return operand1.getName() + " " + getLogicalOperationSignature() + " " + operand2.getName();
+        return ((ExpressionWrapper)operand1).getFullExpression()+ " " + getLogicalOperationSignature() + " " + ((ExpressionWrapper)operand2).getFullExpression();
     }
 
     public abstract String getLogicalOperationSignature();

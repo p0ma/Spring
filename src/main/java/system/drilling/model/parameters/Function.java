@@ -1,11 +1,13 @@
 package system.drilling.model.parameters;
 
+import system.drilling.model.well.MyValidationException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Function extends Parameter implements IParameterListener {
 
-    private boolean finalResult;
+    private boolean finalResult = false;
     protected boolean calculating = false;
 
     private List<Class<?>> parameters = new ArrayList<Class<?>>();
@@ -66,6 +68,11 @@ public abstract class Function extends Parameter implements IParameterListener {
                 finalResult = false;
             }
         }
+    }
+
+    @Override
+    public void setParameterValue(Double value) throws MyValidationException{
+        throw new MyValidationException("Function '" + this.getParameterName() + "' cannot be set to explicit value because it depends on other parameters");
     }
 
     @Override

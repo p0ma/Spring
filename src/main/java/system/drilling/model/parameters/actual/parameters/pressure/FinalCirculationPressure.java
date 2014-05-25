@@ -16,6 +16,16 @@ public class FinalCirculationPressure extends Function {
 
     @Override
     protected Double function() throws CrossComputingException {
-        return null;
+        return 0d;
+    }
+
+    @Override
+    public void setupParameterName() {
+        setParameterName("Final circulation pressure");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Pressure");
     }
 }

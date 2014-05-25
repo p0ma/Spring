@@ -1,18 +1,20 @@
 package system.drilling.model.well;
 
 import javax.persistence.*;
+import javax.validation.Validation;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Min;
 
 @Entity
-public class PipeSection {
+public class PipeSection{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = PipeType.class)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = PipeType.class, orphanRemoval = true)
     @JoinColumn(name = "pipe_type")
     private PipeType pipeType;
-
     private double length;
 
     private int orderNumber;
@@ -21,7 +23,7 @@ public class PipeSection {
 
     }
 
-    public PipeSection(PipeType pipeType, double length, int orderNumber) {
+    public PipeSection(PipeType pipeType, double length, int orderNumber) throws MyValidationException{
         setPipeType(pipeType);
         setLength(length);
         setOrderNumber(orderNumber);
@@ -39,8 +41,9 @@ public class PipeSection {
         return length;
     }
 
-    public void setLength(double length) {
+    public void setLength(double length) throws MyValidationException {
         if(length > 0) this.length = length;
+        else throw new MyValidationException("Length must be greater than 0");
     }
 
     public Long getId() {

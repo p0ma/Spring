@@ -18,6 +18,6 @@
 
     <jpa:repositories base-package="system.drilling.repositories"/>
 
-    <mvc:resources mapping="/resources/**" location="/resources/bootstrap/" />
+    <mvc:resources mapping="/resources/**" location="/resources/" />
 
 </beans>

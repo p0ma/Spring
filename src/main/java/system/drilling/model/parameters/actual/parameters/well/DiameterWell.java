@@ -12,5 +12,13 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("diameter_well")
 public class DiameterWell extends Parameter {
+    @Override
+    public void setupParameterName() {
+        setParameterName("Diameter well");
+    }
 
+    @Override
+    public void setupGroupName() {
+        setGroupName("Well");
+    }
 }

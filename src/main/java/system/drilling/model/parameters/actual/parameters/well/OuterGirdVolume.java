@@ -13,4 +13,13 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("outer_gird_volume")
 public class OuterGirdVolume extends Parameter{
+    @Override
+    public void setupParameterName() {
+        setParameterName("Outer gird volume");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Well");
+    }
 }

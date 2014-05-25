@@ -19,22 +19,49 @@ public class Explanation {
 
     public String getExplanation() {
         StringBuilder stringBuilder = new StringBuilder(500);
-        stringBuilder.append("predicate ");
-        stringBuilder.append(from.getName());
-        stringBuilder.append(" leads to");
-        if(to.getConclusion() != null) {
-            stringBuilder.append(" conclusion that ");
-            stringBuilder.append(to.getConclusion().getMessage());
-
-        } else if(to instanceof Predicate) {
-            stringBuilder.append(" predicate ");
-            stringBuilder.append(to.getName());
+        if(from != null) {
+            if(from.isAQuestion()) {
+                stringBuilder.append("Question '");
+                stringBuilder.append(from.getConclusion().getMessage());
+                stringBuilder.append("'");
+            } else {
+                stringBuilder.append("Predicate '");
+                stringBuilder.append(from.getName());
+                stringBuilder.append("'");
+            }
+            stringBuilder.append(" leads to ");
+        }
+        if(to != null) {
+            if(to.isAConclusion()) {
+                stringBuilder.append("conclusion '");
+                stringBuilder.append(to.getConclusion().getMessage());
+                stringBuilder.append("'");
+            } else if(to.isAQuestion()) {
+                stringBuilder.append("question '");
+                stringBuilder.append(to.getConclusion().getMessage());
+                stringBuilder.append("'");
+            } else if(to instanceof Predicate) {
+                stringBuilder.append("predicate '");
+                stringBuilder.append(to.getName());
+                stringBuilder.append("'");
+            }
+        } else {
+            stringBuilder.append(" nothing");
         }
 
         stringBuilder.append(" because ");
-        stringBuilder.append(from.getLogicalOperation().getLogicalOperationName());
-        stringBuilder.append(" is ");
-        stringBuilder.append(predicateResult);
+        if(from.isAQuestion()) {
+            stringBuilder.append(" answer was ");
+            if(predicateResult == true) {
+                stringBuilder.append(" 'YES' ");
+            } else {
+                stringBuilder.append(" 'NO' ");
+            }
+        } else {
+            stringBuilder.append("'" + from.getLogicalOperation().getLogicalOperationName() + "'");
+            stringBuilder.append(" is ");
+            stringBuilder.append(predicateResult);
+        }
         return stringBuilder.toString();
     }
 

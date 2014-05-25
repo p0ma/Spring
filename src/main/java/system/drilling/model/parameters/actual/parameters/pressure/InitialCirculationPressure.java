@@ -16,6 +16,16 @@ public class InitialCirculationPressure extends Function {
 
     @Override
     protected Double function() throws CrossComputingException {
-        return null;
+        return 0d;
+    }
+
+    @Override
+    public void setupParameterName() {
+        setParameterName("Initial circulation pressure");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Pressure");
     }
 }

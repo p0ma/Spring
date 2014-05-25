@@ -16,19 +16,19 @@ public class Predicate implements IPredicate{
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "logical_operation_id")
     private LogicalOperation logicalOperation;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "fires_on_true_id")
     private Predicate firesOnTrue;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "fires_on_false_id")
     private Predicate firesOnFalse;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "conclusion_id")
     private Conclusion conclusion;
 
@@ -58,12 +58,8 @@ public class Predicate implements IPredicate{
         this.firesOnFalse = predicate;
     }
 
-    public Explanation fire() {
-        Explanation explanation = new Explanation();
-        explanation.setFrom(this);
-        explanation.setPredicateResult(logicalOperation.getResult());
-        explanation.setTo(explanation.isPredicateResult() ? firesOnTrue : firesOnFalse);
-        return explanation;
+    public Predicate fire() {
+        return logicalOperation.getResult() ? firesOnTrue : firesOnFalse;
     }
 
     public Long getId() {
@@ -92,5 +88,21 @@ public class Predicate implements IPredicate{
 
     public void setConclusion(Conclusion conclusion) {
         this.conclusion = conclusion;
+    }
+
+    public boolean isAQuestion() {
+        if(conclusion != null) {
+            return conclusion.isAQuestion();
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isAConclusion() {
+        if(conclusion != null) {
+            return !conclusion.isAQuestion();
+        } else {
+            return false;
+        }
     }
 }

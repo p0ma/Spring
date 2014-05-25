@@ -12,4 +12,13 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("fluid_volume")
 public class FluidVolume extends Parameter {
+    @Override
+    public void setupParameterName() {
+        setParameterName("Fluid volume");
+    }
+
+    @Override
+    public void setupGroupName() {
+        setGroupName("Fluid");
+    }
 }

@@ -13,6 +13,24 @@ public class Conclusion{
     @Column(name = "message", nullable = false)
     private String message;
 
+    private Boolean isAQuestion;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Boolean isAQuestion() {
+        return isAQuestion;
+    }
+
+    public void setIsAQuestion(Boolean isAQuestion) {
+        this.isAQuestion = isAQuestion;
+    }
+
     public Conclusion() {}
 
     public Conclusion(String message) {
