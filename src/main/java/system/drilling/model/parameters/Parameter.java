@@ -14,14 +14,32 @@ import java.util.List;
 @DiscriminatorColumn(name = "parameter_name", discriminatorType = DiscriminatorType.STRING, length = 50)
 public abstract class Parameter implements IParameter {
 
+    @Transient
+    protected int round;
+
     protected Double value;
+
+    public String getUnit() {
+        return unit;
+    }
+
+    @Transient
+    protected String unit;
 
     public Double getParameterValue() {
         return value;
     }
 
+    public void setupUnit() {
+        unit = "";
+    }
+
+    public void setupRound() {
+        round = 8;
+    }
+
     @Transient
-    protected IParametersModel model;
+    protected IParametersModel parametersModel;
 
     @Transient
     private String groupName;
@@ -67,14 +85,16 @@ public abstract class Parameter implements IParameter {
         this.id = id;
     }
 
-    private final void init() {
+    private void init() {
         setupGroupName();
         setupParameterName();
+        setupUnit();
+        setupRound();
     }
 
     public Parameter() {
         init();
-        value = new Double(0);
+        value = 0d;
     }
 
     public Parameter(Double value) {
@@ -83,7 +103,7 @@ public abstract class Parameter implements IParameter {
     }
 
     public void setParameterValue(Double value) throws MyValidationException {
-         setValue(value);
+        setValue(value);
     }
 
     public void setValue(Double value) {
@@ -105,13 +125,33 @@ public abstract class Parameter implements IParameter {
         return value;
     }
 
-    @Override
-    public final void setModel(ParametersModel parametersModel) {
-        this.model = parametersModel;
+    public Double getRoundedValue() throws CrossComputingException {
+        return Math.round(getValue() * Math.pow(10, round)) / Math.pow(10, round);
     }
 
-    public final IParametersModel getModel() {
-        return model;
+    public String getStringValue() throws CrossComputingException {
+        String value = getValue().toString();
+        return value;
+    }
+
+    public String getStringRoundedValue() throws CrossComputingException {
+        Double value = getRoundedValue();
+        String str;
+        if (value == value.intValue()) {
+            str = Integer.toString(value.intValue());
+        } else {
+            str = value.toString();
+        }
+        return str;
+    }
+
+    @Override
+    public final void setParametersModel(ParametersModel parametersModel) {
+        this.parametersModel = parametersModel;
+    }
+
+    public final IParametersModel getParametersModel() {
+        return parametersModel;
     }
 
     @Transient
@@ -135,15 +175,20 @@ public abstract class Parameter implements IParameter {
 
     @Override
     public int compareTo(Object object) {
-        try{
-        if (this.getValue() == ((Parameter) object).getValue())
-            return 0;
-        else if ((this.getValue()) > ((Parameter) object).getValue())
-            return 1;
-        else
-            return -1;
-        }catch (CrossComputingException e) {
+        try {
+            if (this.getValue().equals(((Parameter) object).getValue()))
+                return 0;
+            else if ((this.getValue()) > ((Parameter) object).getValue())
+                return 1;
+            else
+                return -1;
+        } catch (CrossComputingException e) {
             return -2;
         }
+    }
+
+    @Override
+    public String getHint() {
+        return "Imputable value";
     }
 }

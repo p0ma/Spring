@@ -1,4 +1,4 @@
-package system.drilling.model.parameters.actual.parameters.pressure;
+package system.drilling.model.parameters.actual.parameters.shoe;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -10,15 +10,20 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("mud_pumping_pressure_loss")
-public class MudPumpingPressureLoss extends Parameter {
+@DiscriminatorValue("shoe_trunk_depth")
+public class ShoeTrunkDepth extends Parameter {
+    @Override
+    public void setupUnit() {
+        this.unit = "m";
+    }
+
     @Override
     public void setupParameterName() {
-        setParameterName("Mud pumping pressure loss");
+        setParameterName("Trunk depth");
     }
 
     @Override
     public void setupGroupName() {
-        setGroupName("Pressure");
+        setGroupName("Shoe");
     }
 }

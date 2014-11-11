@@ -1,4 +1,4 @@
-package system.drilling.model.parameters.actual.parameters.mud;
+package system.drilling.model.parameters.actual.parameters.solid;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -10,21 +10,26 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("mud_volume")
-public class MudVolume extends Parameter {
+@DiscriminatorValue("pressure_during_injectivity_test")
+public class PressureDuringInjectivityTest extends Parameter {
+
+    @Override
+    public void setupRound() {
+        round = 3;
+    }
 
     @Override
     public void setupUnit() {
-        this.unit = "l";
+        this.unit = "bar";
     }
 
     @Override
     public void setupParameterName() {
-        setParameterName("Mud volume");
+        setParameterName("Pressure during injectivity test");
     }
 
     @Override
     public void setupGroupName() {
-        setGroupName("Mud");
+        setGroupName("Solid");
     }
 }

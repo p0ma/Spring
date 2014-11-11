@@ -4,10 +4,10 @@ package system.drilling.model.well;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.springframework.stereotype.Component;
-import system.drilling.repositories.exceptions.PipeSectionNotFoundException;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 
 
 @Component
@@ -23,6 +23,22 @@ public class Well {
     private List<PipeSection> pipeSections = new LinkedList<PipeSection>();
 
     public Well() {
+    }
+
+    public double getInnerVolume() {
+        double volume = 0;
+        for (PipeSection pipeSection : pipeSections) {
+            volume += pipeSection.getInnerVolume();
+        }
+        return volume;
+    }
+
+    public double getLength() {
+        double length = 0;
+        for (PipeSection pipeSection : pipeSections) {
+            length += pipeSection.getLength();
+        }
+        return length;
     }
 
     /*public double getInnerVolume() {
@@ -67,8 +83,8 @@ public class Well {
     }
 
     public void removePipeSection(PipeSection pipeSection) {
-        for(PipeSection p : pipeSections) {
-            if(p.getId().equals(pipeSection.getId())) {
+        for (PipeSection p : pipeSections) {
+            if (p.getId().equals(pipeSection.getId())) {
                 pipeSections.remove(p);
                 break;
             }

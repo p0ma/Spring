@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="predicates")
-public class Predicate implements IPredicate{
+@Table(name = "predicates")
+public class Predicate implements IPredicate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,7 +32,8 @@ public class Predicate implements IPredicate{
     @JoinColumn(name = "conclusion_id")
     private Conclusion conclusion;
 
-    public Predicate() {  }
+    public Predicate() {
+    }
 
     public String getName() {
         return name;
@@ -91,7 +92,7 @@ public class Predicate implements IPredicate{
     }
 
     public boolean isAQuestion() {
-        if(conclusion != null) {
+        if (conclusion != null) {
             return conclusion.isAQuestion();
         } else {
             return false;
@@ -99,8 +100,16 @@ public class Predicate implements IPredicate{
     }
 
     public boolean isAConclusion() {
-        if(conclusion != null) {
+        if (conclusion != null) {
             return !conclusion.isAQuestion();
+        } else {
+            return false;
+        }
+    }
+
+    public boolean Equals(Predicate predicate) {
+        if (this.getId().equals(predicate.getId())) {
+            return true;
         } else {
             return false;
         }

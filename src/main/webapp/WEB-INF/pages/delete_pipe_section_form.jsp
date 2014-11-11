@@ -37,7 +37,7 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Adding pipe section</h3>
+        <h3 class="panel-title">Deleting pipe section</h3>
     </div>
     <div class="panel-body">
         <div class="input-group">

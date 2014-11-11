@@ -1,4 +1,4 @@
-package system.drilling.model.parameters.actual.parameters.well;
+package system.drilling.model.parameters.actual.parameters.solid;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -10,15 +10,20 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("diameter_casing")
-public class DiameterCasing extends Parameter {
+@DiscriminatorValue("mud_density_during_solid_test")
+public class MudDensityDuringSolidTest extends Parameter {
+    @Override
+    public void setupUnit() {
+        this.unit = "kg/m<sup>3</sup>";
+    }
+
     @Override
     public void setupParameterName() {
-        setParameterName("Diameter casing");
+        setParameterName("Mud density during solid test");
     }
 
     @Override
     public void setupGroupName() {
-        setGroupName("Well");
+        setGroupName("Solid");
     }
 }

@@ -10,11 +10,16 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("diameter_well")
-public class DiameterWell extends Parameter {
+@DiscriminatorValue("well_vertical_depth")
+public class WellVerticalDepth extends Parameter {
+    @Override
+    public void setupUnit() {
+        this.unit = "m";
+    }
+
     @Override
     public void setupParameterName() {
-        setParameterName("Diameter well");
+        setParameterName("Vertical depth");
     }
 
     @Override

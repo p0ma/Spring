@@ -7,7 +7,7 @@ public interface IParameter extends IListenable, IComparable {
 
     public Double getValue() throws CrossComputingException;
 
-    public void setModel(ParametersModel parametersModel);
+    public void setParametersModel(ParametersModel parametersModel);
 
     public void setValue(Double value);
 
@@ -16,5 +16,7 @@ public interface IParameter extends IListenable, IComparable {
     String getGroupName();
 
     String getParameterName();
+
+    String getHint();
 
 }

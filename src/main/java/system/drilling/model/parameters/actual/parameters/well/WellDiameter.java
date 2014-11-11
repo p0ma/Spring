@@ -1,6 +1,5 @@
 package system.drilling.model.parameters.actual.parameters.well;
 
-
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import system.drilling.model.parameters.Parameter;
@@ -11,11 +10,16 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("outer_gird_volume")
-public class OuterGirdVolume extends Parameter{
+@DiscriminatorValue("well_diameter")
+public class WellDiameter extends Parameter {
+
+    public void setupUnit() {
+        this.unit = "mm";
+    }
+
     @Override
     public void setupParameterName() {
-        setParameterName("Outer gird volume");
+        setParameterName("Diameter");
     }
 
     @Override

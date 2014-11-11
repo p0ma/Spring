@@ -68,18 +68,18 @@ public class InferenceModel {
         if (inference == null) {
             inference = new Inference();
         }
-        for(;;) {
+        for (; ; ) {
             Explanation explanation;
-            if(predicate != null) {
+            if (predicate != null) {
                 explanation = new Explanation();
                 explanation.setFrom(predicate);
-                if(predicate.isAQuestion()) {
+                if (predicate.isAQuestion()) {
                     lastOperated = predicate;
                     throw new AnswerIsNeededException(predicate.getConclusion().getMessage());
                 }
-                if(!predicate.isAConclusion()) {
+                if (!predicate.isAConclusion()) {
                     Boolean result = predicate.getLogicalOperation().getResult();
-                    if(result) {
+                    if (result) {
                         predicate = predicate.getFiresOnTrue();
                     } else {
                         predicate = predicate.getFiresOnFalse();
@@ -136,8 +136,6 @@ public class InferenceModel {
     public boolean testPredicates() throws CyclingException {
         List<Explanation> explanationList;
         List<Predicate> checkList;
-        boolean result = true;
-        Explanation explanation;
         for (Predicate predicate : predicateList) {
             checkList = new ArrayList<Predicate>();
             explanationList = new ArrayList<Explanation>();
@@ -151,11 +149,28 @@ public class InferenceModel {
         if (predicate != null) {
             Explanation explanation = new Explanation();
             explanation.setFrom(predicate);
-            explanation.setTo(predicate.getFiresOnFalse());
-            explanationList.add(explanation);
             checkList.add(predicate);
-            testPredicate(predicate.getFiresOnFalse(), checkList, explanationList);
-            testPredicate(predicate.getFiresOnTrue(), checkList, explanationList);
+            Predicate firesOnFalse = predicate.getFiresOnFalse();
+            if (firesOnFalse != null) {
+                explanation.setTo(firesOnFalse);
+                explanationList.add(explanation);
+                if (firesOnFalse.equals(predicate)) {
+                    throw new CyclingException(cyclingPredicates(explanationList));
+                } else {
+                    testPredicate(firesOnFalse, checkList, explanationList);
+                }
+            }
+            Predicate firesOnTrue = predicate.getFiresOnTrue();
+            if (firesOnTrue != null) {
+                explanation.setTo(firesOnTrue);
+                explanationList.add(explanation);
+                if (firesOnTrue.equals(predicate)) {
+                    throw new CyclingException(cyclingPredicates(explanationList));
+                } else {
+
+                    testPredicate(firesOnTrue, checkList, explanationList);
+                }
+            }
             checkList.remove(predicate);
         } else {
             return null;
@@ -166,50 +181,15 @@ public class InferenceModel {
     private String cyclingPredicates(List<Explanation> list) {
         StringBuilder stringBuilder = new StringBuilder(500);
         for (Explanation explanation : list) {
-            stringBuilder.append("Predicate '" + explanation.getFrom().getName() +
-                    "' with id '" + explanation.getFrom().getId() + "'");
-            stringBuilder.append(" leads to predicate '" + explanation.getTo().getName() + "'" +
-                    "' with id '" + explanation.getTo().getId() + "'\n");
-
+            stringBuilder.append("Predicate '" + explanation.getFrom().getName() + "'");
+            stringBuilder.append(" leads to predicate '" + explanation.getTo().getName() + "'<br>");
         }
+        stringBuilder.append("And that make them cycling.<br>");
         return stringBuilder.toString();
     }
 
-    public static void main(String[] args) {
-        InferenceModel inferenceModel = new InferenceModel();
-        Predicate predicate = new Predicate();
-        predicate.setName("predicate0");
-
-        Predicate predicate1 = new Predicate();
-        predicate1.setName("predicate1");
-
-        Predicate predicate2 = new Predicate();
-        predicate2.setName("predicate2");
-
-        //Predicate predicate3 = new Predicate();
-        //predicate3.setName("predicate3");
-
-        predicate.setFiresOnFalse(predicate1);
-        predicate.setFiresOnTrue(predicate2);
-        //predicate1.setFiresOnFalse(predicate3);
-        predicate1.setFiresOnTrue(predicate2);
-        //predicate2.setFiresOnFalse(predicate3);
-        //predicate2.setFiresOnTrue(predicate3);
-        //predicate3.setFiresOnFalse(predicate);
-
-        try {
-            inferenceModel.addPredicate(predicate);
-            inferenceModel.addPredicate(predicate1);
-            inferenceModel.addPredicate(predicate2);
-            //inferenceModel.addPredicate(predicate3);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
     public void removePredicate(Predicate predicate) {
         predicateList.remove(predicate);
     }
-
-
 }

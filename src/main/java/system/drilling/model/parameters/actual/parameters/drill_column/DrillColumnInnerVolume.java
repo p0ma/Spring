@@ -1,4 +1,4 @@
-package system.drilling.model.parameters.actual.parameters.well;
+package system.drilling.model.parameters.actual.parameters.drill_column;
 
 import com.springapp.mvc.context.provider.ApplicationContextProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +17,10 @@ import javax.persistence.Transient;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("actual_well_depth")
-public class ActualWellDepth extends Function {
+@DiscriminatorValue("drill_column_inner_volume")
+public class DrillColumnInnerVolume extends Function {
 
-    public ActualWellDepth() {
+    public DrillColumnInnerVolume() {
         ApplicationContext applicationContext = ApplicationContextProvider.getApplicationContext();
         if (applicationContext != null) {
             wellService = applicationContext.getBean(WellService.class);
@@ -29,7 +29,7 @@ public class ActualWellDepth extends Function {
 
     @Override
     public void setupUnit() {
-        this.unit = "m";
+        this.unit = "m<sup>3</sup>";
     }
 
     @Transient
@@ -39,21 +39,21 @@ public class ActualWellDepth extends Function {
     @Override
     protected Double function() throws CrossComputingException {
         Well well = wellService.getWell();
-        return well.getLength();
+        return well.getInnerVolume();
     }
 
     @Override
     public String getFormula() {
-        return "Well depth";
+        return "Inner volume";
     }
 
     @Override
     public void setupParameterName() {
-        setParameterName("Actual well depth");
+        setParameterName("Drill column inner volume");
     }
 
     @Override
     public void setupGroupName() {
-        setGroupName("Well");
+        setGroupName("Drill column");
     }
 }

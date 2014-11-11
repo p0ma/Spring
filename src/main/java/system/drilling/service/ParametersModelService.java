@@ -16,13 +16,13 @@ public class ParametersModelService {
     private ParametersModelRepository parametersModelRepository;
 
     @Transactional(readOnly = true)
-    public ParametersModel getParametersModel(){
+    public ParametersModel getParametersModel() {
         List<ParametersModel> parametersModelList = parametersModelRepository.findAll();
-        if(!parametersModelList.isEmpty()) {
+        if (!parametersModelList.isEmpty()) {
             return parametersModelList.get(0);
-        }
-        else {
+        } else {
             ParametersModel parametersModel = new ParametersModel();
+            parametersModel.initParameters();
             parametersModelRepository.save(parametersModel);
             return parametersModel;
         }
@@ -34,7 +34,7 @@ public class ParametersModelService {
         ParametersModel deleted = parametersModelRepository.findOne(parametersModelId);
 
         if (deleted == null) {
-            throw new ParametersModelNotFoundException("No parameters model with id " + parametersModelId + " has been found. Nothing to delete.");
+            throw new ParametersModelNotFoundException("No parameters parametersModel with id " + parametersModelId + " has been found. Nothing to delete.");
         }
 
         parametersModelRepository.delete(deleted);
@@ -57,7 +57,7 @@ public class ParametersModelService {
         ParametersModel person = parametersModelRepository.findOne(updated.getId());
 
         if (person == null) {
-            throw new ParametersModelNotFoundException("No parameters model with id " + updated.getId() + " has been found. Nothing to update.");
+            throw new ParametersModelNotFoundException("No parameters parametersModel with id " + updated.getId() + " has been found. Nothing to update.");
         }
 
         parametersModelRepository.save(updated);

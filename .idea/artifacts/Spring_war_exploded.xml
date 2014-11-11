@@ -56,6 +56,10 @@
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: com.efsavage.jquery:jquery-maven:1.7.2" />
           <element id="library" level="project" name="Maven: org.mockito:mockito-all:1.9.5" />
+          <element id="library" level="project" name="Maven: com.google.visualization:visualization-datasource:1.1.1" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:r07" />
+          <element id="library" level="project" name="Maven: com.ibm.icu:icu4j:4.0.1" />
+          <element id="library" level="project" name="Maven: net.sf.opencsv:opencsv:1.8" />
         </element>
       </element>
     </root>

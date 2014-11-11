@@ -1,4 +1,4 @@
-package system.drilling.model.parameters.actual.parameters.pressure;
+package system.drilling.model.parameters.actual.parameters.well;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -10,15 +10,20 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("drill_pipe_inner_pressure")
-public class DrillPipeInnerPressure extends Parameter {
+@DiscriminatorValue("well_trunk_depth")
+public class WellTrunkDepth extends Parameter {
+    @Override
+    public void setupUnit() {
+        this.unit = "m";
+    }
+
     @Override
     public void setupParameterName() {
-        setParameterName("Drill pipe inner pressure");
+        setParameterName("Trunk depth");
     }
 
     @Override
     public void setupGroupName() {
-        setGroupName("Pressure");
+        setGroupName("Well");
     }
 }

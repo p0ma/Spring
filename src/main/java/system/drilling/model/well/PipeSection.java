@@ -1,12 +1,9 @@
 package system.drilling.model.well;
 
 import javax.persistence.*;
-import javax.validation.Validation;
-import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.Min;
 
 @Entity
-public class PipeSection{
+public class PipeSection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +20,7 @@ public class PipeSection{
 
     }
 
-    public PipeSection(PipeType pipeType, double length, int orderNumber) throws MyValidationException{
+    public PipeSection(PipeType pipeType, double length, int orderNumber) throws MyValidationException {
         setPipeType(pipeType);
         setLength(length);
         setOrderNumber(orderNumber);
@@ -42,7 +39,7 @@ public class PipeSection{
     }
 
     public void setLength(double length) throws MyValidationException {
-        if(length > 0) this.length = length;
+        if (length > 0) this.length = length;
         else throw new MyValidationException("Length must be greater than 0");
     }
 
@@ -63,7 +60,7 @@ public class PipeSection{
     }
 
     public double getInnerVolume() {
-        return pipeType.getInnerDiameter() * length;
+        return pipeType.getCrossSectionalArea() * length;
     }
 
 

@@ -34,7 +34,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test-mvc:1.0.0.M2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0" level="application_server_libraries" />
@@ -117,6 +117,10 @@
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.mockito:mockito-all:1.9.5" level="project" />
+    <orderEntry type="library" name="Maven: com.google.visualization:visualization-datasource:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:r07" level="project" />
+    <orderEntry type="library" name="Maven: com.ibm.icu:icu4j:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.opencsv:opencsv:1.8" level="project" />
   </component>
 </module>
 

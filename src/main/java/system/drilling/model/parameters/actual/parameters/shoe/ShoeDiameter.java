@@ -1,4 +1,4 @@
-package system.drilling.model.parameters.actual.parameters.fluid;
+package system.drilling.model.parameters.actual.parameters.shoe;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -10,15 +10,21 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("fluid_intensity")
-public class FluidIntensity extends Parameter {
+@DiscriminatorValue("shoe_diameter")
+public class ShoeDiameter extends Parameter {
+
+    @Override
+    public void setupUnit() {
+        this.unit = "mm";
+    }
+
     @Override
     public void setupParameterName() {
-        setParameterName("Fluid intensity");
+        setParameterName("Diameter");
     }
 
     @Override
     public void setupGroupName() {
-        setGroupName("Fluid");
+        setGroupName("Shoe");
     }
 }

@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <label class="sr-only" for="inputOuterDiameter">Outer diameter</label>
                     <input type="text" class="form-control" id="inputOuterDiameter"
-                           placeholder="Enter inner diameter">
+                           placeholder="Enter outer diameter">
                     <form:errors path="outerDiameter"/>
                 </div>
 

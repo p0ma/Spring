@@ -4,9 +4,14 @@ import com.springapp.mvc.context.provider.ApplicationContextProvider;
 import org.springframework.context.ApplicationContext;
 import system.drilling.model.parameters.*;
 import system.drilling.model.parameters.Parameter;
+import system.drilling.model.parameters.actual.parameters.pressure.CycleBeginningPressure;
+import system.drilling.model.parameters.actual.parameters.pressure.CycleEndingPressure;
+import system.drilling.model.parameters.actual.parameters.pressure.PressureLoss;
+import system.drilling.model.parameters.actual.parameters.pump.PumpTurns;
 import system.drilling.model.well.MyValidationException;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,22 +32,43 @@ public class ParametersModel implements IParametersModel {
     private ApplicationContext modelContext;
 
     public void initParameters() {
-        for(Map.Entry<String, Parameter> entry : modelContext.getBeansOfType(Parameter.class).entrySet())
-        {
+        for (Map.Entry<String, Parameter> entry : modelContext.getBeansOfType(Parameter.class).entrySet()) {
             IParameter parameter = getParameter(entry.getValue().getClass());
-            if(parameter == null) {
+            parameter.setParametersModel(this);
+            if (parameter == null) {
                 addParameter(entry.getValue().getClass());
             }
         }
+    }
+
+    public ArrayList<DPoint> getPoints() {
+        double cycleBeginningPressure = getParameterValue(CycleBeginningPressure.class),
+                cycleEndingPressure = getParameterValue(CycleEndingPressure.class),
+                pressureLoss = getParameterValue(PressureLoss.class),
+                pumpTurns = getParameterValue(PumpTurns.class);
+        int turnsScale = 100;
+        int moves = (int) Math.ceil(((double) pumpTurns) / (double) turnsScale);
+        ArrayList<DPoint> arrayList = new ArrayList<DPoint>();
+        double curMove;
+        double curPressure;
+        for (int i = 0; i < moves - 1; i++) {
+            curMove = i * turnsScale;
+            curPressure = cycleBeginningPressure + pressureLoss / i;
+            arrayList.add(new DPoint(curMove, curPressure));
+        }
+        curMove = moves;
+        curPressure = cycleEndingPressure;
+        arrayList.add(new DPoint(curMove, curPressure));
+        return arrayList;
     }
 
     public Map<String, Map<String, IParameter>> getParametersByGroups() {
         Map<String, Map<String, IParameter>> map = new HashMap<String, Map<String, IParameter>>();
         Map<String, IParameter> map2 = getParameterMap();
         Map<String, IParameter> map3;
-        for(Map.Entry<String, IParameter> entry : map2.entrySet() ) {
+        for (Map.Entry<String, IParameter> entry : map2.entrySet()) {
             map3 = map.get(entry.getValue().getGroupName());
-            if(map3 == null) {
+            if (map3 == null) {
                 map3 = new HashMap<String, IParameter>();
 
             }
@@ -106,14 +132,19 @@ public class ParametersModel implements IParametersModel {
 
     public IParameter getParameter(Class<?> key) {
         try {
-            return parameterMap.get(key.getSimpleName());
+            IParameter parameter = parameterMap.get(key.getSimpleName());
+            if (parameter != null) {
+                return parameterMap.get(key.getSimpleName());
+            } else {
+                return addParameter(key).getParameter(key);
+            }
         } catch (NullPointerException e) {
             return addParameter(key).getParameter(key);
         }
     }
 
     public Parameter getParameter(String key) {
-        return (Parameter)this.parameterMap.get(key);
+        return (Parameter) this.parameterMap.get(key);
     }
 
     public Double getParameterValue(Class<?> key) {
@@ -126,7 +157,7 @@ public class ParametersModel implements IParametersModel {
 
     private ParametersModel addParameter(String key, IParameter parameter) {
         parameterMap.put(key, parameter);
-        parameter.setModel(this);
+        parameter.setParametersModel(this);
         setChanged(true);
         return this;
     }
@@ -136,13 +167,13 @@ public class ParametersModel implements IParametersModel {
         return this;
     }
 
-    public ParametersModel setParameterValue(String key, Double value) throws MyValidationException{
+    public ParametersModel setParameterValue(String key, Double value) throws MyValidationException {
         parameterMap.get(key).setParameterValue(value);
         setChanged(true);
         return this;
     }
 
-    public ParametersModel setParameterValue(Class<?> key, Double value) throws MyValidationException{
+    public ParametersModel setParameterValue(Class<?> key, Double value) throws MyValidationException {
         try {
             setParameterValue(key.getSimpleName(), value);
         } catch (NullPointerException e) {
@@ -167,14 +198,13 @@ public class ParametersModel implements IParametersModel {
     @Override
     public Map<String, String> getAllValues() {
         Map<String, String> map = new HashMap<String, String>();
-        try{
-        int size = parameterMap.size();
-        for(IParameter parameter : parameterMap.values())
-        {
-            map.put(parameter.getClass().getSimpleName(), ((Double)(parameter.getValue())).toString());
-            if(parameterMap.values().size() > size) return getAllValues();
-        }
-        }catch (CrossComputingException e) {
+        try {
+            int size = parameterMap.size();
+            for (IParameter parameter : parameterMap.values()) {
+                map.put(parameter.getClass().getSimpleName(), ((Double) (parameter.getValue())).toString());
+                if (parameterMap.values().size() > size) return getAllValues();
+            }
+        } catch (CrossComputingException e) {
             e.printStackTrace();
         }
         return map;

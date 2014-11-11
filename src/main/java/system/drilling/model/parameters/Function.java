@@ -25,21 +25,27 @@ public abstract class Function extends Parameter implements IParameterListener {
     public final void calculate() throws CrossComputingException {
         calculating = true;
         setValue(
-        function());
+                function());
         calculating = false;
         finalResult = true;
     }
 
     protected final void registerDependentParameter(Class<?> parameter) {
-        parameters.add(parameter);
-        model.provideListenerToParameter(this, parameter);
+        try {
+            parameters.add(parameter);
+            parametersModel.provideListenerToParameter(this, parameter);
+        } catch (NullPointerException e) {
+            System.out.println("Parameter: " + parameter.getSimpleName());
+            System.out.println("This Parameter: " + this.getParameterName());
+            System.out.println("Model: " + this.getParametersModel());
+        }
     }
 
     protected Double getParameterValue(Class<?> parameter) {
-        if (parameters.contains(parameter)) return model.getParameterValue(parameter);
+        if (parameters.contains(parameter)) return parametersModel.getParameterValue(parameter);
         else {
             registerDependentParameter(parameter);
-            return model.getParameterValue(parameter);
+            return parametersModel.getParameterValue(parameter);
         }
     }
 
@@ -71,8 +77,8 @@ public abstract class Function extends Parameter implements IParameterListener {
     }
 
     @Override
-    public void setParameterValue(Double value) throws MyValidationException{
-        throw new MyValidationException("Function '" + this.getParameterName() + "' cannot be set to explicit value because it depends on other parameters");
+    public void setParameterValue(Double value) throws MyValidationException {
+        throw new MyValidationException("Function cannot be set to explicit value because it depends on other parameters");
     }
 
     @Override
@@ -82,5 +88,12 @@ public abstract class Function extends Parameter implements IParameterListener {
 
     public void setFinalResult(boolean finalResult) {
         this.finalResult = finalResult;
+    }
+
+    public abstract String getFormula();
+
+    @Override
+    public String getHint() {
+        return getFormula();
     }
 }

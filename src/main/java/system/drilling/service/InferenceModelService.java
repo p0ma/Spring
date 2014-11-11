@@ -47,7 +47,7 @@ public class InferenceModelService {
         InferenceModel inferenceModel = inferenceModelRepository.findOne(updated.getId());
 
         if (inferenceModel == null) {
-            throw new InferenceModelFoundException("No inference model with id " + updated.getId() + " has been found. Nothing to update.");
+            throw new InferenceModelFoundException("No inference parametersModel with id " + updated.getId() + " has been found. Nothing to update.");
         }
 
         inferenceModelRepository.save(updated);
@@ -55,12 +55,11 @@ public class InferenceModelService {
         return updated;
     }
 
-    public InferenceModel getInferenceModel(){
+    public InferenceModel getInferenceModel() {
         List<InferenceModel> parametersModelList = inferenceModelRepository.findAll();
-        if(!parametersModelList.isEmpty()) {
+        if (!parametersModelList.isEmpty()) {
             return parametersModelList.get(0);
-        }
-        else {
+        } else {
             InferenceModel inferenceModel = new InferenceModel();
             inferenceModelRepository.save(inferenceModel);
             return inferenceModel;

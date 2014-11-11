@@ -1,6 +1,6 @@
 package com.springapp.mvc.controllers;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.beans.TypeMismatchException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -9,17 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import system.drilling.model.ParametersModel;
 import system.drilling.model.parameters.IParameter;
 import system.drilling.model.parameters.Parameter;
-import system.drilling.model.parameters.actual.parameters.fluid.FluidCriticalVolume;
-import system.drilling.model.parameters.actual.parameters.pressure.*;
-import system.drilling.model.parameters.actual.parameters.well.ActualWellDepth;
-import system.drilling.model.parameters.actual.parameters.well.OuterGirdVolume;
 import system.drilling.model.well.MyValidationException;
 import system.drilling.repositories.exceptions.ParametersModelNotFoundException;
 import system.drilling.service.ParametersModelService;
-import system.drilling.service.WellService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
@@ -30,16 +23,13 @@ public class ParametersController {
     @Autowired
     private ParametersModelService parametersModelService;
 
-    @Autowired
-    private WellService wellService;
-
-    @RequestMapping(value = "/setparam")
+    @RequestMapping(value = "/setparam", method = RequestMethod.POST)
     @ResponseBody
-    public String getTime(@RequestParam String name, @RequestParam String val) throws MyValidationException {
+    public String setParameter(@RequestParam String name, @RequestParam String val) throws MyValidationException {
         ParametersModel parametersModel;
-            parametersModel = parametersModelService.getParametersModel();
+        parametersModel = parametersModelService.getParametersModel();
         Parameter parameter = parametersModel.getParameter(name);
-        parametersModel.setParameterValue(name, Double.parseDouble(val));
+        parametersModel.setParameterValue(name, Double.parseDouble(val.replace(',', '.')));
         if (parametersModel.isChanged()) {
             try {
                 parametersModelService.update(parametersModel);
@@ -48,7 +38,25 @@ public class ParametersController {
                 e.printStackTrace();
             }
         }
-        return "Parameter '" + parameter.getParameterName() + "' has been set to '" + val + "'";
+        return "Parameter has been successfully set";
+    }
+
+    @ExceptionHandler(NumberFormatException.class)
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseBody
+    public String numberFormatExceptionHandler(NumberFormatException e) throws IOException {
+        return "Invalid number format";
+    }
+
+    @ExceptionHandler(TypeMismatchException.class)
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseBody
+    public String typeMismatchExceptionHandler(TypeMismatchException e) throws NumberFormatException {
+        boolean isNumberFormatException = e.getCause() instanceof NumberFormatException;
+        if (isNumberFormatException) {
+            throw (NumberFormatException) e.getCause();
+        }
+        return "Invalid type";
     }
 
     @ExceptionHandler(Exception.class)
@@ -72,7 +80,7 @@ public class ParametersController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String printWelcome(ModelMap model) {
+    public String showParameters(ModelMap model) {
         ParametersModel parametersModel = parametersModelService.getParametersModel();
         parametersModel.initParameters();
         Map<String, Map<String, IParameter>> parameterMap2 = parametersModel.getParametersByGroups();

@@ -1,4 +1,4 @@
-package system.drilling.model.parameters.actual.parameters.well;
+package system.drilling.model.parameters.actual.parameters.fluid;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -10,17 +10,21 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("descent_depth_intermediate_column")
-public class DescentDepthIntermediateColumn extends Parameter {
+@DiscriminatorValue("fluid_inflow")
+public class FluidInflow extends Parameter {
+
+    @Override
+    public void setupUnit() {
+        this.unit = "l";
+    }
 
     @Override
     public void setupParameterName() {
-        setParameterName("Descent depth intermediate column");
+        setParameterName("Fluid inflow");
     }
 
     @Override
     public void setupGroupName() {
-        setGroupName("Well");
+        setGroupName("Fluid");
     }
-
 }

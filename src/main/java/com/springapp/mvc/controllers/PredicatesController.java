@@ -1,6 +1,5 @@
 package com.springapp.mvc.controllers;
 
-import de.congrace.exp4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -9,29 +8,16 @@ import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.tags.Param;
-import system.decision.support.logic.Conclusion;
 import system.decision.support.logic.CyclingException;
 import system.decision.support.logic.InferenceModel;
 import system.decision.support.logic.Predicate;
-import system.decision.support.logic.operations.ExpressionWrapper;
-import system.decision.support.logic.operations.GreaterEqual;
-import system.decision.support.logic.operations.LessEqual;
 import system.decision.support.logic.operations.LogicalOperation;
-import system.drilling.model.ParametersModel;
 import system.drilling.model.dto.ConclusionDTO;
-import system.drilling.model.dto.PipeSectionDTO;
 import system.drilling.model.dto.PredicateDTO;
 import system.drilling.model.dto.QuestionDTO;
-import system.drilling.model.parameters.actual.parameters.pressure.DrillPipeOuterPressure;
-import system.drilling.model.parameters.actual.parameters.pressure.MudPumpingPressure;
-import system.drilling.model.parameters.actual.parameters.pressure.MudPumpingPressureLoss;
-import system.drilling.model.parameters.actual.parameters.well.ActualWellDepth;
-import system.drilling.repositories.exceptions.ParametersModelNotFoundException;
 import system.drilling.service.InferenceModelService;
 import system.drilling.service.ParametersModelService;
 import system.drilling.service.PredicateService;
-import system.drilling.service.WellService;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -43,7 +29,7 @@ import java.util.List;
 @RequestMapping("/predicates")
 public class PredicatesController {
 
-    //private static final String MODEL_CONFIG_PATH = "classpath*:system/drilling/model/config.xml";
+    //private static final String MODEL_CONFIG_PATH = "classpath*:system/drilling/parametersModel/config.xml";
 
     @Autowired
     private PredicateService predicateService;
@@ -54,16 +40,16 @@ public class PredicatesController {
     @Autowired
     private InferenceModelService inferenceModelService;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public String predicates(ModelMap model) {
+    @RequestMapping(method = RequestMethod.GET)
+    public String predicates(ModelMap model) {
         List<Predicate> predicateList = predicateService.findAll();
         List<Predicate> questions = new ArrayList<Predicate>();
         List<Predicate> conclusions = new ArrayList<Predicate>();
-        for(Predicate predicate : predicateList) {
-            if(predicate.isAQuestion()) {
+        for (Predicate predicate : predicateList) {
+            if (predicate.isAQuestion()) {
                 questions.add(predicate);
             }
-            if(predicate.isAConclusion()) {
+            if (predicate.isAConclusion()) {
                 conclusions.add(predicate);
             }
         }
@@ -72,14 +58,14 @@ public class PredicatesController {
         model.addAttribute("predicates", predicateList);
         model.addAttribute("questions", questions);
         model.addAttribute("conclusions", conclusions);
-		return "predicates";
-	}
+        return "predicates";
+    }
 
     @RequestMapping(value = "/choose_starting_predicate", method = RequestMethod.POST)
     @ResponseBody
     public String deletePipeSection(@RequestParam Long id) throws IOException, Exception {
         String msg;
-        try{
+        try {
             InferenceModel inferenceModel = inferenceModelService.getInferenceModel();
             Predicate predicate = predicateService.findById(id);
             inferenceModel.setStartindPredicate1(predicate);
@@ -95,8 +81,8 @@ public class PredicatesController {
     public String deletePipeSectionForm(ModelMap model) {
         List<Predicate> predicateList = predicateService.findAll();
         List<Predicate> predicateList1 = new ArrayList<Predicate>();
-        for(Predicate predicate : predicateList) {
-            if(!predicate.isAConclusion()) {
+        for (Predicate predicate : predicateList) {
+            if (!predicate.isAConclusion()) {
                 predicateList1.add(predicate);
             }
         }
@@ -173,9 +159,10 @@ public class PredicatesController {
         Predicate predicate = predicateService.createFromDto(predicateDTO);
         InferenceModel inferenceModel = inferenceModelService.getInferenceModel();
 
+        predicate.setId(id);
+
         inferenceModel.addPredicate(predicate);
         try {
-            predicate.setId(id);
             predicateService.update(predicate);
         } catch (Exception e) {
             inferenceModel.removePredicate(predicate);
@@ -194,9 +181,10 @@ public class PredicatesController {
         Predicate predicate = predicateService.createFromDto(conclusionDTO);
         InferenceModel inferenceModel = inferenceModelService.getInferenceModel();
 
+        predicate.setId(id);
+
         inferenceModel.addPredicate(predicate);
         try {
-            predicate.setId(id);
             predicateService.update(predicate);
         } catch (Exception e) {
             inferenceModel.removePredicate(predicate);
@@ -215,9 +203,10 @@ public class PredicatesController {
         Predicate predicate = predicateService.createFromDto(questionDTO);
         InferenceModel inferenceModel = inferenceModelService.getInferenceModel();
 
+        predicate.setId(id);
+
         inferenceModel.addPredicate(predicate);
         try {
-            predicate.setId(id);
             predicateService.update(predicate);
         } catch (Exception e) {
             inferenceModel.removePredicate(predicate);
@@ -275,11 +264,11 @@ public class PredicatesController {
         BindingResult result = e.getBindingResult();
         List<FieldError> fieldErrors = result.getFieldErrors();
         Iterator<FieldError> iterator = fieldErrors.iterator();
-        for(;iterator.hasNext();) {
+        for (; iterator.hasNext(); ) {
             FieldError fieldError = iterator.next();
             stringBuilder.append("Value '" + fieldError.getRejectedValue() + "' for field " +
                     fieldError.getField() + " is not acceptable!");
-            if(iterator.hasNext()) {
+            if (iterator.hasNext()) {
                 stringBuilder.append("<br>");
             }
         }
@@ -291,6 +280,7 @@ public class PredicatesController {
         model.addAttribute("predicates", predicateService.findAll());
         model.addAttribute("parameters", parametersModelService.getParametersModel().getParameterMap());
         model.addAttribute("logicalOperations", LogicalOperation.getLogicalOperations());
+        model.addAttribute("pretext", "Adding");
         return "add_predicate_form";
     }
 
@@ -298,12 +288,13 @@ public class PredicatesController {
     public String addConclusion(ModelMap model) {
         List<Predicate> predicates = predicateService.findAll();
         List<Predicate> conclusions = new ArrayList<Predicate>();
-        for(Predicate predicate : predicates) {
-            if(predicate.isAConclusion()) {
+        for (Predicate predicate : predicates) {
+            if (predicate.isAConclusion()) {
                 conclusions.add(predicate);
             }
         }
         model.addAttribute("conclusions", conclusions);
+        model.addAttribute("pretext", "Adding");
         return "add_conclusion_form";
     }
 
@@ -311,89 +302,54 @@ public class PredicatesController {
     public String addQuestion(ModelMap model) {
         List<Predicate> predicates = predicateService.findAll();
         List<Predicate> question = new ArrayList<Predicate>();
-        for(Predicate predicate : predicates) {
-            if(predicate.isAQuestion()) {
+        for (Predicate predicate : predicates) {
+            if (predicate.isAQuestion()) {
                 question.add(predicate);
             }
         }
         model.addAttribute("questions", question);
+        model.addAttribute("pretext", "Adding");
         return "add_question_form";
     }
 
     @RequestMapping(value = "/edit_predicate_form/{id}", method = RequestMethod.GET)
     public String editPredicate(@PathVariable Long id, ModelMap model) {
-        model.addAttribute("predicate",predicateService.findById(id));
+        model.addAttribute("predicate", predicateService.findById(id));
         model.addAttribute("predicates", predicateService.findAll());
         model.addAttribute("parameters", parametersModelService.getParametersModel().getParameterMap());
         model.addAttribute("logicalOperations", LogicalOperation.getLogicalOperations());
+        model.addAttribute("pretext", "Editing");
         return "add_predicate_form";
     }
 
     @RequestMapping(value = "/edit_conclusion_form/{id}", method = RequestMethod.GET)
     public String editConclusion(@PathVariable Long id, ModelMap model) {
-        model.addAttribute("predicate",predicateService.findById(id));
+        model.addAttribute("predicate", predicateService.findById(id));
         List<Predicate> predicates = predicateService.findAll();
         List<Predicate> conclusions = new ArrayList<Predicate>();
-        for(Predicate predicate : predicates) {
-            if(predicate.isAConclusion()) {
+        for (Predicate predicate : predicates) {
+            if (predicate.isAConclusion()) {
                 conclusions.add(predicate);
             }
         }
         model.addAttribute("conclusions", conclusions);
+        model.addAttribute("pretext", "Editing");
         return "add_conclusion_form";
     }
 
     @RequestMapping(value = "/edit_question_form/{id}", method = RequestMethod.GET)
     public String editQuestion(@PathVariable Long id, ModelMap model) {
-        model.addAttribute("predicate",predicateService.findById(id));
+        model.addAttribute("predicate", predicateService.findById(id));
         List<Predicate> predicates = predicateService.findAll();
         List<Predicate> questions = new ArrayList<Predicate>();
-        for(Predicate predicate : predicates) {
-            if(predicate.isAQuestion()) {
+        for (Predicate predicate : predicates) {
+            if (predicate.isAQuestion()) {
                 questions.add(predicate);
             }
         }
         model.addAttribute("predicates", predicates);
         model.addAttribute("questions", questions);
+        model.addAttribute("pretext", "Editing");
         return "add_question_form";
-    }
-
-    private void addSome() {
-        ParametersModel parametersModel = parametersModelService.getParametersModel();
-        Predicate predicate = new Predicate();
-        predicate.setName("predicate");
-        Predicate predicate1 = new Predicate();
-        predicate1.setName("predicate1");
-        Predicate predicate2 = new Predicate();
-        predicate2.setName("predicate2");
-        Predicate predicate3 = new Predicate();
-        predicate3.setName("predicate3");
-        predicate.setFiresOnTrue(predicate1);
-        predicate.setFiresOnFalse(predicate2);
-        predicate1.setFiresOnTrue(predicate3);
-        predicate1.setFiresOnFalse(predicate2);
-        LogicalOperation logicalOperation = new GreaterEqual();
-        logicalOperation.setOperand1(parametersModel.getParameter(DrillPipeOuterPressure.class));
-        logicalOperation.setOperand2(parametersModel.getParameter(DrillPipeOuterPressure.class));
-        predicate.setLogicalOperation(logicalOperation);
-        LogicalOperation logicalOperation1 = new LessEqual();
-        logicalOperation1.setOperand1(parametersModel.getParameter(MudPumpingPressure.class));
-        logicalOperation1.setOperand2(parametersModel.getParameter(MudPumpingPressureLoss.class));
-        predicate1.setLogicalOperation(logicalOperation1);
-        predicate2.setConclusion(new Conclusion("conclusion1:predicate2"));
-        predicate3.setConclusion(new Conclusion(("conclusion2:predicate3")));
-
-        if(parametersModel.isChanged()) {
-            try {
-                parametersModelService.update(parametersModel);
-            } catch (ParametersModelNotFoundException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
-        }
-
-        predicateService.create(predicate);
-        predicateService.create(predicate1);
-        predicateService.create(predicate2);
-        predicateService.create(predicate3);
     }
 }

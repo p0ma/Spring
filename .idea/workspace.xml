@@ -1,143 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" name="Default" comment="RELEASE 1.0.0">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/AnswerIsNeededException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/BusinessBillDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/dto/ConclusionDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ConfirmationDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/CyclingException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/ExpressionWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/FieldErrorDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/InferenceController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/InferenceModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/InferenceModelFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/InferenceModelRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/InferenceModelService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/JsonResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/LogicalOperationNotFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/LogicalOperationRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/LogicalOperationService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_congrace_exp4j_0_3_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_7_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_0_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_instrument_4_0_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_instrument_tomcat_4_0_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/MyValidationException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/NoStartingPredicateException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/NotFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParameterRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/ParsingExpressionException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/dto/PipeSectionDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/PipeSectionNotFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/dto/PredicateDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/dto/QuestionDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_conclusion_form.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_predicate_form.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_question_form.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/choose_starting_predicate_form.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/delete_pipe_section_form.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/dialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/inference.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/jquery.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pipe_sections.jsp" />
-      <change type="DELETED" beforePath="D:\GitHub\Spring\src\main\java\system\decision\support\logic\inference\InferenceMachine.java" afterPath="" />
+    <list default="true" id="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/chart/Chart.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ChartController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/CycleBeginningPressure.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/CycleEndingPressure.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/DPoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/drill_column/DrillColumnInnerVolume.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/mud/JammingMudDensity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_r07.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_visualization_visualization_datasource_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibm_icu_icu4j_4_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_opencsv_opencsv_1_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/solid/MaximumAllowableAdditionalPressure.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/NotParsableString.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pump/PumpTurns.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/shoe/ShoeDiameter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/shoe/ShoeTrunkDepth.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/shoe/ShoeVerticalDepth.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/TestController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/chart.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test1.jsp" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\.idea\libraries\lib.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\controllers\BusinessBillDTO.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\fluid\FluidCriticalVolume.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\FinalCirculationPressure.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\fluid\FluidIntensity.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/mud/MudDensity.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\fluid\FluidVolume.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/fluid/FluidInflow.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\mud\JammingMudVolume.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/mud/MaximumAllowableDensity.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\DrillPipeInnerPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/solid/MudDensityDuringSolidTest.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\DrillPipeOuterPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/solid/PressureDuringInjectivityTest.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\InitialCirculationPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/PressureLoss.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\MudPumpingPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/PumpingPressure.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\MudPumpingPressureLoss.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/PipesPressure.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well\DescentDepthIntermediateColumn.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pump/PumpPerformance.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well\DiameterCasing.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellTrunkDepth.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well\DiameterWell.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellDiameter.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well\OuterGirdVolume.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellVerticalDepth.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/Conclusion.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/Conclusion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/DescentDepthIntermediateColumn.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/DescentDepthIntermediateColumn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/DiameterCasing.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/DiameterCasing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/DiameterWell.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/DiameterWell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/DrillPipeInnerPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/DrillPipeInnerPressure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/DrillPipeOuterPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/DrillPipeOuterPressure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/Explanation.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/Explanation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/FinalCirculationPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/FinalCirculationPressure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/fluid/FluidCriticalVolume.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/fluid/FluidCriticalVolume.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/fluid/FluidIntensity.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/fluid/FluidIntensity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/fluid/FluidVolume.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/fluid/FluidVolume.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/IComparable.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/IComparable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/IParameter.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/IParameter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/IParametersModel.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/IParametersModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/IPredicate.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/IPredicate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/inference/Inference.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/inference/Inference.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/InitialCirculationPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/InitialCirculationPressure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/mud/JammingMudVolume.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/mud/JammingMudVolume.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LogicalOperation.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LogicalOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/MudPumpingPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/MudPumpingPressure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/MudPumpingPressureLoss.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/MudPumpingPressureLoss.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/InferenceModel.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/InferenceModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/InferenceModelService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/InferenceModelService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/mud/MudVolume.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/mud/MudVolume.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/OuterGirdVolume.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/OuterGirdVolume.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/NoStartingPredicateException.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/NoStartingPredicateException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/ParametersModel.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/ParametersModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/ParametersModelNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/ParametersModelNotFoundException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/PipeSection.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/PipeSection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/PipeSectionRepository.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/PipeSectionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/PipeSectionService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/PipeSectionService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/PipeType.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/PipeType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/Predicate.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/Predicate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/PredicateNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/PredicateNotFoundException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/PredicateService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/PredicateService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Spring.iml" afterPath="$PROJECT_DIR$/Spring.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Spring_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Spring_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/Well.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/Well.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/WellNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/WellNotFoundException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/WellService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/WellService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_conclusion_form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_conclusion_form.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_predicate_form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_predicate_form.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap-theme.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/resources/mvc-dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/choose_starting_predicate_form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/choose_starting_predicate_form.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/delete_pipe_section_form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/delete_pipe_section_form.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/jquery.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/jquery.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameters.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameters.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/predicates.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/predicates.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_aspectj_aspectjrt_1_6_8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_7_2.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_slf4j_jcl_over_slf4j_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_1.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_data_spring_data_commons_core_1_1_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_6_4_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_data_spring_data_jpa_1_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_1_4_4_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_aop_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_beans_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_context_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_core_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_expression_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_jdbc_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_orm_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_test_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_tx_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_web_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_webmvc_3_2_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_0_2_RELEASE.xml" />
-      <change type="MOVED" beforePath="D:\GitHub\Spring\src\main\webapp\WEB-INF\pages\well.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp" />
     </list>
     <ignored path="Spring.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400977042106" ignored="false" />
-    <file path="/HelloController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400426956535" ignored="false" />
-    <file path="/mvc-dispatcher-servlet.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400683062321" ignored="false" />
+    <file path="/Dummy.txt" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415696227197" ignored="false" />
+    <file path="/HelloController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415675684996" ignored="false" />
+    <file path="/mvc-dispatcher-servlet.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415705050150" ignored="false" />
     <file path="/Model.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400531174843" ignored="false" />
     <file path="/Main.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400423576024" ignored="false" />
     <file path="/config.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1399735747836" ignored="false" />
-    <file path="/fragment.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400965964231" ignored="false" />
+    <file path="/fragment.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415675805677" ignored="false" />
     <file path="/MyConfiguration.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1399751931125" ignored="false" />
     <file path="/AppTests.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400165956826" ignored="false" />
     <file path="/web.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400773488638" ignored="false" />
     <file path="/TestConfiguration.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1399750869403" ignored="false" />
     <file path="/ModelContextProvider.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1399754326488" ignored="false" />
     <file path="/ApplicationContextProvider.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1399754412662" ignored="false" />
-    <file path="/Function.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400797664156" ignored="false" />
-    <file path="/Parameter.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400797272268" ignored="false" />
+    <file path="/Function.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415679408619" ignored="false" />
+    <file path="/Parameter.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415679552340" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1399804577424" ignored="false" />
     <file path="/InferenceResult.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1399804829751" ignored="false" />
     <file path="/Conclusion.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400964989431" ignored="false" />
-    <file path="/Predicate.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400975240352" ignored="false" />
+    <file path="/Predicate.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1401149822506" ignored="false" />
     <file path="/InferenceMachine.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400880664262" ignored="false" />
     <file path="/Inference.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1399811135015" ignored="false" />
     <file path="/Explanation.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400971249439" ignored="false" />
@@ -148,16 +109,16 @@
     <file path="/IPredicate.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400952551094" ignored="false" />
     <file path="/Pressure.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400528002371" ignored="false" />
     <file path="/ApplicationConfiguration1.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400180561650" ignored="false" />
-    <file path="/application.properties" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400965590391" ignored="false" />
+    <file path="/application.properties" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1408976710167" ignored="false" />
     <file path="/applicationContext.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400166275122" ignored="false" />
-    <file path="/pom.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400858112646" ignored="false" />
+    <file path="/pom.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411674223505" ignored="false" />
     <file path="/Person.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400173075954" ignored="false" />
     <file path="/PersonNotFoundException.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400172332739" ignored="false" />
     <file path="/RepositoryPersonService.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400180530862" ignored="false" />
     <file path="/PersonRepository.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400179884321" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/system/drilling/repository.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400178841771" ignored="false" />
     <file path="/PersonRepositoryIml.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400179531010" ignored="false" />
-    <file path="/MudVolume.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400527971330" ignored="false" />
+    <file path="/MudVolume.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411639171785" ignored="false" />
     <file path="/Volume.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400528020677" ignored="false" />
     <file path="/Volume1.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400426778063" ignored="false" />
     <file path="/Pressure1.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400427026632" ignored="false" />
@@ -165,31 +126,31 @@
     <file path="D:/IntelliJ IDEA Workspace/springmvc-bootstrap-showcase-master/src/main/java/org/springframework/mvc/extensions/ajax/webapp/WEB-INF/views/tags/navbar.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400433047626" ignored="false" />
     <file path="D:/IntelliJ IDEA Workspace/springmvc-bootstrap-showcase-master/src/main/webapp/WEB-INF/decorators/main-layout.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400433348662" ignored="false" />
     <file path="D:/IntelliJ IDEA Workspace/springmvc-bootstrap-showcase-master/src/main/webapp/WEB-INF/views/tags/navbar.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400433348662" ignored="false" />
-    <file path="/hello.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400690649146" ignored="false" />
-    <file path="/navbar.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400966509743" ignored="false" />
-    <file path="/parameters.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400948878065" ignored="false" />
-    <file path="/ParametersController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400947770407" ignored="false" />
+    <file path="/hello.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414611006103" ignored="false" />
+    <file path="/navbar.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411669628987" ignored="false" />
+    <file path="/parameters.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415707746176" ignored="false" />
+    <file path="/ParametersController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415706741334" ignored="false" />
     <file path="/DiameterCasing.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400527271686" ignored="false" />
     <file path="/DiameterWell.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400527350907" ignored="false" />
     <file path="/OuterGirdVolume.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400527665898" ignored="false" />
-    <file path="/ActualWellDepth.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400776778891" ignored="false" />
+    <file path="/ActualWellDepth.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411653096773" ignored="false" />
     <file path="/InitialCirculationPressure.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400958503375" ignored="false" />
     <file path="/FinalCirculationPressure.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400529097179" ignored="false" />
     <file path="/JammingMudVolume.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400529102155" ignored="false" />
     <file path="/FluidIntensity.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400530928530" ignored="false" />
-    <file path="/ParametersModel.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400882101359" ignored="false" />
+    <file path="/ParametersModel.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411670246346" ignored="false" />
     <file path="/ParametersModelRepository.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400591126594" ignored="false" />
-    <file path="/ParametersModelService.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400766657206" ignored="false" />
+    <file path="/ParametersModelService.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1408721647028" ignored="false" />
     <file path="/ParametersModelNotFoundException.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400766388599" ignored="false" />
-    <file path="/a.dummy" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400960224286" ignored="false" />
+    <file path="/a.dummy" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411638896464" ignored="false" />
     <file path="/PredicateRepository.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400678810064" ignored="false" />
     <file path="/PredicateService.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400966366248" ignored="false" />
     <file path="/PredicateNotFoundException.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400608944954" ignored="false" />
-    <file path="/PredicatesController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400974122152" ignored="false" />
+    <file path="/PredicatesController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1401149478322" ignored="false" />
     <file path="/predicates.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400966800278" ignored="false" />
-    <file path="/PipeType.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400777139837" ignored="false" />
-    <file path="/PipeSection.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400803716079" ignored="false" />
-    <file path="/Well.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400881196696" ignored="false" />
+    <file path="/PipeType.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411653627913" ignored="false" />
+    <file path="/PipeSection.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411653567439" ignored="false" />
+    <file path="/Well.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411653372722" ignored="false" />
     <file path="D:/IF-034.Java/SS_DiscountFP/SSDPFinal/SSDP/.idea/workspace.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400678517684" ignored="false" />
     <file path="/WellService.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400885775623" ignored="false" />
     <file path="/WellRepository.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400679445237" ignored="false" />
@@ -198,10 +159,10 @@
     <file path="/FluidVolume.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400681234624" ignored="false" />
     <file path="/WellController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400860019942" ignored="false" />
     <file path="/well.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400691218353" ignored="false" />
-    <file path="/bootstrap.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400690257969" ignored="false" />
+    <file path="/bootstrap.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415677200140" ignored="false" />
     <file path="/pipe_sections.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400801209229" ignored="false" />
     <file path="/pipe_sections1.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400695787986" ignored="false" />
-    <file path="/add_pipe_section_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400790867733" ignored="false" />
+    <file path="/add_pipe_section_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1401686731664" ignored="false" />
     <file path="/PipeSectionDTO.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400723129126" ignored="false" />
     <file path="/ValidationErrorDto.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400729003399" ignored="false" />
     <file path="/ValidationErrorDTO.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400729382975" ignored="false" />
@@ -211,12 +172,12 @@
     <file path="/LogicalOperationService.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400786929884" ignored="false" />
     <file path="/ParameterRepository.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400782657268" ignored="false" />
     <file path="/FluidCriticalVolume.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400795954484" ignored="false" />
-    <file path="/IParameter.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400793184155" ignored="false" />
-    <file path="/delete_pipe_section_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400802777815" ignored="false" />
-    <file path="/add_predicate_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400975421069" ignored="false" />
+    <file path="/IParameter.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415679537348" ignored="false" />
+    <file path="/delete_pipe_section_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1401148706199" ignored="false" />
+    <file path="/add_predicate_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1401148769162" ignored="false" />
     <file path="/ExpressionWrapper.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400974636657" ignored="false" />
     <file path="/PredicateDTO.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400875004445" ignored="false" />
-    <file path="/InferenceModel.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400974691544" ignored="false" />
+    <file path="/InferenceModel.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1401150478850" ignored="false" />
     <file path="/CyclingException.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400876351750" ignored="false" />
     <file path="/InferenceModelService.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400886796095" ignored="false" />
     <file path="/InferenceModelRepository.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400886424299" ignored="false" />
@@ -229,11 +190,43 @@
     <file path="/InferenceController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400971096511" ignored="false" />
     <file path="/AnswerIsNeededException.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400951839184" ignored="false" />
     <file path="/NoStartingPredicateException.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400957061566" ignored="false" />
-    <file path="/choose_starting_predicate_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400961067719" ignored="false" />
+    <file path="/choose_starting_predicate_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1401148719197" ignored="false" />
     <file path="/add_conclusion.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400963542183" ignored="false" />
     <file path="/ConclusionDTO.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400963737247" ignored="false" />
     <file path="/add_question_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400975428488" ignored="false" />
-    <file path="/add_conclusion_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1400973807920" ignored="false" />
+    <file path="/add_conclusion_form.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1401148789755" ignored="false" />
+    <file path="/PressureInjectivityTest.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1408709872666" ignored="false" />
+    <file path="/MaximumAllowableDensity.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415681518699" ignored="false" />
+    <file path="/MaximumAllowableAdditionalPressure.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1408973181331" ignored="false" />
+    <file path="/MudDensity.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1408728003285" ignored="false" />
+    <file path="/WellDiameter.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1408972672215" ignored="false" />
+    <file path="/PressureDuringInjectivityTest.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1408977226832" ignored="false" />
+    <file path="/PumpingPressure.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411578277273" ignored="false" />
+    <file path="/CycleBeginningPressure.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411578646500" ignored="false" />
+    <file path="/CycleEndingPressure.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411578976564" ignored="false" />
+    <file path="/JammingMudDensity.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411638856129" ignored="false" />
+    <file path="/FluidInflow.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411638751509" ignored="false" />
+    <file path="/DrillColumnInnerVolume.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411653132025" ignored="false" />
+    <file path="/PumpTurns.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411656060977" ignored="false" />
+    <file path="/PressureLoss.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411655916693" ignored="false" />
+    <file path="/Chart.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411660777449" ignored="false" />
+    <file path="/ChartController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411674794051" ignored="false" />
+    <file path="/DPoint.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411670239658" ignored="false" />
+    <file path="/chart.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1411675116306" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/TranslateIt/src/main/webapp/WEB-INF/pages/hello.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414611011633" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/Transliterator/.idea/workspace.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414611017846" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/TranslateIt/src/main/java/com/springapp/mvc/HelloController.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414608878107" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/TranslateIt/pom.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414609857825" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/Transliterator/src/Transliteration.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414608820308" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/TranslateIt/src/main/java/com/springapp/mvc/Transliteration.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414608830877" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/TranslateIt/src/main/webapp/WEB-INF/web.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414610049994" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/TranslateIt/src/main/java/com/springapp/mvc/ConfigurableStringHttpMessageConverter.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414610793327" ignored="false" />
+    <file path="/ConfigurableStringHttpMessageConverter.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414610766824" ignored="false" />
+    <file path="$USER_HOME$/IdeaProjects/TranslateIt/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1414610879447" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.js" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415675362397" ignored="false" />
+    <file path="/test.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415675580577" ignored="false" />
+    <file path="/test1.jsp" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415677150011" ignored="false" />
+    <file path="/NotParsableString.java" changelist="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" time="1415701459365" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,8 +241,9 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -295,91 +289,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="add_conclusion_form.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_conclusion_form.jsp">
+      <file leaf-file-name="ParametersController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="90" selection-start="3685" selection-end="3685" vertical-scroll-proportion="-2.0384614">
+            <state line="31" column="23" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_predicate_form.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_predicate_form.jsp">
+      <file leaf-file-name="ParametersModelService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="191" column="89" selection-start="8372" selection-end="8372" vertical-scroll-proportion="-36.615383">
+            <state line="33" column="45" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_question_form.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_question_form.jsp">
+      <file leaf-file-name="WellVerticalDepth.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellVerticalDepth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="88" selection-start="5428" selection-end="5428" vertical-scroll-proportion="-6.3076925">
+            <state line="13" column="13" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp">
+      <file leaf-file-name="WellTrunkDepth.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellTrunkDepth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="63" selection-start="462" selection-end="496" vertical-scroll-proportion="-5.8846154">
+            <state line="13" column="13" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="choose_starting_predicate_form.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/choose_starting_predicate_form.jsp">
+      <file leaf-file-name="WellDiameter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellDiameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="56" selection-start="639" selection-end="639" vertical-scroll-proportion="-9.153846">
+            <state line="13" column="13" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delete_pipe_section_form.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/delete_pipe_section_form.jsp">
+      <file leaf-file-name="ActualWellDepth.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="56" selection-start="633" selection-end="633" vertical-scroll-proportion="-9.153846">
+            <state line="24" column="13" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hello.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp">
+      <file leaf-file-name="Parameter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="14" column="22" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelloController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java">
+      <file leaf-file-name="Function.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="25" selection-start="532" selection-end="532" vertical-scroll-proportion="0.33497536">
+            <state line="80" column="50" selection-start="2498" selection-end="2498" vertical-scroll-proportion="0.5255023">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inference.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/inference.jsp">
+      <file leaf-file-name="ParametersModelRepository.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParametersModelRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="5" column="17" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_pipe_section_form.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp">
+      <file leaf-file-name="MyValidationException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/well/MyValidationException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="2" column="13" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -393,6 +387,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -403,22 +398,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ConfirmationDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/InferenceController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/decision/support/logic/inference/Inference.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/inference.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LogicalOperation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/ExpressionWrapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/decision/support/logic/InferenceModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/decision/support/logic/Predicate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/decision/support/logic/Explanation.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_predicate_form.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_conclusion_form.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_question_form.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/choose_starting_predicate_form.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/delete_pipe_section_form.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/PressureLoss.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pump/PumpTurns.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/drill_column/DrillColumnInnerVolume.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/IParameter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/solid/MaximumAllowableAdditionalPressure.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/mud/MaximumAllowableDensity.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/NotParsableString.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/GlobalBindingInitilizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/GlobalBindingInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mvc-dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameters.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java" />
       </list>
     </option>
   </component>
@@ -437,9 +432,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-12" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -500,10 +496,6 @@
               <option name="myItemId" value="Spring" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -526,18 +518,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mvc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -620,44 +600,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tablednd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -867,6 +809,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="repositories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drilling" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -996,140 +976,6 @@
               <option name="myItemId" value="parameters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pressure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drilling" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parameters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parameters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drilling" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parameters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parameters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fluid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drilling" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1192,82 +1038,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="logic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="operations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inference" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1330,82 +1100,49 @@
               <option name="myItemId" value="context" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="provider" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="context" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configuration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="D:/IF-034.Java/SS_DiscountFP/SSDPFinal/SSDP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/lib" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="system.drilling.model.dto" />
       <recent name="com.springapp.mvc.controllers" />
-      <recent name="system.drilling.repositories" />
-      <recent name="system.drilling.service" />
-      <recent name="system.drilling.repositories.exceptions" />
+      <recent name="system.drilling.model.parameters.actual.parameters.pressure" />
+      <recent name="system.drilling.model.parameters.actual.parameters.pump" />
+      <recent name="system.drilling.model.parameters.actual.parameters.drill_column" />
+      <recent name="system.drilling.model.parameters.actual.parameters.fluid" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GitHub\Spring\src\main\webapp\WEB-INF\pages" />
-      <recent name="D:\GitHub\Spring\src\main\webapp" />
-      <recent name="D:\GitHub\Spring\src\main\resources" />
-      <recent name="D:\GitHub\Spring\src" />
+      <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\resources\bootstrap\js" />
+      <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\resources\bootstrap\fonts" />
+      <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\resources\bootstrap\css" />
+      <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\WEB-INF\pages" />
+      <recent name="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="system.drilling.model.dto" />
@@ -1415,11 +1152,11 @@
       <recent name="system.drilling.service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\resources\bootstrap" />
       <recent name="D:\GitHub\Spring\src\main\resources" />
       <recent name="D:\GitHub\Spring\src\main\webapp\resources\bootstrap" />
       <recent name="D:\GitHub\Spring\src\main\webapp\WEB-INF" />
       <recent name="D:\GitHub\Spring\src\main\webapp\WEB-INF\pages" />
-      <recent name="D:\GitHub\Spring\src\main\java\com\springapp\mvc" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.springapp.mvc" />
@@ -1454,6 +1191,28 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="InferenceModel" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="system.decision.support.logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="system.decision.support.logic.InferenceModel" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Spring" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="false" name="RepositoryPersonServiceTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1482,28 +1241,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="InferenceModel" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="system.decision.support.logic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="system.decision.support.logic.InferenceModel" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Spring" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -1516,19 +1253,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -1557,6 +1281,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1692,8 +1429,8 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.AppTests" />
       <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0" />
       <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryPersonServiceTest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.InferenceModel" />
+      <item index="3" class="java.lang.String" itemvalue="Application.InferenceModel" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryPersonServiceTest" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -1739,38 +1476,42 @@
       <created>1400687950349</created>
       <updated>1400687950349</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="RELEASE 1.0.0">
+      <created>1400977343371</created>
+      <updated>1400977343371</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="0" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32887402" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3188406" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3180363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26867336" sideWeight="0.078975454" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32887402" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280363" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28068304" sideWeight="0.73132664" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26867336" sideWeight="0.92102456" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27374598" sideWeight="0.7406617" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25933832" sideWeight="0.92102456" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.058164354" sideWeight="0.68115944" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32887402" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1836,7 +1577,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1844,41 +1585,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/decision/support/logic/InferenceModel.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.2.RELEASE/spring-web-4.0.2.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="42" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#379#390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/decision/support/logic/Predicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="68" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="258" column="74" selection-start="9381" selection-end="9381" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#2587#2598#0" expanded="true" />
-            <element signature="e#2653#2664#0" expanded="true" />
-            <element signature="e#4166#4177#0" expanded="true" />
-            <element signature="e#11196#11207#0" expanded="true" />
-            <element signature="e#11711#11722#0" expanded="true" />
-            <element signature="e#12860#12871#0" expanded="true" />
-            <element signature="e#13477#13488#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/decision/support/logic/Explanation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="102" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0">
+        <state line="33" column="29" selection-start="2403" selection-end="2403" vertical-scroll-proportion="-14.68">
           <folding />
         </state>
       </provider>
@@ -1890,79 +1599,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/NotParsableString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameters.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="43" selection-start="1743" selection-end="1743" vertical-scroll-proportion="3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ChartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="13" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="13" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/well/MyValidationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0">
+        <state line="31" column="23" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParametersModelRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+        <state line="5" column="17" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_predicate_form.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="89" selection-start="8372" selection-end="8372" vertical-scroll-proportion="-36.615383">
+        <state line="33" column="45" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_conclusion_form.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellVerticalDepth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="90" selection-start="3685" selection-end="3685" vertical-scroll-proportion="-2.0384614">
+        <state line="13" column="13" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_question_form.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellTrunkDepth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="88" selection-start="5428" selection-end="5428" vertical-scroll-proportion="-6.3076925">
+        <state line="13" column="13" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/WellDiameter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="63" selection-start="462" selection-end="496" vertical-scroll-proportion="-5.8846154">
+        <state line="13" column="13" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/choose_starting_predicate_form.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="56" selection-start="639" selection-end="639" vertical-scroll-proportion="-9.153846">
+        <state line="24" column="13" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/delete_pipe_section_form.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="56" selection-start="633" selection-end="633" vertical-scroll-proportion="-9.153846">
+        <state line="14" column="22" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/inference.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="25" selection-start="532" selection-end="532" vertical-scroll-proportion="0.33497536">
+        <state line="80" column="50" selection-start="2498" selection-end="2498" vertical-scroll-proportion="0.5255023">
           <folding />
         </state>
       </provider>
@@ -2026,7 +1756,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -2034,7 +1763,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.springframework:spring-jdbc:3.0.5.RELEASE</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
