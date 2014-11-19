@@ -24,8 +24,12 @@ public abstract class Function extends Parameter implements IParameterListener {
 
     public final void calculate() throws CrossComputingException {
         calculating = true;
+        Double value = function();
+        if (value.isInfinite() || value.isNaN()) {
+            value = 0d;
+        }
         setValue(
-                function());
+                value);
         calculating = false;
         finalResult = true;
     }

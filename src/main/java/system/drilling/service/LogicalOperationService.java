@@ -1,19 +1,14 @@
 package system.drilling.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import system.decision.support.logic.Predicate;
 import system.decision.support.logic.operations.LogicalOperation;
-import system.drilling.model.parameters.Parameter;
 import system.drilling.repositories.LogicalOperationRepository;
 import system.drilling.repositories.ParameterRepository;
 import system.drilling.repositories.exceptions.LogicalOperationNotFoundException;
-import system.drilling.repositories.exceptions.PredicateNotFoundException;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 

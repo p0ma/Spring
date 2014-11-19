@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import system.drilling.model.parameters.CrossComputingException;
 import system.drilling.model.parameters.Function;
-import system.drilling.model.parameters.actual.parameters.mud.MaximumAllowableDensity;
+import system.drilling.model.parameters.actual.parameters.mud.JammingMudDensity;
 import system.drilling.model.parameters.actual.parameters.mud.MudDensity;
 
 import javax.persistence.DiscriminatorValue;
@@ -24,18 +24,18 @@ public class CycleEndingPressure extends Function {
     @Override
     protected Double function() throws CrossComputingException {
         return function(getParameterValue(MudDensity.class),
-                getParameterValue(MaximumAllowableDensity.class),
-                getParameterValue(PumpingPressure.class));
+                getParameterValue(PumpingPressure.class),
+                getParameterValue(JammingMudDensity.class));
     }
 
     @Override
     public String getFormula() {
-        return "maximumAllowableDensity * pumpingPressure / mudDensity";
+        return "pressureLoss * jammingMudDensity / mudDensity";
     }
 
-    private Double function(Double mudDensity, Double maximumAllowableDensity,
-                            Double pumpingPressure) {
-        Double result = maximumAllowableDensity * pumpingPressure / mudDensity;
+    private Double function(Double mudDensity, Double pumpingPressure,
+                            Double jammingMudDensity) {
+        Double result = pumpingPressure * jammingMudDensity / mudDensity;
         return result;
     }
 

@@ -2,12 +2,14 @@ package com.springapp.mvc.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+import system.auth.User;
 import system.decision.support.logic.CyclingException;
 import system.decision.support.logic.InferenceModel;
 import system.decision.support.logic.Predicate;
@@ -92,11 +94,12 @@ public class PredicatesController {
 
     @RequestMapping(value = "/add_predicate", method = RequestMethod.POST)
     @ResponseBody
-    public String addPredicate(
+    public String addPredicate(@AuthenticationPrincipal User user,
             @Valid PredicateDTO predicateDTO
     ) throws IOException, Exception, CyclingException {
 
-        Predicate predicate = predicateService.createFromDto(predicateDTO);
+        Predicate predicate = predicateService.createFromDto(predicateDTO,
+                user.getWorkingDataSet().getParametersModel());
         InferenceModel inferenceModel = inferenceModelService.getInferenceModel();
 
         inferenceModel.addPredicate(predicate);
@@ -152,11 +155,12 @@ public class PredicatesController {
 
     @RequestMapping(value = "/edit_predicate/{id}")
     @ResponseBody
-    public String editPredicate(
+    public String editPredicate(@AuthenticationPrincipal User user,
             @Valid PredicateDTO predicateDTO, @PathVariable Long id
     ) throws IOException, Exception, CyclingException {
 
-        Predicate predicate = predicateService.createFromDto(predicateDTO);
+        Predicate predicate = predicateService.createFromDto(predicateDTO,
+                user.getWorkingDataSet().getParametersModel());
         InferenceModel inferenceModel = inferenceModelService.getInferenceModel();
 
         predicate.setId(id);
@@ -276,9 +280,9 @@ public class PredicatesController {
     }
 
     @RequestMapping(value = "/add_predicate_form", method = RequestMethod.GET)
-    public String addPredicate(ModelMap model) {
+    public String addPredicate(@AuthenticationPrincipal User user, ModelMap model) {
         model.addAttribute("predicates", predicateService.findAll());
-        model.addAttribute("parameters", parametersModelService.getParametersModel().getParameterMap());
+        model.addAttribute("parameters", user.getWorkingDataSet().getParametersModel().getParameterMap());
         model.addAttribute("logicalOperations", LogicalOperation.getLogicalOperations());
         model.addAttribute("pretext", "Adding");
         return "add_predicate_form";
@@ -313,10 +317,10 @@ public class PredicatesController {
     }
 
     @RequestMapping(value = "/edit_predicate_form/{id}", method = RequestMethod.GET)
-    public String editPredicate(@PathVariable Long id, ModelMap model) {
+    public String editPredicate(@AuthenticationPrincipal User user, @PathVariable Long id, ModelMap model) {
         model.addAttribute("predicate", predicateService.findById(id));
         model.addAttribute("predicates", predicateService.findAll());
-        model.addAttribute("parameters", parametersModelService.getParametersModel().getParameterMap());
+        model.addAttribute("parameters", user.getWorkingDataSet().getParametersModel().getParameterMap());
         model.addAttribute("logicalOperations", LogicalOperation.getLogicalOperations());
         model.addAttribute("pretext", "Editing");
         return "add_predicate_form";

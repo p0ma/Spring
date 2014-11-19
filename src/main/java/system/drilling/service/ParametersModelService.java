@@ -15,19 +15,6 @@ public class ParametersModelService {
     @Autowired
     private ParametersModelRepository parametersModelRepository;
 
-    @Transactional(readOnly = true)
-    public ParametersModel getParametersModel() {
-        List<ParametersModel> parametersModelList = parametersModelRepository.findAll();
-        if (!parametersModelList.isEmpty()) {
-            return parametersModelList.get(0);
-        } else {
-            ParametersModel parametersModel = new ParametersModel();
-            parametersModel.initParameters();
-            parametersModelRepository.save(parametersModel);
-            return parametersModel;
-        }
-    }
-
     @Transactional(rollbackFor = ParametersModelNotFoundException.class)
     public ParametersModel delete(Long parametersModelId) throws ParametersModelNotFoundException {
 

@@ -11,6 +11,7 @@
         function addPipeSection(length, outerDiameter, thickness) {
             var result_panel = $("#result_panel");
             var result = $("#result");
+            var json = {"length": length, "outerDiameter": outerDiameter, "thickness": thickness};
             $.ajax({
                 url: "/well/add_pipe_section.html",
                 data: ({length: length, outerDiameter: outerDiameter, thickness: thickness}),

@@ -4,9 +4,12 @@ import com.springapp.mvc.context.provider.ApplicationContextProvider;
 import org.springframework.context.ApplicationContext;
 import system.drilling.model.parameters.*;
 import system.drilling.model.parameters.Parameter;
+import system.drilling.model.parameters.actual.parameters.drill_column.DrillColumnInnerVolume;
 import system.drilling.model.parameters.actual.parameters.pressure.CycleBeginningPressure;
 import system.drilling.model.parameters.actual.parameters.pressure.CycleEndingPressure;
 import system.drilling.model.parameters.actual.parameters.pressure.PressureLoss;
+import system.drilling.model.parameters.actual.parameters.pump.PumpPerformance;
+import system.drilling.model.parameters.actual.parameters.pump.PumpPoint;
 import system.drilling.model.parameters.actual.parameters.pump.PumpTurns;
 import system.drilling.model.well.MyValidationException;
 
@@ -26,6 +29,9 @@ public class ParametersModel implements IParametersModel {
     private Map<String, IParameter> parameterMap = new HashMap<String, IParameter>();
 
     @Transient
+    private Map<String, IParameter> savedMap = new HashMap<String, IParameter>();
+
+    @Transient
     private boolean changed;
 
     @Transient
@@ -41,24 +47,43 @@ public class ParametersModel implements IParametersModel {
         }
     }
 
-    public ArrayList<DPoint> getPoints() {
+    public void prepareForSaving() {
+        /*for(Map.Entry<String, IParameter> entry : parameterMap.entrySet()) {
+            Parameter parameter = (Parameter)entry.getValue();
+            if(parameter instanceof Function) {
+                savedMap.put(entry.getKey(), entry.getValue());
+            }
+        }
+        parameterMap.entrySet().removeAll(savedMap.entrySet());*/
+    }
+
+    public ArrayList<PumpPoint> getPoints() {
         double cycleBeginningPressure = getParameterValue(CycleBeginningPressure.class),
                 cycleEndingPressure = getParameterValue(CycleEndingPressure.class),
                 pressureLoss = getParameterValue(PressureLoss.class),
-                pumpTurns = getParameterValue(PumpTurns.class);
-        int turnsScale = 100;
-        int moves = (int) Math.ceil(((double) pumpTurns) / (double) turnsScale);
-        ArrayList<DPoint> arrayList = new ArrayList<DPoint>();
-        double curMove;
-        double curPressure;
-        for (int i = 0; i < moves - 1; i++) {
-            curMove = i * turnsScale;
-            curPressure = cycleBeginningPressure + pressureLoss / i;
-            arrayList.add(new DPoint(curMove, curPressure));
+                pumpPerformance = getParameterValue(PumpPerformance.class);
+
+        int pumpTurns = getParameterValue(PumpTurns.class).intValue(),
+                turnsScale = 100;
+        ArrayList<PumpPoint> arrayList = new ArrayList<PumpPoint>();
+        arrayList.add(new PumpPoint(0, cycleBeginningPressure));
+        int pumpTurnsTemp = pumpTurns - turnsScale;
+        while (pumpTurnsTemp > 0) {
+            int turns = pumpTurns - pumpTurnsTemp;
+            double pressure = cycleBeginningPressure - (pressureLoss / pumpTurns) * (turns);
+            arrayList.add(new PumpPoint(
+                    turns,
+                    pressure
+            ));
+            pumpTurnsTemp -= turnsScale;
         }
-        curMove = moves;
-        curPressure = cycleEndingPressure;
-        arrayList.add(new DPoint(curMove, curPressure));
+        int turns = pumpTurns;
+        double pressure = cycleBeginningPressure - (pressureLoss / pumpTurns) * (turns);
+        arrayList.add(new PumpPoint(
+                turns,
+                pressure
+        ));
+
         return arrayList;
     }
 
@@ -221,6 +246,17 @@ public class ParametersModel implements IParametersModel {
                 ((Function) parameter).setFinalResult(false);
             }
         }
+    }
+
+    public static void main(String[] args) {
+        IParameter parameter = new DrillColumnInnerVolume();
+        System.out.println(parameter instanceof Function);
+        System.out.println(parameter instanceof Parameter);
+
+    }
+
+    public static ParametersModel build() {
+        return new ParametersModel();
     }
 
    /* public static class Builder {

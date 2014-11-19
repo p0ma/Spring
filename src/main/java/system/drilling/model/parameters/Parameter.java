@@ -14,6 +14,9 @@ import java.util.List;
 @DiscriminatorColumn(name = "parameter_name", discriminatorType = DiscriminatorType.STRING, length = 50)
 public abstract class Parameter implements IParameter {
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    protected ParametersModel parametersModel;
+
     @Transient
     protected int round;
 
@@ -37,9 +40,6 @@ public abstract class Parameter implements IParameter {
     public void setupRound() {
         round = 8;
     }
-
-    @Transient
-    protected IParametersModel parametersModel;
 
     @Transient
     private String groupName;

@@ -1,62 +1,122 @@
+<!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:include page="jquery.jsp"/>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-    <title>Chart</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <jsp:include page="jquery.jsp"/>
     <jsp:include page="bootstrap.jsp"/>
-    <html>
-    <head>
+    <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/adapters/mootools-adapter.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/adapters/prototype-adapter.js"></script>
+    <script type="text/javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/json2.js"></script>
 
 
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-            var chartData; // globar variable for hold chart data
-            google.load("visualization", "1", { packages: ["corechart"] });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var message;
+            $.ajax({
+                method: 'GET',
+                url: "/chart/getChartData",
+                headers: {
+                    Accept: "application/json; charset=utf-8",
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                success: function (response) {
+                    message = response;
+                    var json = response;
+                    //var obj = JSON.parse(json.chartData);
 
-            // Here We will fill chartData
-
-            $(document).ready(function () {
-
-                $.ajax({
-                    url: "${pageContext.request.contextPath}/chart/getChartData",
-                    data: "",
-                    dataType: "json",
-                    type: "GET",
-                    contentType: "application/json; chartset=utf-8",
-                    success: function (data) {
-                        chartData = data;
-                    },
-                    error: function () {
-                        alert("Error loading data! Please try again.");
+                    var chartData = response.chartData;
+                    var len = chartData.length;
+                    var editedChartData = [];
+                    for (var i = 0; i < chartData.length; i++) {
+                        editedChartData[i] = [chartData[i].turn, chartData[i].pressure];
                     }
-                }).done(function () {
-                            // after complete loading data
-                            google.setOnLoadCallback(drawChart);
-                            drawChart();
-                        });
+
+                    drawChart(editedChartData);
+                },
+                error: function (response) {
+                    message = response.responseText;
+                }
+            })
+        })
+        function drawChart(chartData) {
+            $('#container').highcharts({
+                chart: {
+                    type: 'area'
+                },
+                title: {
+                    text: "Pressure loss"
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    allowDecimals: true,
+                    labels: {
+                        formatter: function () {
+                            return this.value + ' turns'; // clean, unformatted number for year
+                        }
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Pressure'
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value + ' bar';
+                        }
+                    }
+                },
+                tooltip: {
+                    headerFormat: '',
+                    pointFormat: 'After <b>{point.x} {series.name}</b> pressure will be <b>{point.y:,.2f} bar</b>'
+                },
+                plotOptions: {
+                    area: {
+                        pointStart: 0,
+                        marker: {
+                            enabled: false,
+                            symbol: 'circle',
+                            radius: 2,
+                            states: {
+                                hover: {
+                                    enabled: true
+                                }
+                            }
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Turns',
+                        data: chartData
+                    }
+                ]
             });
+        }
+        ;
 
-            google.load("visualization", "1", {packages: ["corechart"]});
-            google.setOnLoadCallback(drawChart);
-            function drawChart() {
-                var data = google.visualization.DataTable(chartData);
 
-                var options = {
-                    title: 'Company Performance'
-                };
+    </script>
+</head>
 
-                var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+<body>
+<jsp:include page="navbar.jsp"/>
+<div class="container">
+    <div id="json1">
 
-                chart.draw(data, options);
-            }
-        </script>
-    </head>
-    <body>
-    <jsp:include page="navbar.jsp"/>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
-    </body>
-    </html>
+    </div>
+
+    <div id="container">
+
+    </div>
+</div>
+
+</body>
+</html>

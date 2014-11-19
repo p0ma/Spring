@@ -16,14 +16,11 @@ import system.drilling.model.dto.PredicateDTO;
 import system.drilling.model.dto.QuestionDTO;
 import system.drilling.model.parameters.Parameter;
 import system.drilling.model.parameters.actual.parameters.well.ActualWellDepth;
-import system.drilling.repositories.LogicalOperationRepository;
 import system.drilling.repositories.PredicateRepository;
-import system.drilling.repositories.exceptions.LogicalOperationNotFoundException;
 import system.drilling.repositories.exceptions.ParsingExpressionException;
 import system.drilling.repositories.exceptions.PredicateNotFoundException;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
@@ -47,7 +44,7 @@ public class PredicateService {
         return predicateRepository.save(created);
     }
 
-    public Predicate createFromDto(PredicateDTO predicateDTO) throws ParsingExpressionException {
+    public Predicate createFromDto(PredicateDTO predicateDTO, ParametersModel parametersModel) throws ParsingExpressionException {
         Predicate predicate = new Predicate();
         if (predicateDTO.getFiresOnFalse() != null) {
             predicate.setFiresOnFalse(findById(predicateDTO.getFiresOnFalse()));
@@ -67,7 +64,6 @@ public class PredicateService {
         } catch (UnparsableExpressionException e) {
             throw new ParsingExpressionException(e.getMessage());
         }
-        ParametersModel parametersModel = parametersModelService.getParametersModel();
         Parameter parameter1 = parametersModel.getParameter(predicateDTO.getLeft());
         if(parameter1 == null) {
             parameter1 = new ActualWellDepth();

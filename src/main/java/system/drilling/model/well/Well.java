@@ -91,6 +91,10 @@ public class Well {
         }
     }
 
+    public static Well build() {
+        return new Well();
+    }
+
     /*public void ComputeMudVolume()
     {
         float casingHeightLeft = casing.getHeight();

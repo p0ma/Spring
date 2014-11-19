@@ -14,21 +14,38 @@
             var result_panel = $("#result_panel");
             var result = $("#result");
             var input = $("#" + name);
+            var json = {"name": name, "val": val};
             $.ajax({
-                method: 'POST',
-                url: "/parameters/setparam.html",
-                data: ({name: name, val: val}),
+                method: 'PUT',
+                url: "/parameters/setparam.json",
+                data: JSON.stringify(json),
+                async: false,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                },
                 success: function (response) {
-                    var message = response;
-                    input.parent().addClass("input-group has-success")
-                    input.parent().removeClass("input-group has-warning")
+                    var message = response.message;
+                    var hasError = response.hasError;
+                    var lastVal = response.lastVal;
+                    if (hasError == true) {
+                        input.parent().addClass("input-group has-warning");
+                        input.parent().removeClass("input-group has-success");
+                        input.parent().removeClass("input-group has-error");
+                        input.val(lastVal);
+                    } else {
+                        input.parent().addClass("input-group has-success");
+                        input.parent().removeClass("input-group has-warning");
+                        input.parent().removeClass("input-group has-error");
+                    }
                     updateTooltip(input, message, 'bottom');
                 },
                 error: function (response) {
-                    var message = response.responseText;
-                    input.parent().addClass("input-group has-warning")
-                    input.parent().removeClass("input-group has-success")
-                    input.text(val);
+                    var json = JSON.parse(response.responseText);
+                    var message = json.message;
+                    input.parent().addClass("input-group has-error");
+                    input.parent().removeClass("input-group has-success");
+                    input.parent().removeClass("input-group has-warning");
                     updateTooltip(input, message, 'bottom');
                 }
             });
@@ -46,9 +63,9 @@
     </script>
 </head>
 <body>
-<jsp:include page="navbar.jsp"/>
-<span></span>
 
+
+<jsp:include page="navbar.jsp"/>
 <div class="container">
     <c:forEach items="${parameterMap2}" var="group">
         <c:set var="group_name_trimmed" value="${fn:replace(group.key, ' ', '_')}" scope="page"/>

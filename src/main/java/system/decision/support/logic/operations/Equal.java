@@ -1,10 +1,7 @@
 package system.decision.support.logic.operations;
 
-import system.drilling.model.parameters.IComparable;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Entity
 @DiscriminatorValue("equal_logical")

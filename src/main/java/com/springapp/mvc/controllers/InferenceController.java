@@ -1,28 +1,17 @@
 package com.springapp.mvc.controllers;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import system.decision.support.logic.AnswerIsNeededException;
 import system.decision.support.logic.InferenceModel;
-import system.decision.support.logic.inference.Inference;
-import system.drilling.model.ParametersModel;
-import system.drilling.model.parameters.IParameter;
-import system.drilling.model.parameters.Parameter;
 import system.drilling.model.well.MyValidationException;
-import system.drilling.repositories.exceptions.ParametersModelNotFoundException;
 import system.drilling.service.InferenceModelService;
 import system.drilling.service.ParametersModelService;
 import system.drilling.service.WellService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 import java.io.IOException;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/inference")
@@ -39,7 +28,7 @@ public class InferenceController {
     @Autowired
     private InferenceModelService inferenceModelService;
 
-    @RequestMapping(value = "/conclusion", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/conclusion", method = RequestMethod.POST)
     @ResponseBody
     public String getConclusion(@Valid ConfirmationDTO confirmationDTO, HttpServletRequest request, HttpServletResponse response) throws Exception{
         String json;
@@ -88,7 +77,7 @@ public class InferenceController {
         }
         return json;
     }
-
+*/
     @ExceptionHandler(Exception.class)
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody

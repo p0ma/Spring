@@ -1,6 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:include page="jquery.jsp"/>
 <html>
+<head>
+    <jsp:include page="bootstrap.jsp"/>
+    <title>Hello</title>
+</head>
 <body>
-	<h1>${message}</h1>
-    <h1>${message1}</h1>
+<jsp:include page="navbar.jsp"/>
 </body>
 </html>

@@ -1,20 +1,30 @@
 package com.springapp.mvc.context.configuration;
 
+import com.springapp.mvc.auth.MyAuthenticationProvider;
 import com.springapp.mvc.context.provider.ApplicationContextProvider;
+import com.springapp.mvc.converters.ChartDataMessageConverter;
 import org.hibernate.ejb.HibernatePersistence;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.xml.MarshallingHttpMessageConverter;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.oxm.xstream.XStreamMarshaller;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Properties;
 
 
@@ -23,7 +33,8 @@ import java.util.Properties;
 @EnableWebMvc
 @ImportResource("classpath:mvc-dispatcher-servlet.xml")
 @PropertySource("classpath:application.properties")
-public class ApplicationConfiguration1 {
+@Import({SecurityConfig.class})
+public class ApplicationConfiguration1 extends WebMvcConfigurerAdapter {
     private static final String VIEW_RESOLVER_PREFIX = "/WEB-INF/pages/";
     private static final String VIEW_RESOLVER_SUFFIX = ".jsp";
 
@@ -41,6 +52,31 @@ public class ApplicationConfiguration1 {
 
     private static final String PROPERTY_NAME_MESSAGESOURCE_BASENAME = "message.source.basename";
     private static final String PROPERTY_NAME_MESSAGESOURCE_USE_CODE_AS_DEFAULT_MESSAGE = "message.source.use.code.as.default.message";
+
+    /*@Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> httpMessageConverters) {
+        httpMessageConverters.add(new ChartDataMessageConverter(new MediaType("text", "csv")));
+    }*/
+
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> messageConverters) {
+        //messageConverters.add(createXmlHttpMessageConverter());
+        messageConverters.add(new MappingJackson2HttpMessageConverter());
+        messageConverters.add(new ChartDataMessageConverter(new MediaType("text", "csv")));
+
+        super.configureMessageConverters(messageConverters);
+    }
+
+    private HttpMessageConverter<Object> createXmlHttpMessageConverter() {
+        MarshallingHttpMessageConverter xmlConverter =
+                new MarshallingHttpMessageConverter();
+
+        XStreamMarshaller xstreamMarshaller = new XStreamMarshaller();
+        xmlConverter.setMarshaller(xstreamMarshaller);
+        xmlConverter.setUnmarshaller(xstreamMarshaller);
+
+        return xmlConverter;
+    }
 
     @Resource
     private Environment environment;
@@ -109,5 +145,10 @@ public class ApplicationConfiguration1 {
     @Bean
     public ApplicationContextProvider getApplicationContextProvider() {
         return new ApplicationContextProvider();
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        return new MyAuthenticationProvider();
     }
 }

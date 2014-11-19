@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import system.drilling.model.well.PipeSection;
 import system.drilling.repositories.PipeSectionRepository;
 import system.drilling.repositories.exceptions.PipeSectionNotFoundException;
-import system.drilling.repositories.exceptions.WellNotFoundException;
 
 import java.util.List;
 

@@ -1,39 +1,32 @@
 package com.springapp.mvc.controllers;
 
-import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 import system.drilling.model.dto.PipeSectionDTO;
 import system.drilling.model.well.MyValidationException;
 import system.drilling.model.well.PipeSection;
-import system.drilling.model.well.PipeType;
-import system.drilling.model.well.Well;
 import system.drilling.repositories.exceptions.NotFoundException;
 import system.drilling.repositories.exceptions.WellNotFoundException;
 import system.drilling.service.ParametersModelService;
 import system.drilling.service.PipeSectionService;
 import system.drilling.service.WellService;
 
-import javax.persistence.Id;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import javax.validation.ValidationException;
 import java.io.IOException;
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 @Controller
 @RequestMapping("/well")
@@ -51,7 +44,7 @@ public class WellController {
     @Autowired
     private PipeSectionService pipeSectionService;
 
-    @RequestMapping(value = "/add_pipe_section")
+    @RequestMapping(value = "/add_pipe_section", consumes = MediaType.APPLICATION_JSON_VALUE)
      @ResponseBody
      public String addPipeSection(
             @Valid PipeSectionDTO pipeSectionDto

@@ -32,11 +32,11 @@ public class PumpTurns extends Function {
 
     @Override
     public String getFormula() {
-        return "Math.ceil(drillColumnInnerPressure / pumpPerformance * Math.pow(10, 3))";
+        return "Math.ceil(drillColumnInnerVolume / pumpPerformance * Math.pow(10, 3))";
     }
 
-    private Double function(Double drillColumnInnerPressure, Double pumpPerformance) {
-        Double result = Math.ceil(drillColumnInnerPressure / pumpPerformance * Math.pow(10, 3));
+    private Double function(Double drillColumnInnerVolume, Double pumpPerformance) {
+        Double result = Math.ceil(drillColumnInnerVolume / pumpPerformance * Math.pow(10, 3));
         return result;
     }
 
