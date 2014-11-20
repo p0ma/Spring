@@ -2,31 +2,36 @@ package com.springapp.mvc.controllers;
 
 import com.springapp.mvc.media.AjaxDTO;
 import com.springapp.mvc.media.ParameterDTO;
+import entities.auth.User;
+import entities.drilling.model.ParametersModel;
+import entities.drilling.model.parameters.CrossComputingException;
+import entities.drilling.model.parameters.IParameter;
+import entities.drilling.model.parameters.Parameter;
+import entities.drilling.model.well.MyValidationException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import system.auth.User;
-import system.drilling.model.ParametersModel;
-import system.drilling.model.parameters.CrossComputingException;
-import system.drilling.model.parameters.IParameter;
-import system.drilling.model.parameters.Parameter;
-import system.drilling.model.well.MyValidationException;
-import system.drilling.repositories.exceptions.ParameterNotFoundException;
-import system.drilling.repositories.exceptions.ParametersModelNotFoundException;
-import system.drilling.service.ParameterService;
-import system.drilling.service.ParametersModelService;
+import repositories.exceptions.ParameterNotFoundException;
+import service.ParameterService;
+import service.ParametersModelService;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.io.IOException;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/parameters")
 public class ParametersController {
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Autowired
     private ParametersModelService parametersModelService;
@@ -38,27 +43,24 @@ public class ParametersController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public AjaxDTO setParameter(@AuthenticationPrincipal User user, @RequestBody ParameterDTO parameterDTO) {
-        ParametersModel parametersModel;
-        parametersModel = user.getWorkingDataSet().getParametersModel();
-        parametersModel.initParameters();
-        Parameter parameter = parametersModel.getParameter(parameterDTO.getName());
-        Double value = Double.parseDouble(parameterDTO.getVal().replace(',', '.'));
         try {
-            parameter.setParameterValue(value);
-            parameterService.update(parameter);
-            //parametersModel.setParameterValue(parameterDTO.getName(), value);
+            Parameter parameter = parameterService.setParameterValue(user, parameterDTO);
+            return new AjaxDTO("Parameter has been successfully set", parameter.getRoundedValue().toString(), false);
         } catch (MyValidationException e) {
             Double lastValue;
             try {
-                lastValue = parameter.getRoundedValue();
+                lastValue = e.getParameter().getRoundedValue();
             } catch (CrossComputingException e1) {
                 lastValue = 0d;
             }
             return new AjaxDTO(e.getMessage(), lastValue.toString(), true);
         } catch (ParameterNotFoundException e) {
             e.printStackTrace();
+            return new AjaxDTO("Parameter not found", parameterDTO.getVal(), true);
+        } catch (CrossComputingException e) {
+            e.printStackTrace();
+            return new AjaxDTO("Cross computing exception: parameters schema is invalid", parameterDTO.getVal(), true);
         }
-        return new AjaxDTO("Parameter has been successfully set", value.toString(), false);
     }
 
     @ExceptionHandler(NumberFormatException.class)
@@ -93,20 +95,13 @@ public class ParametersController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
+    @Transactional(readOnly = true)
     public String showParameters(ModelMap model, @AuthenticationPrincipal User user) {
-        ParametersModel parametersModel = user.getWorkingDataSet().getParametersModel();
+        ParametersModel parametersModel = parametersModelService.findByUser(user);
         parametersModel.initParameters();
-        Map<String, Map<String, IParameter>> parameterMap2 = parametersModel.getParametersByGroups();
-        model.addAttribute("parameterMap2", parameterMap2);
-        if (parametersModel.isChanged()) {
-            try {
-                parametersModel.prepareForSaving();
-                parametersModelService.update(parametersModel);
-                parametersModel.setChanged(false);
-            } catch (ParametersModelNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
+        Map<String, Map<String, IParameter>> parameterMap =
+                parametersModel.getParametersByGroups();
+        model.addAttribute("parameterMap", parameterMap);
         return "parameters";
     }
 }

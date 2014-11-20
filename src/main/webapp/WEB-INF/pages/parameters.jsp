@@ -67,7 +67,7 @@
 
 <jsp:include page="navbar.jsp"/>
 <div class="container">
-    <c:forEach items="${parameterMap2}" var="group">
+    <c:forEach items="${parameterMap}" var="group">
         <c:set var="group_name_trimmed" value="${fn:replace(group.key, ' ', '_')}" scope="page"/>
 
         <div class="panel panel-default" id="accordion">

@@ -1,9 +1,14 @@
 package com.springapp.mvc.controllers;
 
+import entities.auth.User;
+import entities.drilling.model.dto.PipeSectionDTO;
+import entities.drilling.model.well.MyValidationException;
+import entities.drilling.model.well.PipeSection;
+import entities.drilling.model.well.Well;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -13,14 +18,9 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
-import system.drilling.model.dto.PipeSectionDTO;
-import system.drilling.model.well.MyValidationException;
-import system.drilling.model.well.PipeSection;
-import system.drilling.repositories.exceptions.NotFoundException;
-import system.drilling.repositories.exceptions.WellNotFoundException;
-import system.drilling.service.ParametersModelService;
-import system.drilling.service.PipeSectionService;
-import system.drilling.service.WellService;
+import repositories.exceptions.NotFoundException;
+import repositories.exceptions.WellNotFoundException;
+import service.WellService;
 
 import javax.validation.Valid;
 import javax.validation.ValidationException;
@@ -33,38 +33,26 @@ import java.util.List;
 public class WellController {
 
     @Autowired
-    private MessageSource messageSource;
-
-    @Autowired
-    private ParametersModelService parametersModelService;
-
-    @Autowired
     private WellService wellService;
 
-    @Autowired
-    private PipeSectionService pipeSectionService;
 
     @RequestMapping(value = "/add_pipe_section", consumes = MediaType.APPLICATION_JSON_VALUE)
-     @ResponseBody
-     public String addPipeSection(
-            @Valid PipeSectionDTO pipeSectionDto
-    ) throws IOException, Exception {
-        try{
-            wellService.addPipeSection(pipeSectionDto);
-        } catch (Exception e) {
-            throw e;
-        }
+    @ResponseBody
+    public String addPipeSection(@AuthenticationPrincipal User user, @Valid PipeSectionDTO pipeSectionDto) throws
+            MyValidationException, WellNotFoundException {
+        Well well = user.getWorkingDataSet().getWell();
+        well.addPipeSection(PipeSection.build(pipeSectionDto));
+        wellService.update(well);
         return "Pipe section has been added";
     }
 
     @RequestMapping(value = "/delete_pipe_section")
     @ResponseBody
-    public String deletePipeSection(@RequestParam Long id) throws IOException, Exception {
-        try{
-            wellService.deletePipeSection(id);
-        } catch (Exception e) {
-            throw e;
-        }
+    public String deletePipeSection(@AuthenticationPrincipal User user, @RequestParam Long id) throws
+            WellNotFoundException {
+        Well well = user.getWorkingDataSet().getWell();
+        well.removePipeSection(id);
+        wellService.update(well);
         return "Pipe section has been removed";
     }
 
@@ -75,7 +63,7 @@ public class WellController {
         StringBuilder stringBuilder = new StringBuilder(500);
         BindingResult result = e.getBindingResult();
         List<FieldError> fieldErrors = result.getFieldErrors();
-        for(FieldError fieldError : fieldErrors) {
+        for (FieldError fieldError : fieldErrors) {
             stringBuilder.append("Field " + fieldError.getField() + " has error with code " + fieldError.getCode());
         }
         return stringBuilder.toString();
@@ -103,11 +91,11 @@ public class WellController {
         BindingResult result = e.getBindingResult();
         List<FieldError> fieldErrors = result.getFieldErrors();
         Iterator<FieldError> iterator = fieldErrors.iterator();
-        for(;iterator.hasNext();) {
+        for (; iterator.hasNext(); ) {
             FieldError fieldError = iterator.next();
             stringBuilder.append("Value '" + fieldError.getRejectedValue() + "' for field " +
                     fieldError.getField() + " is not acceptable!");
-            if(iterator.hasNext()) {
+            if (iterator.hasNext()) {
                 stringBuilder.append("<br>");
             }
         }
@@ -135,7 +123,7 @@ public class WellController {
         StringBuilder stringBuilder = new StringBuilder();
         StackTraceElement[] stackTraceElements = e.getStackTrace();
         stringBuilder.append(e.getClass().getSimpleName() + e.getMessage() + "<br>");
-        for(StackTraceElement stackTraceElement : stackTraceElements) {
+        for (StackTraceElement stackTraceElement : stackTraceElements) {
             stringBuilder.append(stackTraceElement.toString() + "\n");
         }
         return stringBuilder.toString();
@@ -143,9 +131,15 @@ public class WellController {
 
     @RequestMapping(value = "/reorder")
     @ResponseBody
-    public String reorder(@RequestParam Long fromId, @RequestParam Long toId, Model model) throws NotFoundException {
-        int[] newOrder = pipeSectionService.swapOrder(fromId, toId);
-        return "Pipe sections " + newOrder[0] + " and " + newOrder[1] + " has been swapped";
+    public String reorder(@AuthenticationPrincipal User user, @RequestParam Long fromId, @RequestParam Long toId, Model model) throws NotFoundException {
+        Well well = user.getWorkingDataSet().getWell();
+        int[] newOrder = well.swapOrder(fromId, toId);
+        if (newOrder != null) {
+            wellService.update(well);
+            return "Pipe sections " + newOrder[0] + " and " + newOrder[1] + " has been swapped";
+        } else {
+            return "Pipe sections hasn't been reordered due to internal error";
+        }
     }
 
     @ExceptionHandler(WellNotFoundException.class)
@@ -156,21 +150,21 @@ public class WellController {
     }
 
     @RequestMapping(value = "/add_pipe_section_form", method = RequestMethod.GET)
-     public String addPipeSectionForm(ModelMap model) {
-
+    public String addPipeSectionForm() {
         return "add_pipe_section_form";
     }
 
     @RequestMapping(value = "/delete_pipe_section_form", method = RequestMethod.GET)
-    public String deletePipeSectionForm(ModelMap model) {
-        List<PipeSection> pipeSections = wellService.getWell().getPipeSections();
+    public String deletePipeSectionForm(@AuthenticationPrincipal User user, ModelMap model) {
+        Well well = user.getWorkingDataSet().getWell();
+        List<PipeSection> pipeSections = well.getPipeSections();
         model.addAttribute("pipeSections", pipeSections);
         return "delete_pipe_section_form";
     }
 
     @RequestMapping(value = "/pipe_sections", method = RequestMethod.GET)
-    public String pipeSections(ModelMap model) {
-        List<PipeSection> pipeSections = wellService.getWell().getPipeSections();
+    public String pipeSections(@AuthenticationPrincipal User user, ModelMap model) {
+        List<PipeSection> pipeSections = user.getWorkingDataSet().getWell().getPipeSections();
         model.addAttribute("pipeSections", pipeSections);
         return "pipe_sections";
     }

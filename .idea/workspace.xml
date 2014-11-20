@@ -1,212 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" name="Default" comment="added user authentication functionality">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/AjaxDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/converters/ChartDataMessageConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/auth/FieldMatch.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/auth/FieldMatchValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/IUserRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_smile_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_charts4j_charts4j_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_acl_3_2_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_3_2_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_3_2_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_taglibs_3_2_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_3_2_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_0_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ParameterDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/ParameterNotFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/ParameterService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pump/PumpPoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/SecurityConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/SpringMvcInitializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/SpringSecurityInitializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/auth/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/UserController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/auth/UserFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/UserNotFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/UserRegistrationDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/UserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/WorkingDataSet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/WorkingDataSetRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\.idea\libraries\Maven__org_codehaus_jackson_jackson_core_asl_1_9_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\.idea\libraries\Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\controllers\FieldErrorDTO.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\controllers\NotParsableString.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\test\java\com\springapp\mvc\AppTests.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\com\springapp\mvc\context\provider\ModelContextProvider.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\ModelContextConfiguration.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\inference\InferenceMachine.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\dto\PersonDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\Calculation$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\Calculation.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\DuringBoring.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\DuringSPO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\IModel.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\Method.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\Model.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\Person$Builder.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\Person.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\Situation.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\dataset\DataSet.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\actual\parameters\MudVolume.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\actual\parameters\Pressure.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\actual\parameters\Volume.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\actual\parameters\Volume1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\actual\parameters\Volume2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\repositories\PersonNotFoundException.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\repositories\PersonRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\service\PersonService.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\service\RepositoryPersonService.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\aspectjrt-1.6.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\jcl-over-slf4j-1.6.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-aop-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-beans-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-context-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-core-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-data-commons-core-1.1.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-data-jpa-1.0.2.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-expression-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-jdbc-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-orm-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-tx-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-web-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\lib\spring-webmvc-3.2.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\com\springapp\mvc\context\provider\ModelContextProvider.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\ModelContextConfiguration.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\inference\InferenceMachine.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\dto\PersonDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\Calculation$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\Calculation.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\DuringBoring.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\DuringSPO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\IModel.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\Method.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\Model.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\Person$Builder.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\Person.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\Situation.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\dataset\DataSet.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\actual\parameters\MudVolume.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\actual\parameters\Pressure.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\actual\parameters\Volume.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\actual\parameters\Volume1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\actual\parameters\Volume2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\repositories\PersonNotFoundException.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\repositories\PersonRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\service\PersonService.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\service\RepositoryPersonService.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\test-classes\com\springapp\mvc\AppTests.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\test-classes\com\springapp\mvc\PersonTestUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\test-classes\com\springapp\mvc\RepositoryPersonServiceTest.class" afterPath="" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\.idea\libraries\Maven__org_springframework_spring_expression_4_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/com/springapp/mvc/context/configuration/ApplicationConfiguration1.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/com/springapp/mvc/context/configuration/ApplicationConfiguration1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/springapp/mvc/context/configuration/ApplicationConfiguration1.class" afterPath="$PROJECT_DIR$/target/classes/com/springapp/mvc/context/configuration/ApplicationConfiguration1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/Conclusion.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/Conclusion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/Conclusion.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/Conclusion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/Equal.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/Equal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/Equal.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/Equal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/Explanation.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/Explanation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/Explanation.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/Explanation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/parameters/Function.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/parameters/Function.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/drilling/model/parameters/Function.class" afterPath="$PROJECT_DIR$/target/classes/system/drilling/model/parameters/Function.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/GreaterEqual.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/GreaterEqual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/GreaterEqual.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/GreaterEqual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/GreaterThan.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/GreaterThan.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/GreaterThan.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/GreaterThan.class" />
+    <list default="true" id="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" name="Default" comment="spring configuration resolved. main functionality added">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/Drilling.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/configuration/MyWebAppInitializer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/TestTransactional.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/WellService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/messages/app/app_en.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/messages/jsp/jsp_en.properties" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\context\configuration\SpringMvcInitializer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\context\configuration\SpringSecurityInitializer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\controllers\NoStartingPredicateException.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\Drilling.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\service\WellService.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\com\springapp\mvc\context\configuration\ApplicationConfiguration1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\DecisionSupport.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\Conclusion.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\Explanation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\IPredicate.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\Predicate.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\inference\Inference.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\operations\Equal.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\operations\GreaterEqual.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\operations\GreaterThan.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\operations\LessEqual.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\operations\LessThan.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\decision\support\logic\operations\LogicalOperation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\Drilling.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\CrossComputingException.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\Function.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\IComparable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\IListenable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\IParameter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\IParameterListener.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\Parameter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\parameters\ParameterChangeEvent.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\well\Casing.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\well\PipeSection.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\well\PipeType.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\Spring\WEB-INF\classes\system\drilling\model\well\Well.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\com\springapp\mvc\context\configuration\ApplicationConfiguration1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\DecisionSupport.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\Conclusion.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\Explanation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\IPredicate.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\Predicate.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\inference\Inference.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\operations\Equal.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\operations\GreaterEqual.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\operations\GreaterThan.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\operations\LessEqual.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\operations\LessThan.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\decision\support\logic\operations\LogicalOperation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\Drilling.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\CrossComputingException.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\Function.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\IComparable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\IListenable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\IParameter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\IParameterListener.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\Parameter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\parameters\ParameterChangeEvent.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\well\Casing.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\well\PipeSection.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\well\PipeType.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\target\classes\system\drilling\model\well\Well.class" afterPath="" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\context\configuration\ApplicationConfiguration1.java" afterPath="$PROJECT_DIR$/src/main/java/configuration/AppConfig.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\context\configuration\SecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/configuration/SecurityConfig.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\controllers\ConfirmationDTO.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/frozen/ConfirmationDTO.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\controllers\InferenceController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/frozen/InferenceController.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\controllers\JsonResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/JsonResponse.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\com\springapp\mvc\controllers\PredicatesController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/frozen/PredicatesController.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\auth\FieldMatch.java" afterPath="$PROJECT_DIR$/src/main/java/entities/auth/FieldMatch.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\auth\FieldMatchValidator.java" afterPath="$PROJECT_DIR$/src/main/java/entities/auth/FieldMatchValidator.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\auth\User.java" afterPath="$PROJECT_DIR$/src/main/java/entities/auth/User.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\auth\UserFactory.java" afterPath="$PROJECT_DIR$/src/main/java/entities/auth/UserFactory.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\DecisionSupport.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/DecisionSupport.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\AnswerIsNeededException.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/AnswerIsNeededException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\Conclusion.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/Conclusion.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\CyclingException.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/CyclingException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\Explanation.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/Explanation.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\IPredicate.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/IPredicate.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\InferenceModel.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/InferenceModel.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\Predicate.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/Predicate.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\inference\Inference.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/inference/Inference.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\operations\Equal.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/Equal.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\operations\ExpressionWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/ExpressionWrapper.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\operations\GreaterEqual.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/GreaterEqual.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\operations\GreaterThan.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/GreaterThan.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\operations\LessEqual.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/LessEqual.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\operations\LessThan.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/LessThan.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\decision\support\logic\operations\LogicalOperation.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/LogicalOperation.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\DPoint.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/DPoint.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\IParametersModel.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/IParametersModel.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\ParametersModel.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/ParametersModel.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\WorkingDataSet.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/WorkingDataSet.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\chart\Chart.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/chart/Chart.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\dto\ConclusionDTO.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/dto/ConclusionDTO.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\dto\PipeSectionDTO.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/dto/PipeSectionDTO.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\dto\PredicateDTO.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/dto/PredicateDTO.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\dto\QuestionDTO.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/dto/QuestionDTO.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\CrossComputingException.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/CrossComputingException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\Function.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/Function.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\IComparable.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/IComparable.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\IListenable.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/IListenable.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\IParameter.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/IParameter.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\IParameterListener.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/IParameterListener.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\Parameter.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/Parameter.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\ParameterChangeEvent.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/ParameterChangeEvent.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\drill_column\DrillColumnInnerVolume.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/drill_column/DrillColumnInnerVolume.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\fluid\FluidInflow.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/fluid/FluidInflow.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\mud\JammingMudDensity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/mud/JammingMudDensity.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\mud\MaximumAllowableDensity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/mud/MaximumAllowableDensity.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\mud\MudDensity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/mud/MudDensity.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\mud\MudVolume.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/mud/MudVolume.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\CycleBeginningPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/pressure/CycleBeginningPressure.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\CycleEndingPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/pressure/CycleEndingPressure.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\PipesPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/pressure/PipesPressure.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\PressureLoss.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/pressure/PressureLoss.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pressure\PumpingPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/pressure/PumpingPressure.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pump\PumpPerformance.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/pump/PumpPerformance.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pump\PumpPoint.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/pump/PumpPoint.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\pump\PumpTurns.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/pump/PumpTurns.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\shoe\ShoeDiameter.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/shoe/ShoeDiameter.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\shoe\ShoeTrunkDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/shoe/ShoeTrunkDepth.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\shoe\ShoeVerticalDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/shoe/ShoeVerticalDepth.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\solid\MaximumAllowableAdditionalPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/solid/MaximumAllowableAdditionalPressure.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\solid\MudDensityDuringSolidTest.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/solid/MudDensityDuringSolidTest.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\solid\PressureDuringInjectivityTest.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/solid/PressureDuringInjectivityTest.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well\ActualWellDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well\WellDiameter.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/well/WellDiameter.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well\WellTrunkDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/well/WellTrunkDepth.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well\WellVerticalDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/well/WellVerticalDepth.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\well\Casing.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/Casing.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\well\MyValidationException.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/MyValidationException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\well\PipeSection.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/PipeSection.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\well\PipeType.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/PipeType.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\well\Well.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/Well.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\IUserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/IUserRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\InferenceModelRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/frozen/InferenceModelRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\LogicalOperationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/frozen/LogicalOperationRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\ParameterRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/ParameterRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\ParametersModelRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/ParametersModelRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\PipeSectionRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/PipeSectionRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\PredicateRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/frozen/PredicateRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\WellRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/WellRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\WorkingDataSetRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/WorkingDataSetRepository.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\InferenceModelFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/InferenceModelFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\LogicalOperationNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/LogicalOperationNotFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\NotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/NotFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\ParameterNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/ParameterNotFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\ParametersModelNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/ParametersModelNotFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\ParsingExpressionException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/ParsingExpressionException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\PipeSectionNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/PipeSectionNotFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\PredicateNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/PredicateNotFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\UserNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/UserNotFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\repositories\exceptions\WellNotFoundException.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/exceptions/WellNotFoundException.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\service\InferenceModelService.java" afterPath="$PROJECT_DIR$/src/main/java/service/frozen/InferenceModelService.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\service\LogicalOperationService.java" afterPath="$PROJECT_DIR$/src/main/java/service/frozen/LogicalOperationService.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\service\ParameterService.java" afterPath="$PROJECT_DIR$/src/main/java/service/ParameterService.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\service\ParametersModelService.java" afterPath="$PROJECT_DIR$/src/main/java/service/ParametersModelService.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\service\PipeSectionService.java" afterPath="$PROJECT_DIR$/src/main/java/service/PipeSectionService.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\service\PredicateService.java" afterPath="$PROJECT_DIR$/src/main/java/service/frozen/PredicateService.java" />
+      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\service\UserService.java" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/com/springapp/mvc/controllers/HelloController.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/com/springapp/mvc/controllers/HelloController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/springapp/mvc/controllers/HelloController.class" afterPath="$PROJECT_DIR$/target/classes/com/springapp/mvc/controllers/HelloController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/parameters/IComparable.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/parameters/IComparable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/drilling/model/parameters/IComparable.class" afterPath="$PROJECT_DIR$/target/classes/system/drilling/model/parameters/IComparable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/parameters/IParameter.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/parameters/IParameter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/drilling/model/parameters/IParameter.class" afterPath="$PROJECT_DIR$/target/classes/system/drilling/model/parameters/IParameter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/IPredicate.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/IPredicate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/IPredicate.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/IPredicate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/inference/Inference.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/inference/Inference.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/inference/Inference.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/inference/Inference.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/LessEqual.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/LessEqual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/LessEqual.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/LessEqual.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/LessThan.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/LessThan.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/LessThan.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/LessThan.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/LogicalOperation.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/operations/LogicalOperation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/LogicalOperation.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/operations/LogicalOperation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/Main.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/Main.class" afterPath="$PROJECT_DIR$/target/classes/system/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/parameters/Parameter.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/parameters/Parameter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/drilling/model/parameters/Parameter.class" afterPath="$PROJECT_DIR$/target/classes/system/drilling/model/parameters/Parameter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/well/PipeSection.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/well/PipeSection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/drilling/model/well/PipeSection.class" afterPath="$PROJECT_DIR$/target/classes/system/drilling/model/well/PipeSection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/well/PipeType.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/well/PipeType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/drilling/model/well/PipeType.class" afterPath="$PROJECT_DIR$/target/classes/system/drilling/model/well/PipeType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/Predicate.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/decision/support/logic/Predicate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/decision/support/logic/Predicate.class" afterPath="$PROJECT_DIR$/target/classes/system/decision/support/logic/Predicate.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring.war" afterPath="$PROJECT_DIR$/target/Spring.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/well/Well.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/system/drilling/model/well/Well.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/system/drilling/model/well/Well.class" afterPath="$PROJECT_DIR$/target/classes/system/drilling/model/well/Well.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/AppTests.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/AppTests.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/ApplicationConfiguration1.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/ApplicationConfiguration1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/AjaxDTO.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/AjaxDTO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ChartController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/CycleEndingPressure.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pressure/CycleEndingPressure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/Equal.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/Equal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/GreaterEqual.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/GreaterEqual.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartData.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/converters/ChartDataMessageConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/converters/ChartDataMessageConverter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/InferenceController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/InferenceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/InferenceModelRepository.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/InferenceModelRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LessEqual.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LessEqual.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LessThan.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LessThan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LogicalOperation.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/logic/operations/LogicalOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/LogicalOperationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/LogicalOperationRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/LogicalOperationService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/LogicalOperationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParameterRepository.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParameterRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/ParametersModel.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/ParametersModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParametersModelRepository.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParametersModelRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/PipeSectionRepository.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/PipeSectionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/PipeSectionService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/PipeSectionService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/service/PredicateService.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/service/PredicateService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pump/PumpTurns.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/pump/PumpTurns.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Spring.iml" afterPath="$PROJECT_DIR$/Spring.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Spring_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Spring_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/Well.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/model/well/Well.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/TestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/TestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/UserRegistrationDTO.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/UserRegistrationDTO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/WellRepository.java" afterPath="$PROJECT_DIR$/src/main/java/system/drilling/repositories/WellRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/application.properties" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/chart.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/chart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/pages/hello.jsp" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/pages/hello.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/resources/mvc-dispatcher-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/mvc-dispatcher-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/target/classes/mvc-dispatcher-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameters.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameters.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -304,118 +284,109 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dssdb.parameters_model" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..parameters_model">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dssdb.well" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..well">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkingDataSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/WorkingDataSet.java">
+      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/configuration/AppConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationConfiguration1.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/ApplicationConfiguration1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.112396695" vertical-offset="0" max-vertical-offset="2227">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PredicatesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3585" max-vertical-offset="5763">
-              <caret line="248" column="37" selection-start-line="248" selection-start-column="37" selection-end-line="248" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dssdb.working_data_set" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..working_data_set">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/system/auth/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="1751">
-              <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2812" max-vertical-offset="3420">
+              <caret line="183" column="32" selection-start-line="183" selection-start-column="32" selection-end-line="183" selection-end-column="32" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#8713#8714#0" expanded="true" />
+                <element signature="e#8766#8767#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dssdb.user" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..user">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dssdb.parameters_model_parameter_map" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..parameters_model_parameter_map">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParametersModelService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java">
+      <file leaf-file-name="MyAuthenticationProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="738">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_en.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/messages/app/app_en.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+              <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParametersController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2016">
+              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParameterService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/ParameterService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="1134">
+              <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParametersModelService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/ParametersModelService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42857143" vertical-offset="0" max-vertical-offset="1188">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/configuration/SecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jsp_en.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/messages/jsp/jsp_en.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+              <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyWebAppInitializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/configuration/MyWebAppInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="648">
+              <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="1404">
+              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -440,51 +411,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/implementation/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/IUserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp" />
-        <option value="dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..user" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/CurrentUserWebArgumentResolver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/provider/UserInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/ApplicationConfiguration1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/exceptions/ParameterNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/ParameterService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameters.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/springapp/mvc/AppTests.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/system/auth/PasswordValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/auth/Password.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/system/auth/FieldMatch.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/auth/FieldMatchValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/implementation/ParametersModelImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParametersModelRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/PredicateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/drill_column/DrillColumnInnerVolume.java" />
-        <option value="dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..parameter" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/UserRegistrationDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/system/auth/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/ParametersModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/well/Well.java" />
-        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/WorkingDataSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/system/auth/UserFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ChartController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/TestController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameters.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/ParameterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/auth/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/DispatcherServletInitializaer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/DispatcherServletInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/SpringMvcInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/PersistanceJpaConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java" />
         <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/WorkingDataSetRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/WellRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/PipeSectionRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParametersModelRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParameterRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/repositories/IUserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/WellService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/system/drilling/service/TestTransactional.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/frozen/PredicateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/Well.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/PipeType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/Casing.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/WellService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mvc-dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/ApplicationConfiguration1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/configuration/DispatcherConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/configuration/SpringMvcInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/configuration/ApplicationConfiguration1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/configuration/MyWebAppInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/configuration/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/drill_column/DrillColumnInnerVolume.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/ParametersModelService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/ParametersModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/ParameterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/CrossComputingException.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/messages/messages_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/well/MyValidationException.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/Function.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/messages/app/app_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/configuration/AppConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/messages/jsp/jsp_en.properties" />
       </list>
     </option>
   </component>
@@ -559,8 +536,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1092" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -640,12 +617,17 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Spring" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -655,6 +637,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -720,11 +758,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
+              <option name="myItemId" value="messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -749,14 +821,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drilling" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -777,14 +841,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drilling" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -814,15 +870,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
+              <option name="myItemId" value="entities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="drilling" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repositories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -848,7 +900,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
+              <option name="myItemId" value="entities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -882,7 +934,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
+              <option name="myItemId" value="entities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -920,11 +972,71 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
+              <option name="myItemId" value="entities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
+              <option name="myItemId" value="drilling" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parameters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configuration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -951,40 +1063,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="converters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1044,81 +1122,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="context" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="provider" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="context" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configuration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1128,7 +1137,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="MavenSettings" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Git/bin/git.exe" />
@@ -1159,20 +1168,21 @@
       <recent name="system.drilling.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\IDEs\GitHub\Spring\src\main\resources\messages\app" />
+      <recent name="C:\IDEs\GitHub\Spring\src\main\resources" />
       <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\resources\bootstrap\js" />
       <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\resources\bootstrap\fonts" />
       <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\resources\bootstrap\css" />
-      <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\WEB-INF\pages" />
-      <recent name="C:\IDEs\GitHub\Spring\src\main\java\system\drilling\model\parameters\actual\parameters\well" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\IDEs\GitHub\Spring\src\main\resources\messages\jsp" />
+      <recent name="C:\IDEs\GitHub\Spring\src\main\resources\messages" />
+      <recent name="C:\IDEs\GitHub\Spring\src\main\resources" />
       <recent name="C:\IDEs\GitHub\Spring\src\main\webapp\resources\bootstrap" />
       <recent name="D:\GitHub\Spring\src\main\resources" />
-      <recent name="D:\GitHub\Spring\src\main\webapp\resources\bootstrap" />
-      <recent name="D:\GitHub\Spring\src\main\webapp\WEB-INF" />
-      <recent name="D:\GitHub\Spring\src\main\webapp\WEB-INF\pages" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="com.springapp.mvc" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1265,11 +1275,39 @@
     <configuration default="false" name="ParametersModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="system.drilling.model.*" />
+          <option name="PATTERN" value="entities.drilling.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="system.drilling.model.ParametersModel" />
+      <option name="MAIN_CLASS_NAME" value="entities.drilling.model.ParametersModel" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Spring" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestTransactional" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="service.TestTransactional" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1602,20 +1640,22 @@
         </option>
       </method>
     </configuration>
-    <list size="6">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="JUnit.AppTests" />
       <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0" />
       <item index="2" class="java.lang.String" itemvalue="Application.Main" />
       <item index="3" class="java.lang.String" itemvalue="Application.InferenceModel" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryPersonServiceTest" />
       <item index="5" class="java.lang.String" itemvalue="Application.ParametersModel" />
+      <item index="6" class="java.lang.String" itemvalue="Application.TestTransactional" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.ParametersModel" />
-        <item index="1" class="java.lang.String" itemvalue="Application.InferenceModel" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryPersonServiceTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.TestTransactional" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ParametersModel" />
+        <item index="2" class="java.lang.String" itemvalue="Application.InferenceModel" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryPersonServiceTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1639,7 +1679,10 @@
       <workItem from="1416279125032" duration="17831000" />
       <workItem from="1416301637841" duration="5842000" />
       <workItem from="1416330423450" duration="2722000" />
-      <workItem from="1416369150357" duration="349000" />
+      <workItem from="1416369150357" duration="25006000" />
+      <workItem from="1416440204758" duration="17605000" />
+      <workItem from="1416460599446" duration="19932000" />
+      <workItem from="1416483274786" duration="66000" />
     </task>
     <task id="LOCAL-00001" summary="commit1">
       <created>1400432074020</created>
@@ -1671,11 +1714,17 @@
       <option name="project" value="LOCAL" />
       <updated>1415709848722</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added user authentication functionality">
+      <created>1416369521042</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1416369521042</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52179000" />
+    <option name="totallyTimeSpent" value="114439000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1698,29 +1747,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1092" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3357513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33367875" sideWeight="0.7852564" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32778355" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882413" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31709844" sideWeight="0.13646056" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882413" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33506763" sideWeight="0.21420941" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32778355" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882413" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882413" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882413" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67022413" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946696" sideWeight="0.67022413" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24893162" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17430703" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.67022413" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1729,7 +1777,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.058164354" sideWeight="0.68115944" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27471384" sideWeight="0.8630064" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.265285" sideWeight="0.8630064" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32746115" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30673575" sideWeight="0.92102456" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1756,21 +1805,17 @@
     <MESSAGE value="RELEASE 1.0.0" />
     <MESSAGE value="Okay, lets work" />
     <MESSAGE value="added user authentication functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added user authentication functionality" />
+    <MESSAGE value="spring configuration resolved. main functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="spring configuration resolved. main functionality added" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java</url>
-          <line>172</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="47" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="156" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1779,462 +1824,395 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/UserService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE-sources.jar!/org/springframework/web/servlet/tags/MessageTag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="366" max-vertical-offset="1037">
-          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/ParameterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/fluid/FluidInflow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2262" max-vertical-offset="5112">
+          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.0.2.RELEASE/spring-aop-4.0.2.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/configuration/MyWebAppInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.76" vertical-offset="835" max-vertical-offset="2771">
-          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/repositories/ParametersModelRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="5" column="89" selection-start-line="5" selection-start-column="89" selection-end-line="5" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/PredicateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="2159">
-          <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="648">
+          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mvc-dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="924">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/drill_column/DrillColumnInnerVolume.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="765">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/PipeSectionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..logical_operation">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..inference_model_1">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..expression_wrapper">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..conclusions">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/Parameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2754">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/UserRegistrationDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="689" max-vertical-offset="1411">
-          <caret line="15" column="121" selection-start-line="15" selection-start-column="121" selection-end-line="15" selection-end-column="121" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1910#1911#0" expanded="false" />
-            <element signature="e#1937#1938#0" expanded="false" />
-            <element signature="e#1977#1978#0" expanded="false" />
-            <element signature="e#2009#2010#0" expanded="false" />
-            <element signature="e#2044#2045#0" expanded="false" />
-            <element signature="e#2075#2076#0" expanded="false" />
-            <element signature="e#2123#2124#0" expanded="false" />
-            <element signature="e#2163#2164#0" expanded="false" />
-            <element signature="e#2195#2196#0" expanded="false" />
-            <element signature="e#2223#2224#0" expanded="false" />
-            <element signature="e#2265#2266#0" expanded="false" />
-            <element signature="e#2299#2300#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.5.RELEASE/spring-security-core-3.2.5.RELEASE.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="816">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="697">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.961538" vertical-offset="664" max-vertical-offset="1309">
-          <caret line="65" column="67" selection-start-line="65" selection-start-column="67" selection-end-line="65" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="1404">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.2.RELEASE/spring-web-4.0.2.RELEASE.jar!/org/springframework/web/filter/DelegatingFilterProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.08" vertical-offset="1280" max-vertical-offset="2919">
+          <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/SecurityConfig.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/4.0.2.RELEASE/spring-orm-4.0.2.RELEASE.jar!/org/springframework/orm/jpa/support/OpenEntityManagerInViewFilter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state vertical-scroll-proportion="-5.28" vertical-offset="390" max-vertical-offset="2415">
+          <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.2.RELEASE/spring-web-4.0.2.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.0" vertical-offset="41" max-vertical-offset="1512">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="571" max-vertical-offset="1242">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2682">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="1513">
-          <caret line="69" column="35" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="453" max-vertical-offset="1428">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/drill_column/DrillColumnInnerVolume.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.26923" vertical-offset="256" max-vertical-offset="986">
-          <caret line="43" column="59" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="31" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.692308" vertical-offset="813" max-vertical-offset="1598">
-          <caret line="81" column="18" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="738">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/well/Well.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="2862">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/WellService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1098">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/add_pipe_section_form.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.2.RELEASE/spring-core-4.0.2.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.730769" vertical-offset="357" max-vertical-offset="1513">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.72" vertical-offset="1312" max-vertical-offset="2646">
+          <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..pipe_type">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..well_pipe_sections">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.0.2.RELEASE/spring-tx-4.0.2.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2440" max-vertical-offset="3111">
-          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-8.56" vertical-offset="1046" max-vertical-offset="5472">
+          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.0.2.RELEASE/spring-aop-4.0.2.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.56" vertical-offset="6554" max-vertical-offset="10602">
+          <caret line="425" column="22" selection-start-line="425" selection-start-column="22" selection-end-line="425" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.2.RELEASE/spring-web-4.0.2.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1668" max-vertical-offset="2822">
+        <state vertical-scroll-proportion="-8.56" vertical-offset="1784" max-vertical-offset="2988">
           <caret line="130" column="19" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.56" vertical-offset="5402" max-vertical-offset="12582">
+          <caret line="377" column="19" selection-start-line="377" selection-start-column="19" selection-end-line="377" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.56" vertical-offset="5600" max-vertical-offset="9072">
+          <caret line="396" column="19" selection-start-line="396" selection-start-column="19" selection-end-line="396" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.5.RELEASE/spring-security-web-3.2.5.RELEASE.jar!/org/springframework/security/web/access/intercept/FilterSecurityInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.56" vertical-offset="146" max-vertical-offset="1224">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.5.RELEASE/spring-security-web-3.2.5.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.56" vertical-offset="2504" max-vertical-offset="3204">
+          <caret line="189" column="20" selection-start-line="189" selection-start-column="20" selection-end-line="189" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.5.RELEASE/spring-security-web-3.2.5.RELEASE.jar!/org/springframework/security/web/access/ExceptionTranslationFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.88" vertical-offset="516" max-vertical-offset="2664">
+          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..parameter">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state />
       </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/parameters/actual/parameters/well/ActualWellDepth.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/ParametersModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="259" max-vertical-offset="4932">
+          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/Double.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49401197" vertical-offset="8796" max-vertical-offset="17982">
+          <caret line="536" column="25" selection-start-line="536" selection-start-column="25" selection-end-line="536" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..predicates">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..pipe_section">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/WellService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/Parameter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2329">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2214" max-vertical-offset="2916">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/well/Well.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/well/PipeType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="2227">
-          <caret line="94" column="26" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
-          <folding>
-            <element signature="e#2408#2409#0" expanded="true" />
-            <element signature="e#2441#2442#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="464" max-vertical-offset="1296">
+          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/auth/UserFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/CrossComputingException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+          <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/well/MyValidationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="1044">
+          <caret line="19" column="71" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/drilling/model/parameters/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1800">
+          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE.jar!/org/springframework/web/servlet/tags/MessageTag.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.4" vertical-offset="1679" max-vertical-offset="2322">
+          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.0.2.RELEASE/spring-context-4.0.2.RELEASE.jar!/org/springframework/context/support/AbstractApplicationContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.88" vertical-offset="9534" max-vertical-offset="10944">
+          <caret line="646" column="18" selection-start-line="646" selection-start-column="18" selection-end-line="646" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.0.2.RELEASE/spring-context-4.0.2.RELEASE-sources.jar!/org/springframework/context/support/MessageSourceSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="835" max-vertical-offset="2808">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.2.RELEASE/spring-core-4.0.2.RELEASE.jar!/org/springframework/util/ObjectUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.88" vertical-offset="588" max-vertical-offset="12420">
+          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.0.2.RELEASE/spring-context-4.0.2.RELEASE-sources.jar!/org/springframework/context/support/ReloadableResourceBundleMessageSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3990" max-vertical-offset="11232">
+          <caret line="283" column="0" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE-sources.jar!/org/springframework/web/servlet/tags/RequestContextAwareTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1141" max-vertical-offset="1872">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE-sources.jar!/org/springframework/web/servlet/support/RequestContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5304" max-vertical-offset="15210">
+          <caret line="367" column="0" selection-start-line="367" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.0.2.RELEASE/spring-context-4.0.2.RELEASE-sources.jar!/org/springframework/context/support/AbstractApplicationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18079" max-vertical-offset="20574">
+          <caret line="1132" column="0" selection-start-line="1132" selection-start-column="0" selection-end-line="1132" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.0.2.RELEASE/spring-context-4.0.2.RELEASE-sources.jar!/org/springframework/context/support/AbstractMessageSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1861" max-vertical-offset="6012">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE-sources.jar!/org/springframework/web/servlet/tags/MessageTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2262" max-vertical-offset="5112">
+          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/configuration/MyWebAppInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="756">
+          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/navbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="1404">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages/jsp/jsp_en.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages/app/app_en.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="907">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/configuration/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2812" max-vertical-offset="3420">
+          <caret line="183" column="32" selection-start-line="183" selection-start-column="32" selection-end-line="183" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#8713#8714#0" expanded="true" />
+            <element signature="e#8766#8767#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1371" max-vertical-offset="1989">
-          <caret line="96" column="66" selection-start-line="96" selection-start-column="66" selection-end-line="96" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2016">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ChartController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/ParameterService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="466" max-vertical-offset="1134">
+          <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/configuration/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/repositories/WorkingDataSetRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/ParametersModelService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="221">
-          <caret line="5" column="78" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.42857143" vertical-offset="0" max-vertical-offset="1188">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/ParametersModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4080" max-vertical-offset="4862">
-          <caret line="258" column="37" selection-start-line="258" selection-start-column="37" selection-end-line="258" selection-end-column="37" />
-          <folding>
-            <element signature="e#8954#8955#0" expanded="true" />
-            <element signature="e#8998#8999#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..working_data_set">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..well">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..user">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..parameters_model">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/18f1f878/7a949090-7fde-4656-ba1d-50739bef6a59/dssdb..parameters_model_parameter_map">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/service/ParametersModelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/auth/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="1751">
-          <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/drilling/model/WorkingDataSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/PredicatesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3585" max-vertical-offset="5763">
-          <caret line="248" column="37" selection-start-line="248" selection-start-column="37" selection-end-line="248" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/context/configuration/ApplicationConfiguration1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.112396695" vertical-offset="0" max-vertical-offset="2227">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

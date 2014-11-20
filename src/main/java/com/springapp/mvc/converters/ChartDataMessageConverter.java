@@ -3,13 +3,13 @@ package com.springapp.mvc.converters;
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 import com.springapp.mvc.media.ChartData;
+import entities.drilling.model.parameters.actual.parameters.pump.PumpPoint;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.AbstractHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
-import system.drilling.model.parameters.actual.parameters.pump.PumpPoint;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,18 +1,18 @@
 package com.springapp.mvc.controllers;
 
 import com.springapp.mvc.media.ChartData;
+import entities.auth.User;
+import entities.drilling.model.ParametersModel;
+import entities.drilling.model.parameters.actual.parameters.pump.PumpPoint;
+import entities.drilling.model.well.MyValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import system.auth.User;
-import system.drilling.model.ParametersModel;
-import system.drilling.model.parameters.actual.parameters.pump.PumpPoint;
-import system.drilling.model.well.MyValidationException;
-import system.drilling.repositories.exceptions.ParametersModelNotFoundException;
-import system.drilling.service.ParametersModelService;
+import repositories.exceptions.ParametersModelNotFoundException;
+import service.ParametersModelService;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,5 +1,6 @@
 package com.springapp.mvc.auth;
 
+import entities.auth.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -8,9 +9,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
-import system.auth.User;
-import system.drilling.repositories.exceptions.UserNotFoundException;
-import system.drilling.service.UserService;
+import repositories.exceptions.UserNotFoundException;
+import service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;

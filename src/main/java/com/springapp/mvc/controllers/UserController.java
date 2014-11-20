@@ -1,6 +1,8 @@
 package com.springapp.mvc.controllers;
 
 import com.springapp.mvc.media.UserRegistrationDTO;
+import entities.auth.User;
+import entities.auth.UserFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -10,12 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import system.auth.User;
-import system.auth.UserFactory;
-import system.drilling.service.UserService;
+import service.UserService;
 
 import javax.validation.Valid;
 
@@ -45,19 +44,18 @@ public class UserController {
         Authentication authentication =
                 myAuthenticationProvider.authenticate(new UsernamePasswordAuthenticationToken(
                         user, user.getPassword()));
-        SecurityContextHolder.getContext().setAuthentication(authentication);
         if (authentication != null) {
+            SecurityContextHolder.getContext().setAuthentication(authentication);
             return "redirect:/welcome";
         } else {
-            bindingResult.addError(new ObjectError("user", "No such user or password matching"));
-            model.put(BindingResult.class.getName() + ".user", bindingResult);
+            bindingResult.rejectValue("password", "error.user", "No such user or password matching");
             return "login";
         }
     }
 
     @RequestMapping("/registration")
     public String registration(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new UserRegistrationDTO());
         return "registration";
     }
 

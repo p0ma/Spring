@@ -1,6 +1,6 @@
 package com.springapp.mvc.media;
 
-import system.drilling.model.parameters.actual.parameters.pump.PumpPoint;
+import entities.drilling.model.parameters.actual.parameters.pump.PumpPoint;
 
 /**
  * Created with IntelliJ IDEA.

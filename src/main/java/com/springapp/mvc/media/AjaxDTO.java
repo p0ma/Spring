@@ -14,7 +14,7 @@ public class AjaxDTO {
         this.hasError = hasError;
     }
 
-    public boolean isHasError() {
+    public boolean hasError() {
         return hasError;
     }
 

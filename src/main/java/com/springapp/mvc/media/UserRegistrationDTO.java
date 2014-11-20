@@ -1,8 +1,8 @@
 package com.springapp.mvc.media;
 
+import entities.auth.FieldMatch;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import system.auth.FieldMatch;
 
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
