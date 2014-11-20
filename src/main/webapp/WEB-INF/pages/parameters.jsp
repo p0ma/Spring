@@ -8,7 +8,7 @@
     <title>Parameters</title>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+            $("body").tooltip({selector: '[data-toggle=tooltip]', html: true});
         });
         function setParameterValue(name, val) {
             var result_panel = $("#result_panel");
@@ -63,13 +63,10 @@
     </script>
 </head>
 <body>
-
-
 <jsp:include page="navbar.jsp"/>
 <div class="container">
     <c:forEach items="${parameterMap}" var="group">
         <c:set var="group_name_trimmed" value="${fn:replace(group.key, ' ', '_')}" scope="page"/>
-
         <div class="panel panel-default" id="accordion">
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -109,20 +106,15 @@
                                    class="form-control"
                                    value="${parameter.value.stringRoundedValue}">
                         </div>
-
                         <c:if test="${isRowed}">
                             </div>
                         </c:if>
-
-
                     </c:forEach>
                 </div>
             </div>
         </div>
-
     </c:forEach>
 </div>
-​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-
+​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 </body>
 </html>

@@ -12,18 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("well_diameter")
 public class WellDiameter extends Parameter {
-
-    public void setupUnit() {
-        this.unit = "mm";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Diameter");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Well");
-    }
 }

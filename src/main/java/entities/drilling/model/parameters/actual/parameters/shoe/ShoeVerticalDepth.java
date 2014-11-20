@@ -12,19 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("shoe_vertical_depth")
 public class ShoeVerticalDepth extends Parameter {
-
-    @Override
-    public void setupUnit() {
-        this.unit = "m";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Vertical depth");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Shoe");
-    }
 }

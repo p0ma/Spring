@@ -12,19 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("pump_performance")
 public class PumpPerformance extends Parameter {
-
-    @Override
-    public void setupUnit() {
-        this.unit = "l/turn";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Pump performance");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Pump");
-    }
 }

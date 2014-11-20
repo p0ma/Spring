@@ -12,19 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("fluid_inflow")
 public class FluidInflow extends Parameter {
-
-    @Override
-    public void setupUnit() {
-        this.unit = "l";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Fluid inflow");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Fluid");
-    }
 }

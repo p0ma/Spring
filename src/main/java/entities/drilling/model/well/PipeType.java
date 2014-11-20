@@ -41,6 +41,7 @@ public class PipeType {
     }
 
     public PipeType(double outerDiameter, double thickness) throws MyValidationException {
+        this.thickness = thickness;
         setOuterDiameter(outerDiameter);
         setThickness(thickness);
     }

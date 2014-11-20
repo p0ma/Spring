@@ -4,9 +4,13 @@ package entities.drilling.model.well;
 import entities.drilling.model.WorkingDataSet;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,8 +21,9 @@ public class Well {
     private Long id;
 
     @Cascade(value = {CascadeType.ALL})
-    @OneToMany(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PipeSection.class)
-    private List<PipeSection> pipeSections = new LinkedList<PipeSection>();
+    @OneToMany(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY)
+    @LazyCollection(LazyCollectionOption.TRUE)
+    private List<PipeSection> pipeSections = new ArrayList<PipeSection>();
 
     @OneToOne(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "well")
     private WorkingDataSet workingDataSet;
@@ -42,6 +47,7 @@ public class Well {
         return volume;
     }
 
+    @Transactional(readOnly = true, propagation = Propagation.MANDATORY)
     public double getLength() {
         double length = 0;
         for (PipeSection pipeSection : pipeSections) {

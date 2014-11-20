@@ -12,18 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("well_vertical_depth")
 public class WellVerticalDepth extends Parameter {
-    @Override
-    public void setupUnit() {
-        this.unit = "m";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Vertical depth");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Well");
-    }
 }

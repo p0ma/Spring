@@ -1,6 +1,9 @@
 package service;
 
+import entities.auth.User;
 import entities.drilling.model.well.PipeSection;
+import entities.drilling.model.well.Well;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +17,9 @@ public class PipeSectionService {
 
     @Autowired
     private PipeSectionRepository pipeSectionRepository;
+
+    @Autowired
+    private UserService userService;
 
     @Transactional
     public PipeSection create(PipeSection created) {
@@ -56,5 +62,18 @@ public class PipeSectionService {
         pipeSectionRepository.save(updated);
 
         return updated;
+    }
+
+    @Transactional(readOnly = true)
+    public List<PipeSection> getPipeSections(User user) {
+        user = userService.findById(user.getId());
+        Well well = user.getWorkingDataSet().getWell();
+        well.getId();
+        List<PipeSection> pipeSections = well.getPipeSections();
+        pipeSections.size();
+        Hibernate.initialize(pipeSections);
+        pipeSections.size();
+        return pipeSections;
+//        return userService.findById(user.getId()).getWorkingDataSet().getWell().getPipeSections();
     }
 }

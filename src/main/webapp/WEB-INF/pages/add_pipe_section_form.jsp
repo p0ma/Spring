@@ -13,8 +13,13 @@
             var result = $("#result");
             var json = {"length": length, "outerDiameter": outerDiameter, "thickness": thickness};
             $.ajax({
-                url: "/well/add_pipe_section.html",
-                data: ({length: length, outerDiameter: outerDiameter, thickness: thickness}),
+                method: 'POST',
+                url: "/well/add_pipe_section.json",
+                data: JSON.stringify(json),
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                },
                 success: function (response) {
                     result.parent().addClass("panel panel-success");
                     result.parent().removeClass("panel panel-danger");

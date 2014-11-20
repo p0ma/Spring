@@ -8,8 +8,10 @@ import entities.drilling.model.parameters.CrossComputingException;
 import entities.drilling.model.parameters.IParameter;
 import entities.drilling.model.parameters.Parameter;
 import entities.drilling.model.well.MyValidationException;
+import entities.drilling.model.well.PipeSection;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
@@ -20,18 +22,22 @@ import org.springframework.web.bind.annotation.*;
 import repositories.exceptions.ParameterNotFoundException;
 import service.ParameterService;
 import service.ParametersModelService;
+import service.PipeSectionService;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/parameters")
 public class ParametersController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    @Autowired
+    private MessageSource messageSource;
+
+    @Autowired
+    private PipeSectionService pipeSectionService;
 
     @Autowired
     private ParametersModelService parametersModelService;
@@ -42,24 +48,32 @@ public class ParametersController {
     @RequestMapping(value = "/setparam", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public AjaxDTO setParameter(@AuthenticationPrincipal User user, @RequestBody ParameterDTO parameterDTO) {
+    public AjaxDTO setParameter(@AuthenticationPrincipal User user, @RequestBody ParameterDTO parameterDTO,
+                                Locale locale) {
         try {
             Parameter parameter = parameterService.setParameterValue(user, parameterDTO);
-            return new AjaxDTO("Parameter has been successfully set", parameter.getRoundedValue().toString(), false);
+            return new AjaxDTO(messageSource.getMessage("parameter.has.been.successfully.set", null, locale),
+                    parameter.getRoundedValue().toString(), false);
         } catch (MyValidationException e) {
-            Double lastValue;
             try {
-                lastValue = e.getParameter().getRoundedValue();
+                return new AjaxDTO(e.getMessage(), e.getParameter().getStringRoundedValue(), true);
             } catch (CrossComputingException e1) {
-                lastValue = 0d;
+                e1.printStackTrace();
+                return new AjaxDTO(messageSource.getMessage("cross.computing.error.message", null, locale),
+                        parameterDTO.getVal(), true);
             }
-            return new AjaxDTO(e.getMessage(), lastValue.toString(), true);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            return new AjaxDTO(messageSource.getMessage("bad.number.format", null, locale), parameterDTO.getVal(),
+                    true);
         } catch (ParameterNotFoundException e) {
             e.printStackTrace();
-            return new AjaxDTO("Parameter not found", parameterDTO.getVal(), true);
+            return new AjaxDTO(messageSource.getMessage("parameter.not.found", null, locale), parameterDTO.getVal(),
+                    true);
         } catch (CrossComputingException e) {
             e.printStackTrace();
-            return new AjaxDTO("Cross computing exception: parameters schema is invalid", parameterDTO.getVal(), true);
+            return new AjaxDTO(messageSource.getMessage("cross.computing.error.message", null, locale),
+                    parameterDTO.getVal(), true);
         }
     }
 
@@ -98,6 +112,8 @@ public class ParametersController {
     @Transactional(readOnly = true)
     public String showParameters(ModelMap model, @AuthenticationPrincipal User user) {
         ParametersModel parametersModel = parametersModelService.findByUser(user);
+        parametersModel.getWorkingDataSet().getWell().getLength();
+        List<PipeSection> pipeSections = pipeSectionService.getPipeSections(user);
         parametersModel.initParameters();
         Map<String, Map<String, IParameter>> parameterMap =
                 parametersModel.getParametersByGroups();

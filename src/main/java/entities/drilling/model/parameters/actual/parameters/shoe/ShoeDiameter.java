@@ -12,19 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("shoe_diameter")
 public class ShoeDiameter extends Parameter {
-
-    @Override
-    public void setupUnit() {
-        this.unit = "mm";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Diameter");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Shoe");
-    }
 }

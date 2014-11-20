@@ -9,18 +9,10 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Component
-@Scope(value = "prototype")
+@Scope("prototype")
 @Entity
 @DiscriminatorValue("drill_column_inner_volume")
 public class DrillColumnInnerVolume extends Function {
-
-    public DrillColumnInnerVolume() {
-    }
-
-    @Override
-    public void setupUnit() {
-        this.unit = "m<sup>3</sup>";
-    }
 
     @Override
     protected Double function() throws CrossComputingException {
@@ -29,20 +21,5 @@ public class DrillColumnInnerVolume extends Function {
         } catch (NullPointerException e) {
             return 0d;
         }
-    }
-
-    @Override
-    public String getFormula() {
-        return "Inner volume";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Drill column inner volume");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Drill column");
     }
 }

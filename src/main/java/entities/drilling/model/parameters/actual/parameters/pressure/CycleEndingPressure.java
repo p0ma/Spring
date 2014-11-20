@@ -17,35 +17,15 @@ import javax.persistence.Entity;
 public class CycleEndingPressure extends Function {
 
     @Override
-    public void setupUnit() {
-        this.unit = "bar";
-    }
-
-    @Override
     protected Double function() throws CrossComputingException {
         return function(getParameterValue(MudDensity.class),
                 getParameterValue(PumpingPressure.class),
                 getParameterValue(JammingMudDensity.class));
     }
 
-    @Override
-    public String getFormula() {
-        return "pressureLoss * jammingMudDensity / mudDensity";
-    }
-
     private Double function(Double mudDensity, Double pumpingPressure,
                             Double jammingMudDensity) {
         Double result = pumpingPressure * jammingMudDensity / mudDensity;
         return result;
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Cycle ending pressure");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Pressure");
     }
 }

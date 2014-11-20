@@ -10,9 +10,11 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.xml.MarshallingHttpMessageConverter;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.oxm.xstream.XStreamMarshaller;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -73,8 +75,20 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> messageConverters) {
         messageConverters.add(new MappingJackson2HttpMessageConverter());
+//        messageConverters.add(createXmlHttpMessageConverter());
 //        messageConverters.add(new ChartDataMessageConverter(new MediaType("text", "csv")));
         super.configureMessageConverters(messageConverters);
+    }
+
+    private HttpMessageConverter<Object> createXmlHttpMessageConverter() {
+        MarshallingHttpMessageConverter xmlConverter =
+                new MarshallingHttpMessageConverter();
+
+        XStreamMarshaller xstreamMarshaller = new XStreamMarshaller();
+        xmlConverter.setMarshaller(xstreamMarshaller);
+        xmlConverter.setUnmarshaller(xstreamMarshaller);
+
+        return xmlConverter;
     }
 
     @Resource
@@ -125,7 +139,8 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
 
 
-        messageSource.setBasenames("classpath:messages/app/app", "classpath:messages/jsp/jsp");
+        messageSource.setBasenames("classpath:messages/app/app", "classpath:messages/jsp/jsp",
+                "classpath:messages/app/parameter");
         messageSource.setUseCodeAsDefaultMessage(Boolean.parseBoolean(environment.getRequiredProperty(PROPERTY_NAME_MESSAGESOURCE_USE_CODE_AS_DEFAULT_MESSAGE)));
         messageSource.setDefaultEncoding("UTF-8");
 

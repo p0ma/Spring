@@ -97,11 +97,4 @@ public abstract class Function extends Parameter implements IParameterListener {
     public void setFinalResult(boolean finalResult) {
         this.finalResult = finalResult;
     }
-
-    public abstract String getFormula();
-
-    @Override
-    public String getHint() {
-        return getFormula();
-    }
 }

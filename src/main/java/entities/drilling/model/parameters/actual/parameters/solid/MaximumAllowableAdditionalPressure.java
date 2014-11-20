@@ -16,10 +16,6 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("maximum_allowable_additional_pressure")
 public class MaximumAllowableAdditionalPressure extends Function {
-    @Override
-    public void setupUnit() {
-        this.unit = "bar";
-    }
 
     @Override
     protected Double function() throws CrossComputingException {
@@ -29,20 +25,5 @@ public class MaximumAllowableAdditionalPressure extends Function {
         Double result = (maximumAllowableDensity -
                 mudDensity) * wellVerticalDepth * 9.81 / Math.pow(10, 6);
         return result;
-    }
-
-    @Override
-    public String getFormula() {
-        return "(maximumAllowableDensity - mudDensity) * wellVerticalDepth * 9.81 / Math.pow(10, 6)";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Maximum allowable additional pressure");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Solid");
     }
 }

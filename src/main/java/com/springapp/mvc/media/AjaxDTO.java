@@ -3,7 +3,7 @@ package com.springapp.mvc.media;
 public class AjaxDTO {
     private String message;
     private String lastVal;
-    private Boolean hasError;
+    private boolean hasError;
 
     public AjaxDTO() {
     }
@@ -14,11 +14,11 @@ public class AjaxDTO {
         this.hasError = hasError;
     }
 
-    public boolean hasError() {
+    public boolean isHasError() {
         return hasError;
     }
 
-    public void setHasError(Boolean hasError) {
+    public void setHasError(boolean hasError) {
         this.hasError = hasError;
     }
 

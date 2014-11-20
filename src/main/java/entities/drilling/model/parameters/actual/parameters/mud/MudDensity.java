@@ -12,19 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("mud_density")
 public class MudDensity extends Parameter {
-
-    @Override
-    public void setupUnit() {
-        this.unit = "kg/m<sup>3</sup>";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Density");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Mud");
-    }
 }

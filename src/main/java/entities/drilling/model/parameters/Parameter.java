@@ -3,6 +3,7 @@ package entities.drilling.model.parameters;
 import entities.drilling.model.IParametersModel;
 import entities.drilling.model.ParametersModel;
 import entities.drilling.model.well.MyValidationException;
+import localization.LocalizationUtils;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,55 +23,27 @@ public abstract class Parameter implements IParameter {
 
     protected Double value;
 
-    public String getUnit() {
-        return unit;
+    public final String getUnit() {
+        return LocalizationUtils.getMessage(this.getClass().getSimpleName() + ".unit");
     }
-
-    @Transient
-    protected String unit;
 
     public Double getParameterValue() {
         return value;
-    }
-
-    public void setupUnit() {
-        unit = "";
     }
 
     public void setupRound() {
         round = 8;
     }
 
-    @Transient
-    private String groupName;
-
-    @Transient
-    private String parameterName;
-
     @Override
-    public String getGroupName() {
-        return groupName;
-    }
-
-    protected void setupGroupName() {
-        setGroupName("Parameters");
-    }
-
-    protected void setupParameterName() {
-        setParameterName("Parameter");
-    }
-
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
-    }
-
-    public void setParameterName(String parameterName) {
-        this.parameterName = parameterName;
+    public final String getGroupName() {
+        return LocalizationUtils.getMessage(LocalizationUtils.packageSimpleName(this.getClass().getPackage()) +
+                ".group.name");
     }
 
     @Override
-    public String getParameterName() {
-        return parameterName;
+    public final String getParameterName() {
+        return LocalizationUtils.getMessage(this.getClass().getSimpleName() + ".name");
     }
 
     @Id
@@ -86,9 +59,6 @@ public abstract class Parameter implements IParameter {
     }
 
     private void init() {
-        setupGroupName();
-        setupParameterName();
-        setupUnit();
         setupRound();
     }
 
@@ -188,7 +158,7 @@ public abstract class Parameter implements IParameter {
     }
 
     @Override
-    public String getHint() {
-        return "Imputable value";
+    public final String getHint() {
+        return LocalizationUtils.getMessage(this.getClass().getSimpleName() + ".formula");
     }
 }

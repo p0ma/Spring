@@ -12,18 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("mud_density_during_solid_test")
 public class MudDensityDuringSolidTest extends Parameter {
-    @Override
-    public void setupUnit() {
-        this.unit = "kg/m<sup>3</sup>";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Mud density during solid test");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Solid");
-    }
 }

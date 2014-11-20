@@ -17,19 +17,4 @@ public class PressureDuringInjectivityTest extends Parameter {
     public void setupRound() {
         round = 3;
     }
-
-    @Override
-    public void setupUnit() {
-        this.unit = "bar";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Pressure during injectivity test");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Solid");
-    }
 }

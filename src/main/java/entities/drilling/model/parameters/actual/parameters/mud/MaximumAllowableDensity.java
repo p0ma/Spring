@@ -18,11 +18,6 @@ import javax.persistence.Entity;
 public class MaximumAllowableDensity extends Function {
 
     @Override
-    public void setupUnit() {
-        this.unit = "kg/m<sup>3</sup>";
-    }
-
-    @Override
     protected Double function() throws CrossComputingException {
         Double mudDensityDuringSolidTest = getParameterValue(MudDensityDuringSolidTest.class);
         Double pressureDuringInjectivityTest = getParameterValue(PressureDuringInjectivityTest.class);
@@ -33,26 +28,11 @@ public class MaximumAllowableDensity extends Function {
         return result;
     }
 
-    @Override
-    public String getFormula() {
-        return "mudDensityDuringSolidTest + pressureDuringInjectivityTest * Math.pow(10, 6) / (shoeVerticalDepth * 9.81)";
-    }
-
     private Double function(Double mudDensityDuringSolidTest, Double pressureDuringInjectivityTest,
                             Double shoeVerticalDepth) {
         Double result = mudDensityDuringSolidTest +
                 pressureDuringInjectivityTest * Math.pow(10, 6) /
                         (shoeVerticalDepth * 9.81);
         return result;
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Maximum allowable density");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Mud");
     }
 }

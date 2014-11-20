@@ -11,7 +11,6 @@ public class PipeSection {
         PipeSection pipeSection = new PipeSection();
         pipeSection.setLength(pipeSectionDTO.getLength());
         pipeSection.setPipeType(PipeType.build(pipeSectionDTO.getOuterDiameter(), pipeSectionDTO.getThickness()));
-        pipeSection.getPipeType().setPipeSection(pipeSection);
         return pipeSection;
     }
 
@@ -22,7 +21,7 @@ public class PipeSection {
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private PipeType pipeType;
 
-    @ManyToOne(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Well well;
 
     public Well getWell() {

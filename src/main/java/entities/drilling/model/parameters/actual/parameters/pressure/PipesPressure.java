@@ -12,19 +12,4 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("pipes_pressure")
 public class PipesPressure extends Parameter {
-
-    @Override
-    public void setupUnit() {
-        this.unit = "bar";
-    }
-
-    @Override
-    public void setupParameterName() {
-        setParameterName("Pipes pressure");
-    }
-
-    @Override
-    public void setupGroupName() {
-        setGroupName("Pressure");
-    }
 }
