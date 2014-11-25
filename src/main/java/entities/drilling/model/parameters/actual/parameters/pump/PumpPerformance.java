@@ -1,6 +1,6 @@
 package entities.drilling.model.parameters.actual.parameters.pump;
 
-import entities.drilling.model.parameters.Parameter;
+import entities.drilling.model.parameters.InputValue;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,5 +11,5 @@ import javax.persistence.Entity;
 @Scope(value = "prototype")
 @Entity
 @DiscriminatorValue("pump_performance")
-public class PumpPerformance extends Parameter {
+public class PumpPerformance extends InputValue {
 }

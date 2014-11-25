@@ -25,7 +25,7 @@ public class WorkingDataSet {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Well well;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "workingDataSet")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "workingDataSet")
     private User user;
 
     public User getUser() {

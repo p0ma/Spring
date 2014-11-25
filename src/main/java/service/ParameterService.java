@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.ParameterRepository;
 import repositories.exceptions.ParameterNotFoundException;
+import repositories.exceptions.UserNotFoundException;
 
 import java.util.List;
 
@@ -23,13 +24,10 @@ public class ParameterService {
 
     @Transactional(rollbackFor = ParameterNotFoundException.class)
     public Parameter delete(Long id) throws ParameterNotFoundException {
-
         Parameter deleted = parameterRepository.findOne(id);
-
         if (deleted == null) {
-            throw new ParameterNotFoundException("No parameter with id " + id + " found. Nothing to delete.");
+            throw new ParameterNotFoundException();
         }
-
         parameterRepository.delete(deleted);
         return deleted;
     }
@@ -40,30 +38,29 @@ public class ParameterService {
     }
 
     @Transactional(readOnly = true)
-    public Parameter findById(Long id) {
-        return parameterRepository.findOne(id);
+    public Parameter findById(Long id) throws ParameterNotFoundException {
+        Parameter parameter = parameterRepository.findOne(id);
+        if (parameter == null) {
+            throw new ParameterNotFoundException();
+        }
+        return parameter;
     }
 
     @Transactional(rollbackFor = ParameterNotFoundException.class)
     public Parameter update(Parameter updated) throws ParameterNotFoundException {
-
         Parameter parameter = parameterRepository.findOne(updated.getId());
-
         if (parameter == null) {
-            throw new ParameterNotFoundException("No parameter with id " + updated.getId() + " found. Nothing to update.");
+            throw new ParameterNotFoundException();
         }
-
         parameterRepository.save(updated);
-
         return updated;
     }
 
-    @Transactional(readOnly = false, rollbackFor = ParameterNotFoundException.class)
+    @Transactional(readOnly = false, rollbackFor = {ParameterNotFoundException.class, UserNotFoundException.class})
     public Parameter setParameterValue(User user, ParameterDTO parameterDTO) throws MyValidationException,
-            NumberFormatException, ParameterNotFoundException {
-        user = userService.findById(user.getId());
-        Parameter parameter = user.getWorkingDataSet().getParametersModel().initParameters()
-                .getParameter(parameterDTO.getName());
+            NumberFormatException, ParameterNotFoundException, UserNotFoundException {
+        Parameter parameter = userService.findById(user.getId()).getWorkingDataSet().getParametersModel()
+                .initParameters().getParameter(parameterDTO.getName());
         parameter.setParameterValue(Double.parseDouble(parameterDTO.getVal()));
         update(parameter);
         return parameter;

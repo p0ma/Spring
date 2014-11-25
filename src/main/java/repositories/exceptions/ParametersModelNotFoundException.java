@@ -1,7 +1,9 @@
 package repositories.exceptions;
 
-public class ParametersModelNotFoundException extends NotFoundException {
-    public ParametersModelNotFoundException(String message) {
-        super(message);
+import localization.LocalizationUtils;
+
+public class ParametersModelNotFoundException extends Exception {
+    public ParametersModelNotFoundException() {
+        super(LocalizationUtils.getMessage(ParametersModelNotFoundException.class.getSimpleName() + ".message"));
     }
 }

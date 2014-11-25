@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("pressure_loss")
+@DiscriminatorValue("PressureLoss")
 public class PressureLoss extends Function {
 
     @Override

@@ -1,6 +1,6 @@
 package entities.drilling.model.parameters.actual.parameters.mud;
 
-import entities.drilling.model.parameters.Parameter;
+import entities.drilling.model.parameters.InputValue;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,5 +11,5 @@ import javax.persistence.Entity;
 @Scope(value = "prototype")
 @Entity
 @DiscriminatorValue("mud_volume")
-public class MudVolume extends Parameter {
+public class MudVolume extends InputValue {
 }

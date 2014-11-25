@@ -1,7 +1,9 @@
 package repositories.exceptions;
 
-public class WellNotFoundException extends NotFoundException {
-    public WellNotFoundException(String message) {
-        super(message);
+import localization.LocalizationUtils;
+
+public class WellNotFoundException extends Exception {
+    public WellNotFoundException() {
+        super(LocalizationUtils.getMessage(WellNotFoundException.class.getSimpleName() + ".message"));
     }
 }

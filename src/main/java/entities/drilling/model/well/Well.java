@@ -2,10 +2,6 @@ package entities.drilling.model.well;
 
 
 import entities.drilling.model.WorkingDataSet;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,12 +16,11 @@ public class Well {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Cascade(value = {CascadeType.ALL})
-    @OneToMany(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY)
-    @LazyCollection(LazyCollectionOption.TRUE)
+    @OneToMany(targetEntity = PipeSection.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY,
+            mappedBy = "well", orphanRemoval = true)
     private List<PipeSection> pipeSections = new ArrayList<PipeSection>();
 
-    @OneToOne(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "well")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "well")
     private WorkingDataSet workingDataSet;
 
     public WorkingDataSet getWorkingDataSet() {
@@ -97,13 +92,14 @@ public class Well {
         this.pipeSections = pipeSections;
     }
 
-    public void removePipeSection(Long id) {
+    public PipeSection removePipeSection(Long id) {
         for (PipeSection p : pipeSections) {
             if (p.getId().equals(id)) {
                 pipeSections.remove(p);
-                break;
+                return p;
             }
         }
+        return null;
     }
 
     public static Well build() {
@@ -123,7 +119,7 @@ public class Well {
         return null;
     }
 
-    private PipeSection findById(Long Id) {
+    private PipeSection findById(Long id) {
         for (PipeSection pipeSection : pipeSections) {
             if (pipeSection.getId().equals(id)) {
                 return pipeSection;

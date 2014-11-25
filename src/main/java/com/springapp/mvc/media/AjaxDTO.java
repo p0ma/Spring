@@ -2,15 +2,13 @@ package com.springapp.mvc.media;
 
 public class AjaxDTO {
     private String message;
-    private String lastVal;
     private boolean hasError;
 
     public AjaxDTO() {
     }
 
-    public AjaxDTO(String message, String lastVal, Boolean hasError) {
+    public AjaxDTO(String message, boolean hasError) {
         this.message = message;
-        this.lastVal = lastVal;
         this.hasError = hasError;
     }
 
@@ -28,13 +26,5 @@ public class AjaxDTO {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public String getLastVal() {
-        return lastVal;
-    }
-
-    public void setLastVal(String lastVal) {
-        this.lastVal = lastVal;
     }
 }

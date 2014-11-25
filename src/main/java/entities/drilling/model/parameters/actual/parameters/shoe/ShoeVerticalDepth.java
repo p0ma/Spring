@@ -1,6 +1,7 @@
+/*
 package entities.drilling.model.parameters.actual.parameters.shoe;
 
-import entities.drilling.model.parameters.Parameter;
+import entities.drilling.model.parameters.InputValue;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,5 +12,6 @@ import javax.persistence.Entity;
 @Scope(value = "prototype")
 @Entity
 @DiscriminatorValue("shoe_vertical_depth")
-public class ShoeVerticalDepth extends Parameter {
+public class ShoeVerticalDepth extends InputValue {
 }
+*/

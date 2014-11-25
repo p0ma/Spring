@@ -1,5 +1,7 @@
 package repositories.exceptions;
 
+import localization.LocalizationUtils;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Damager1
@@ -8,7 +10,7 @@ package repositories.exceptions;
  * To change this template use File | Settings | File Templates.
  */
 public class UserNotFoundException extends Exception {
-    public UserNotFoundException(String s) {
-        super(s);
+    public UserNotFoundException() {
+        super(LocalizationUtils.getMessage(UserNotFoundException.class.getSimpleName() + ".message"));
     }
 }

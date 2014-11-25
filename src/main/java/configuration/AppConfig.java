@@ -140,7 +140,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 
         messageSource.setBasenames("classpath:messages/app/app", "classpath:messages/jsp/jsp",
-                "classpath:messages/app/parameter");
+                "classpath:messages/app/parameter", "classpath:messages/errors/errors");
         messageSource.setUseCodeAsDefaultMessage(Boolean.parseBoolean(environment.getRequiredProperty(PROPERTY_NAME_MESSAGESOURCE_USE_CODE_AS_DEFAULT_MESSAGE)));
         messageSource.setDefaultEncoding("UTF-8");
 

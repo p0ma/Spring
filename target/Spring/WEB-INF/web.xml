@@ -1,50 +1,23 @@
 <web-app version="2.4"
-	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+         xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+	http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd">
 
-    <!--<display-name>Sample</display-name>-->
+    <!-- Prior to Servlet 3.0 define either an error-code or an exception-type but not both -->
+    <error-page>
+        <!-- Define error page to react on Java exception -->
+        <exception-type>com.springapp.mvc.controllers.exceptions.ResourceNotFoundException</exception-type>
+        <!-- The location of the resource to display in response to the error will point to the Spring MVC handler method -->
+        <location>/error</location>
+    </error-page>
 
-    <!--<servlet>
-		<servlet-name>sample</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        &lt;!&ndash;<init-param>
-            <param-name>contextClass</param-name>
-            <param-value>
-                org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-            </param-value>
-        </init-param>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>
-                configuration.ApplicationConfiguration1
-            </param-value>
-        </init-param>&ndash;&gt;
-        <load-on-startup>1</load-on-startup>
-	</servlet>-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404</location>
+    </error-page>
 
-    <!--<servlet-mapping>
-        <servlet-name>sample</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>-->
-
-    <!--    <listener>
-            <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-        </listener>
-        <listener>
-            <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-        </listener>-->
-
-    <!-- Security Filter -->
-    <!--  <filter>
-          <filter-name>springSecurityFilterChain</filter-name>
-          <filter-class>org.springframework.web.filter.DelegatingFilterProxy
-          </filter-class>
-      </filter>
-
-      <filter-mapping>
-          <filter-name>springSecurityFilterChain</filter-name>
-          <url-pattern>/*</url-pattern>
-      </filter-mapping>-->
-
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error500</location>
+    </error-page>
 </web-app>

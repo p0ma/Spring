@@ -1,7 +1,9 @@
 package repositories.exceptions;
 
-public class PipeSectionNotFoundException extends NotFoundException {
-    public PipeSectionNotFoundException(String message) {
-        super(message);
+import localization.LocalizationUtils;
+
+public class PipeSectionNotFoundException extends Exception {
+    public PipeSectionNotFoundException() {
+        super(LocalizationUtils.getMessage(PipeSectionNotFoundException.class.getSimpleName() + ".message"));
     }
 }

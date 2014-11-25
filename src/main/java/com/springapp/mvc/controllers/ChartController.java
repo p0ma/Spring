@@ -4,17 +4,16 @@ import com.springapp.mvc.media.ChartData;
 import entities.auth.User;
 import entities.drilling.model.ParametersModel;
 import entities.drilling.model.parameters.actual.parameters.pump.PumpPoint;
-import entities.drilling.model.well.MyValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import repositories.exceptions.ParametersModelNotFoundException;
+import repositories.exceptions.UserNotFoundException;
 import service.ParametersModelService;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
@@ -24,31 +23,12 @@ public class ChartController {
     @Autowired
     private ParametersModelService parametersModelService;
 
-    @ExceptionHandler(Exception.class)
-    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-    @ResponseBody
-    public String exceptionHandler(Exception e) throws IOException {
-        StringBuilder stringBuilder = new StringBuilder();
-        StackTraceElement[] stackTraceElements = e.getStackTrace();
-        stringBuilder.append(e.getClass().getSimpleName() + e.getMessage() + "<br>");
-        for (StackTraceElement stackTraceElement : stackTraceElements) {
-            stringBuilder.append(stackTraceElement.toString() + "\n");
-        }
-        return stringBuilder.toString();
-    }
-
-    @ExceptionHandler(MyValidationException.class)
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    @ResponseBody
-    public String myValidationExceptionHandler(MyValidationException e) throws IOException {
-        return e.getMessage();
-    }
-
     @RequestMapping(value = "/getChartData", method = RequestMethod.GET, produces = "application/json")
     public
     @ResponseBody
-    ChartData getChartData(@AuthenticationPrincipal User user) {
-        ParametersModel parametersModel = user.getWorkingDataSet().getParametersModel();
+    ChartData getChartData(@AuthenticationPrincipal User user) throws ParametersModelNotFoundException,
+            UserNotFoundException {
+        ParametersModel parametersModel = parametersModelService.findByUser(user);
         parametersModel.initParameters();
         ArrayList<PumpPoint> pointsList = parametersModel.getPoints();
         PumpPoint[] arrayArray = pointsList.toArray(new PumpPoint[pointsList.size()]);
@@ -57,17 +37,10 @@ public class ChartController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String printWelcome(@AuthenticationPrincipal User user, ModelMap model) {
-        ParametersModel parametersModel = user.getWorkingDataSet().getParametersModel();
+    public String printWelcome(@AuthenticationPrincipal User user) throws
+            ParametersModelNotFoundException, UserNotFoundException {
+        ParametersModel parametersModel = parametersModelService.findByUser(user);
         parametersModel.initParameters();
-        if (parametersModel.isChanged()) {
-            try {
-                parametersModelService.update(parametersModel);
-                parametersModel.setChanged(false);
-            } catch (ParametersModelNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
         return "chart";
     }
 }

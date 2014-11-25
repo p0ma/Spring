@@ -13,7 +13,7 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("cycle_ending_pressure")
+@DiscriminatorValue("CycleEndingPressure")
 public class CycleEndingPressure extends Function {
 
     @Override

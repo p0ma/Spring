@@ -14,7 +14,7 @@ public class PipeType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pipeType")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "pipeType")
     private PipeSection pipeSection;
 
     public PipeSection getPipeSection() {

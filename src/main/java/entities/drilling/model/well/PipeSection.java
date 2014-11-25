@@ -21,7 +21,7 @@ public class PipeSection {
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private PipeType pipeType;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Well well;
 
     public Well getWell() {

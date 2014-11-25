@@ -24,9 +24,10 @@
                 <label class="control-label" for="name">Username</label>
 
                 <div class="controls">
-                    <form:errors for="name" path="user.name" cssClass="text-danger has-error"/>
-                    <form:input cssClass="form-control" type="text" id="name" path="user.name" placeholder="Username"
+                    <form:input cssClass="form-control" type="text" id="name" path="userRegistrationDTO.name"
+                                placeholder="Username"
                                 required="true" autofocus="true"/>
+                    <form:errors for="name" path="userRegistrationDTO.name" cssClass="text-danger has-error"/>
                 </div>
             </div>
 
@@ -35,9 +36,10 @@
                 <label class="control-label" for="email">E-mail</label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" path="user.email" type="text" id="email" name="email"
+                    <form:input cssClass="form-control" path="userRegistrationDTO.email" type="text" id="email"
+                                name="email"
                                 placeholder="E-mail"/>
-                    <form:errors path="user.email" cssClass="text-danger has-error"/>
+                    <form:errors path="userRegistrationDTO.email" cssClass="text-danger has-error"/>
                 </div>
             </div>
 
@@ -46,10 +48,11 @@
                 <label class="control-label" for="confirmEmail">E-mail (Confirm)</label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" path="user.confirmEmail" type="text" id="confirmEmail"
+                    <form:input cssClass="form-control" path="userRegistrationDTO.confirmEmail" type="text"
+                                id="confirmEmail"
                                 name="confirmEmail"
                                 placeholder="E-mail confirmation"/>
-                    <form:errors path="user.confirmEmail" cssClass="text-danger has-error"/>
+                    <form:errors path="userRegistrationDTO.confirmEmail" cssClass="text-danger has-error"/>
                 </div>
             </div>
 
@@ -58,10 +61,11 @@
                 <label class="control-label" for="password">Password</label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" path="user.password" type="password" id="password"
+                    <form:input cssClass="form-control" path="userRegistrationDTO.password" type="password"
+                                id="password"
                                 name="password"
                                 required="true" placeholder="Password"/>
-                    <form:errors path="user.password" cssClass="text-danger has-error"/>
+                    <form:errors path="userRegistrationDTO.password" cssClass="text-danger has-error"/>
                 </div>
             </div>
 
@@ -70,11 +74,11 @@
                 <label class="control-label" for="confirmPassword">Password (Confirm)</label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" path="user.confirmPassword" type="confirmPassword"
+                    <form:input cssClass="form-control" path="userRegistrationDTO.confirmPassword" type="password"
                                 id="confirmPassword"
                                 name="confirmPassword"
                                 required="true" placeholder="Password confirmation"/>
-                    <form:errors path="user.confirmPassword" cssClass="text-danger has-error"/>
+                    <form:errors path="userRegistrationDTO.confirmPassword" cssClass="text-danger has-error"/>
                 </div>
             </div>
             <div>

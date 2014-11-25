@@ -11,9 +11,15 @@
         function deletePipeSection(id) {
             var result_panel = $("#result_panel");
             var result = $("#result");
+            var json = {"id": id};
             $.ajax({
-                url: "${pageContext.request.contextPath}/well/delete_pipe_section.html",
-                data: ({id: id}),
+                method: 'DELETE',
+                url: "${pageContext.request.contextPath}/well/delete_pipe_section.json",
+                data: JSON.stringify(id),
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                },
                 success: function (response) {
                     result.parent().addClass("panel panel-success");
                     result.parent().removeClass("panel panel-danger");
@@ -35,37 +41,34 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">Deleting pipe section</h3>
-    </div>
-    <div class="panel-body">
-        <div class="input-group">
-
-            <form class="form-inline" role="form">
-                <select id="pipeSelect" class="form-control">
-                    <c:forEach items="${pipeSections}" var="predicate">
-                        <option value="${predicate.id}">
-                                ${predicate.length} ${predicate.pipeType.outerDiameter} ${predicate.pipeType.thickness}
-                        </option>
-                    </c:forEach>
-                </select>
-
-                <button type="button" class="btn btn-default"
-                        onclick="deletePipeSection(
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Deleting pipe section</h3>
+        </div>
+        <div class="panel-body">
+            <div class="input-group">
+                <form class="form-inline" role="form">
+                    <select id="pipeSelect" class="form-control">
+                        <c:forEach items="${pipeSections}" var="predicate">
+                            <option value="${predicate.id}">
+                                    ${predicate.length} ${predicate.pipeType.outerDiameter} ${predicate.pipeType.thickness}
+                            </option>
+                        </c:forEach>
+                    </select>
+                    <button type="button" class="btn btn-default"
+                            onclick="deletePipeSection(
                     document.getElementById('pipeSelect').selectedOptions[0].value)">
-                    Delete pipe section
-                </button>
+                        Delete pipe section
+                    </button>
+                    <div id="result_panel" class="panel panel-danger" hidden="true">
+                        <div id="result" class="panel-heading" hidden="true"></div>
+                    </div>
+                </form>
 
-                <div id="result_panel" class="panel panel-danger" hidden="true">
-                    <div id="result" class="panel-heading" hidden="true"></div>
-                </div>
-            </form>
-
+            </div>
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

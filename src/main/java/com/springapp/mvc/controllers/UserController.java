@@ -14,6 +14,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import repositories.exceptions.UserAlreadyExistsException;
+import repositories.exceptions.UserMailAlreadyUsedException;
 import service.UserService;
 
 import javax.validation.Valid;
@@ -55,7 +57,7 @@ public class UserController {
 
     @RequestMapping("/registration")
     public String registration(Model model) {
-        model.addAttribute("user", new UserRegistrationDTO());
+        model.addAttribute(new UserRegistrationDTO());
         return "registration";
     }
 
@@ -66,13 +68,31 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String registration(ModelMap model, @Valid UserRegistrationDTO user, BindingResult bindingResult) {
+    public String registration(ModelMap model, @Valid UserRegistrationDTO userRegistrationDTO,
+                               BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             model.put(BindingResult.class.getName() + ".user", bindingResult);
             return "registration";
         } else {
-            userService.create(UserFactory.getUser(user));
+            try {
+                User user = userService.register(UserFactory.getUser(userRegistrationDTO));
+                Authentication authentication =
+                        myAuthenticationProvider.authenticate(new UsernamePasswordAuthenticationToken(
+                                user, user.getPassword()));
+                if (authentication != null) {
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+                    return "redirect:/welcome";
+                } else {
+                    return "redirect:/login";
+                }
+            } catch (UserAlreadyExistsException e) {
+                bindingResult.rejectValue("name", "error.userRegistrationDTO", e.getMessage());
+
+                return "registration";
+            } catch (UserMailAlreadyUsedException e) {
+                bindingResult.rejectValue("email", "error.userRegistrationDTO", e.getMessage());
+                return "registration";
+            }
         }
-        return "redirect:/welcome";
     }
 }

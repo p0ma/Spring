@@ -1,6 +1,7 @@
+/*
 package entities.drilling.model.parameters.actual.parameters.well;
 
-import entities.drilling.model.parameters.Parameter;
+import entities.drilling.model.parameters.InputValue;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,5 +12,6 @@ import javax.persistence.Entity;
 @Scope(value = "prototype")
 @Entity
 @DiscriminatorValue("well_vertical_depth")
-public class WellVerticalDepth extends Parameter {
+public class WellVerticalDepth extends InputValue {
 }
+*/

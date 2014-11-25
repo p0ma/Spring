@@ -13,7 +13,7 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("jamming_mud_density")
+@DiscriminatorValue("JammingMudDensity")
 public class JammingMudDensity extends Function {
 
     @Override

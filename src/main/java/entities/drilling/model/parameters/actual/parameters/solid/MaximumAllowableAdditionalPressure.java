@@ -4,7 +4,7 @@ import entities.drilling.model.parameters.CrossComputingException;
 import entities.drilling.model.parameters.Function;
 import entities.drilling.model.parameters.actual.parameters.mud.MaximumAllowableDensity;
 import entities.drilling.model.parameters.actual.parameters.mud.MudDensity;
-import entities.drilling.model.parameters.actual.parameters.well.WellVerticalDepth;
+import entities.drilling.model.parameters.actual.parameters.well.ActualWellDepth;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -14,16 +14,16 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("maximum_allowable_additional_pressure")
+@DiscriminatorValue("MaximumAllowableAdditionalPressure")
 public class MaximumAllowableAdditionalPressure extends Function {
 
     @Override
     protected Double function() throws CrossComputingException {
         Double maximumAllowableDensity = getParameterValue(MaximumAllowableDensity.class);
         Double mudDensity = getParameterValue(MudDensity.class);
-        Double wellVerticalDepth = getParameterValue(WellVerticalDepth.class);
+        Double actualWellDepth = getParameterValue(ActualWellDepth.class);
         Double result = (maximumAllowableDensity -
-                mudDensity) * wellVerticalDepth * 9.81 / Math.pow(10, 6);
+                mudDensity) * actualWellDepth * 9.81 / Math.pow(10, 6);
         return result;
     }
 }

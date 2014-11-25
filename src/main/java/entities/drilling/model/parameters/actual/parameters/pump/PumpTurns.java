@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 @Component
 @Scope(value = "prototype")
 @Entity
-@DiscriminatorValue("pump_turns")
+@DiscriminatorValue("PumpTurns")
 public class PumpTurns extends Function {
 
     public void setupRound() {

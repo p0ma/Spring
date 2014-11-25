@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.WellRepository;
 import repositories.exceptions.PipeSectionNotFoundException;
+import repositories.exceptions.UserNotFoundException;
 import repositories.exceptions.WellNotFoundException;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public class WellService {
         Well deleted = wellRepository.findOne(id);
 
         if (deleted == null) {
-            throw new WellNotFoundException("No well with id " + id + " found. Nothing to delete.");
+            throw new WellNotFoundException();
         }
 
         wellRepository.delete(deleted);
@@ -61,7 +62,7 @@ public class WellService {
         Well predicate = wellRepository.findOne(updated.getId());
 
         if (predicate == null) {
-            throw new WellNotFoundException("No predicate with id " + updated.getId() + " has been found. Nothing to update.");
+            throw new WellNotFoundException();
         }
 
         wellRepository.save(updated);
@@ -70,19 +71,19 @@ public class WellService {
     }
 
     @Transactional
-    public PipeSection removePipeSection(User user, Long id) throws PipeSectionNotFoundException {
-        Well well = userService.findById(user.getId()).getWorkingDataSet().getWell();
-        List<PipeSection> pipeSections = well.getPipeSections();
-        for (PipeSection pipeSection : pipeSections) {
-            if (pipeSection.getId().equals(id)) {
-                return pipeSectionService.delete(id);
-            }
+    public PipeSection removePipeSection(User user, Long id) throws PipeSectionNotFoundException,
+            UserNotFoundException {
+        PipeSection removed = userService.findById(user.getId()).getWorkingDataSet().getWell().removePipeSection(id);
+        if (removed == null) {
+            throw new PipeSectionNotFoundException();
+        } else {
+            return removed;
         }
-        return null;
     }
 
     @Transactional
-    public void addPipeSection(User user, PipeSectionDTO pipeSectionDTO) throws MyValidationException {
+    public void addPipeSection(User user, PipeSectionDTO pipeSectionDTO) throws MyValidationException,
+            UserNotFoundException {
         Well well = userService.findById(user.getId()).getWorkingDataSet().getWell();
         PipeSection pipeSection = PipeSection.build(pipeSectionDTO);
         pipeSection.setWell(well);
@@ -90,7 +91,7 @@ public class WellService {
     }
 
     @Transactional
-    public int[] reorderPipes(User user, Long fromId, Long toId) throws WellNotFoundException {
+    public int[] reorderPipes(User user, Long fromId, Long toId) throws WellNotFoundException, UserNotFoundException {
         Well well = userService.findById(user.getId()).getWorkingDataSet().getWell();
         int[] newOrder = well.swapOrder(fromId, toId);
         if (newOrder != null) {

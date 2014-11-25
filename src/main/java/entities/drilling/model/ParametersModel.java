@@ -25,11 +25,22 @@ public class ParametersModel implements IParametersModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany(targetEntity = Parameter.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY,
-            mappedBy = "parametersModel")
+    @Transient
     private Map<String, IParameter> parameterMap = new HashMap<String, IParameter>();
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "parametersModel")
+    @OneToMany(targetEntity = Parameter.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY,
+            mappedBy = "parametersModel")
+    private Map<String, InputValue> inputValueMap = new HashMap<String, InputValue>();
+
+    public Map<String, InputValue> getInputValueMap() {
+        return inputValueMap;
+    }
+
+    public void setInputValueMap(Map<String, InputValue> inputValueMap) {
+        this.inputValueMap = inputValueMap;
+    }
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "parametersModel")
     private WorkingDataSet workingDataSet;
 
     public WorkingDataSet getWorkingDataSet() {
@@ -46,25 +57,37 @@ public class ParametersModel implements IParametersModel {
     @Transient
     private ApplicationContext modelContext;
 
+    public ParametersModel() {
+        this.changed = false;
+        this.modelContext = ApplicationContextProvider.getApplicationContext();
+    }
+
+    public ParametersModel(ApplicationContext modelContext) {
+        this.modelContext = modelContext;
+    }
+
     public ParametersModel initParameters() {
-        for (Map.Entry<String, Parameter> entry : modelContext.getBeansOfType(Parameter.class).entrySet()) {
-            IParameter parameter = getParameter(entry.getValue().getClass());
-            parameter.setParametersModel(this);
-            if (parameter == null) {
+        for (Map.Entry<String, Function> entry : modelContext.getBeansOfType(Function.class).entrySet()) {
+            if (!parameterMap.containsValue(entry.getValue())) {
                 addParameter(entry.getValue().getClass());
+            }
+        }
+        for (Map.Entry<String, InputValue> entry : modelContext.getBeansOfType(InputValue.class).entrySet()) {
+            if (inputValueMap.get(entry.getValue().getClass().getSimpleName()) == null) {
+                InputValue inputValue = entry.getValue();
+                inputValue.setParametersModel(this);
+                parameterMap.put(inputValue.getClass().getSimpleName(), inputValue);
+                inputValueMap.put(inputValue.getClass().getSimpleName(), inputValue);
+            } else {
+                parameterMap.put(entry.getValue().getClass().getSimpleName(),
+                        inputValueMap.get(entry.getValue().getClass().getSimpleName()));
             }
         }
         return this;
     }
 
     public void prepareForSaving() {
-        /*for(Map.Entry<String, IParameter> entry : parameterMap.entrySet()) {
-            Parameter parameter = (Parameter)entry.getValue();
-            if(parameter instanceof Function) {
-                savedMap.put(entry.getKey(), entry.getValue());
-            }
-        }
-        parameterMap.entrySet().removeAll(savedMap.entrySet());*/
+
     }
 
     public ArrayList<PumpPoint> getPoints() {
@@ -147,15 +170,6 @@ public class ParametersModel implements IParametersModel {
         this.modelContext = modelContext;
     }
 
-    public ParametersModel() {
-        this.changed = false;
-        this.modelContext = ApplicationContextProvider.getApplicationContext();
-    }
-
-    public ParametersModel(ApplicationContext modelContext) {
-        this.modelContext = modelContext;
-    }
-
     private Double getParameterValue(String key) {
         try {
             return parameterMap.get(key).getValue();
@@ -180,6 +194,10 @@ public class ParametersModel implements IParametersModel {
 
     public Parameter getParameter(String key) {
         return (Parameter) this.parameterMap.get(key);
+    }
+
+    public InputValue getInputValue(String key) {
+        return this.inputValueMap.get(key);
     }
 
     public Double getParameterValue(Class<?> key) {
@@ -243,6 +261,15 @@ public class ParametersModel implements IParametersModel {
             e.printStackTrace();
         }
         return map;
+    }
+
+    private ParametersModel addInputValue(Class<?> key) {
+        if (!inputValueMap.containsKey(key.getSimpleName())) {
+            addParameter((IParameter) modelContext.getBean(key));
+
+            inputValueMap.put(key.getSimpleName(), (InputValue) modelContext.getBean(key));
+        }
+        return this;
     }
 
     private ParametersModel addParameter(Class<?> key) {

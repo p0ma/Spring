@@ -4,10 +4,10 @@ import entities.auth.User;
 import entities.drilling.model.ParametersModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.ParametersModelRepository;
 import repositories.exceptions.ParametersModelNotFoundException;
+import repositories.exceptions.UserNotFoundException;
 
 import java.util.List;
 
@@ -22,13 +22,10 @@ public class ParametersModelService {
 
     @Transactional(rollbackFor = ParametersModelNotFoundException.class)
     public ParametersModel delete(Long parametersModelId) throws ParametersModelNotFoundException {
-
         ParametersModel deleted = parametersModelRepository.findOne(parametersModelId);
-
         if (deleted == null) {
-            throw new ParametersModelNotFoundException("No parameters parametersModel with id " + parametersModelId + " has been found. Nothing to delete.");
+            throw new ParametersModelNotFoundException();
         }
-
         parametersModelRepository.delete(deleted);
         return deleted;
     }
@@ -38,27 +35,29 @@ public class ParametersModelService {
         return parametersModelRepository.findAll();
     }
 
-    @Transactional(propagation = Propagation.NEVER)
+    @Transactional(readOnly = true)
     public ParametersModel findById(Long id) {
         return parametersModelRepository.findOne(id);
     }
 
     @Transactional(rollbackFor = ParametersModelNotFoundException.class)
     public ParametersModel update(ParametersModel updated) throws ParametersModelNotFoundException {
-
         ParametersModel person = parametersModelRepository.findOne(updated.getId());
-
         if (person == null) {
-            throw new ParametersModelNotFoundException("No parameters parametersModel with id " + updated.getId() + " has been found. Nothing to update.");
+            throw new ParametersModelNotFoundException();
         }
-
         parametersModelRepository.save(updated);
-
         return updated;
     }
 
     @Transactional(readOnly = true)
-    public ParametersModel findByUser(User user) {
-        return userService.findById(user.getId()).getWorkingDataSet().getParametersModel();
+    public ParametersModel findByUser(User user) throws UserNotFoundException, ParametersModelNotFoundException {
+        ParametersModel parametersModel = userService.findById(user.getId()).getWorkingDataSet().getParametersModel();
+        if (parametersModel == null) {
+            throw new ParametersModelNotFoundException();
+        }
+        parametersModel.initParameters();
+        update(parametersModel);
+        return parametersModel;
     }
 }

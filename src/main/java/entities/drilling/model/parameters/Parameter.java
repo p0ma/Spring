@@ -9,19 +9,30 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "parameter_name", discriminatorType = DiscriminatorType.STRING, length = 50)
 public abstract class Parameter implements IParameter {
 
-    @ManyToOne(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     protected ParametersModel parametersModel;
 
     @Transient
     protected int round;
 
     protected Double value;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public final String getUnit() {
         return LocalizationUtils.getMessage(this.getClass().getSimpleName() + ".unit");
@@ -44,18 +55,6 @@ public abstract class Parameter implements IParameter {
     @Override
     public final String getParameterName() {
         return LocalizationUtils.getMessage(this.getClass().getSimpleName() + ".name");
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     private void init() {
@@ -116,11 +115,11 @@ public abstract class Parameter implements IParameter {
     }
 
     @Override
-    public final void setParametersModel(ParametersModel parametersModel) {
+    public void setParametersModel(ParametersModel parametersModel) {
         this.parametersModel = parametersModel;
     }
 
-    public final IParametersModel getParametersModel() {
+    public IParametersModel getParametersModel() {
         return parametersModel;
     }
 
