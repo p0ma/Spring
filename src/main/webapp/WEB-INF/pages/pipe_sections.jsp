@@ -125,7 +125,6 @@
             <table id="table" class="table">
                 <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Order number</th>
                     <th>Length</th>
                     <th>Outer diameter</th>
@@ -136,7 +135,6 @@
                 <c:if test="${not empty pipeSections}">
                     <c:forEach var="predicate" items="${pipeSections}">
                         <tr id="${predicate.id}">
-                            <td>${predicate.id}</td>
                             <td>${predicate.orderNumber}</td>
                             <td>${predicate.length}</td>
                             <td>${predicate.pipeType.outerDiameter}</td>

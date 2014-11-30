@@ -3,6 +3,8 @@ package service;
 import entities.auth.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.IUserRepository;
@@ -92,5 +94,14 @@ public class UserService {
             throw new UserMailAlreadyUsedException(user.getEmail());
         }
         return create(user);
+    }
+
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        try {
+            return findByName(s);
+        } catch (UserNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

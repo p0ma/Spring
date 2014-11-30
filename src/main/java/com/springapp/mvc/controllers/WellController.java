@@ -7,6 +7,7 @@ import entities.drilling.model.well.MyValidationException;
 import entities.drilling.model.well.PipeSection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,6 +24,7 @@ import service.WellService;
 import java.util.List;
 
 @Controller
+@PreAuthorize("isAuthenticated()")
 @RequestMapping("/well")
 public class WellController {
 
@@ -31,7 +33,6 @@ public class WellController {
 
     @Autowired
     private PipeSectionService pipeSectionService;
-
 
     @RequestMapping(value = "/add_pipe_section", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)

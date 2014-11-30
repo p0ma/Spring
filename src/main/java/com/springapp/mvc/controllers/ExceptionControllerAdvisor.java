@@ -13,6 +13,7 @@ import repositories.exceptions.UserNotFoundException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.MessageFormat;
 
 @ControllerAdvice
 @Controller
@@ -35,9 +36,14 @@ public class ExceptionControllerAdvisor {
         return "not_found";
     }
 
+    @RequestMapping("error403")
+    public String error403(HttpServletRequest request, HttpServletResponse response, Model model) {
+        return "access_denied";
+    }
+
     @RequestMapping("error500")
     public String error500(HttpServletRequest request, HttpServletResponse response, Model model) {
-        /*// retrieve some useful information from the request
+        // retrieve some useful information from the request
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
         // String servletName = (String) request.getAttribute("javax.servlet.error.servlet_name");
@@ -52,7 +58,7 @@ public class ExceptionControllerAdvisor {
                 statusCode, requestUri, exceptionMessage
         );
 
-        model.addAttribute("errorMessage", message);*/
+        model.addAttribute("errorMessage", message);
         return "500";
     }
 

@@ -10,6 +10,7 @@ import entities.drilling.model.well.MyValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,6 +28,7 @@ import java.util.Locale;
 import java.util.Map;
 
 @Controller
+@PreAuthorize("isAuthenticated()")
 @RequestMapping("/parameters")
 public class ParametersController {
 
@@ -67,7 +69,7 @@ public class ParametersController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showParameters(ModelMap model, @AuthenticationPrincipal User user) {
+    public String showParameters(ModelMap model, @AuthenticationPrincipal User user, Locale locale) {
         ParametersModel parametersModel = null;
         try {
             parametersModel = parametersModelService.findByUser(user);

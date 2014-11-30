@@ -4,7 +4,6 @@ import entities.auth.FieldMatch;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 @FieldMatch(fields = {"password", "email"}, verifyFields = {"confirmPassword", "confirmEmail"})
@@ -33,7 +32,6 @@ public class UserRegistrationDTO {
     @Email(message = "Not a well-formed email address")
     private String email;
 
-    @Transient
     @NotEmpty(message = "May not be empty")
     @Size(max = 32, min = 4, message = "Password confirmation should be 4-32 symbols")
     private String confirmPassword;
@@ -46,7 +44,6 @@ public class UserRegistrationDTO {
         this.confirmPassword = confirmPassword;
     }
 
-    @Transient
     @NotEmpty(message = "May not be empty")
     @Size(max = 32, min = 4, message = "Email confirmation should be 4-32 symbols")
     private String confirmEmail;

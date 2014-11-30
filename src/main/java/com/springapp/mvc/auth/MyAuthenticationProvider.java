@@ -2,21 +2,17 @@ package com.springapp.mvc.auth;
 
 import entities.auth.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 import repositories.exceptions.UserNotFoundException;
 import service.UserService;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Component
-public class MyAuthenticationProvider implements AuthenticationProvider {
+public class MyAuthenticationProvider implements AuthenticationProvider, AuthenticationManager {
 
     @Autowired
     private UserService userService;
@@ -28,15 +24,13 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
         try {
             User user = userService.findByName(name);
             if (user.getPassword().equals(password)) {
-                List<GrantedAuthority> grantedAuths = new ArrayList<GrantedAuthority>();
-                grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
-                Authentication auth = new UsernamePasswordAuthenticationToken(user, password, grantedAuths);
+                Authentication auth = new UsernamePasswordAuthenticationToken(user, password, user.getAuthorities());
                 return auth;
             } else {
-                return null;
+                throw new MyAuthenticationException();
             }
         } catch (UserNotFoundException e) {
-            return null;
+            throw new MyAuthenticationException();
         }
 
     }

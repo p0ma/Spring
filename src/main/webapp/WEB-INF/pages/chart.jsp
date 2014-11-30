@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <html>
 <head>
 
@@ -30,27 +31,28 @@
                     var json = response;
                     //var obj = JSON.parse(json.chartData);
 
-                    var chartData = response.chartData;
+                    var chartData = response.chartData.chartData;
+                    var chartLocalization = response.chartLocalization;
                     var len = chartData.length;
                     var editedChartData = [];
                     for (var i = 0; i < chartData.length; i++) {
                         editedChartData[i] = [chartData[i].turn, chartData[i].pressure];
                     }
 
-                    drawChart(editedChartData);
+                    drawChart(editedChartData, chartLocalization);
                 },
                 error: function (response) {
                     message = response.responseText;
                 }
             })
         })
-        function drawChart(chartData) {
+        function drawChart(chartData, chartLocalization) {
             $('#container').highcharts({
                 chart: {
                     type: 'area'
                 },
                 title: {
-                    text: "Pressure loss"
+                    text: $('#chartHeader').text()
                 },
                 subtitle: {
                     text: ''
@@ -59,23 +61,23 @@
                     allowDecimals: true,
                     labels: {
                         formatter: function () {
-                            return this.value + ' turns'; // clean, unformatted number for year
+                            return this.value + ' ' + $('#turnsUnit').text(); // clean, unformatted number for year
                         }
                     }
                 },
                 yAxis: {
                     title: {
-                        text: 'Pressure'
+                        text: $('#pressure').text()
                     },
                     labels: {
                         formatter: function () {
-                            return this.value + ' bar';
+                            return this.value + ' ' + $('#pressureUnit').text();
                         }
                     }
                 },
                 tooltip: {
                     headerFormat: '',
-                    pointFormat: 'After <b>{point.x} {series.name}</b> pressure will be <b>{point.y:,.2f} bar</b>'
+                    pointFormat: $('#pointFormat').text()
                 },
                 plotOptions: {
                     area: {
@@ -92,9 +94,13 @@
                         }
                     }
                 },
+                lang: chartLocalization,
+                credits: {
+                    enabled: false
+                },
                 series: [
                     {
-                        name: 'Turns',
+                        name: $('#turns').text(),
                         data: chartData
                     }
                 ]
@@ -116,6 +122,14 @@
     <div id="container">
 
     </div>
+
+    <div id="pressure" hidden="hidden"><spring:message code="chart.pressure"/></div>
+    <div id="pressureUnit" hidden="hidden"><spring:message code="chart.pressure.unit"/></div>
+    <div id="turns" hidden="hidden"><spring:message code="chart.turns"/></div>
+    <div id="turnsUnit" hidden="hidden"><spring:message code="chart.turns.unit"/></div>
+    <div id="pointFormat" hidden="hidden"><spring:message code="chart.pointFormat"/></div>
+    <div id="chartHeader" hidden="hidden"><spring:message code="chart.header"/></div>
+
 </div>
 
 </body>

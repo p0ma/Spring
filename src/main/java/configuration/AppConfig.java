@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
@@ -138,11 +139,17 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
 
-
-        messageSource.setBasenames("classpath:messages/app/app", "classpath:messages/jsp/jsp",
-                "classpath:messages/app/parameter", "classpath:messages/errors/errors");
-        messageSource.setUseCodeAsDefaultMessage(Boolean.parseBoolean(environment.getRequiredProperty(PROPERTY_NAME_MESSAGESOURCE_USE_CODE_AS_DEFAULT_MESSAGE)));
         messageSource.setDefaultEncoding("UTF-8");
+        messageSource.setBasenames(
+                "classpath:messages/app",
+                "classpath:messages/jsp",
+                "classpath:messages/parameter",
+                "classpath:messages/chart",
+                "classpath:messages/months",
+                "classpath:messages/weekdays",
+                "classpath:messages/errors",
+                "classpath:messages/validation");
+        messageSource.setUseCodeAsDefaultMessage(Boolean.parseBoolean(environment.getRequiredProperty(PROPERTY_NAME_MESSAGESOURCE_USE_CODE_AS_DEFAULT_MESSAGE)));
 
         return messageSource;
     }
@@ -175,6 +182,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return new CookieLocaleResolver();
     }
 
+    @Override
+    public void addInterceptors(InterceptorRegistry interceptorRegistry) {
+        interceptorRegistry.addInterceptor(localeChangeInterceptor());
+    }
+
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
         LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
@@ -198,4 +210,25 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public AuthenticationProvider authenticationProvider() {
         return new MyAuthenticationProvider();
     }
+
+    /*@Bean
+    public RememberMeServices rememberMeServices(MyUserDetailsService myUserDetailsService) {
+        TokenBasedRememberMeServices rememberMeServices = new TokenBasedRememberMeServices();
+        rememberMeServices.setUserDetailsService(myUserDetailsService);
+        return rememberMeServices;
+    }
+
+    @Bean
+    public RememberMeAuthenticationProvider rememberMeAuthenticationProvider() {
+        return new RememberMeAuthenticationProvider();
+    }
+
+    @Bean
+    RememberMeAuthenticationFilter rememberMeAuthenticationFilter(
+            RememberMeServices rememberMeServices, AuthenticationManager authenticationManager) {
+        RememberMeAuthenticationFilter rememberMeAuthenticationFilter = new RememberMeAuthenticationFilter();
+        rememberMeAuthenticationFilter.setRememberMeServices(rememberMeServices);
+        rememberMeAuthenticationFilter.setAuthenticationManager(authenticationManager);
+        return rememberMeAuthenticationFilter;
+    }*/
 }

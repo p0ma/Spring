@@ -1,7 +1,7 @@
 package entities.auth;
 
+import localization.LocalizationUtils;
 import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.lang.WordUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -37,7 +37,9 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
             boolean tempMatches = (fieldObj != null) && fieldObj.equals(verifyFieldObj);
 
             if (!tempMatches) {
-                addConstraintViolation(context, WordUtils.capitalize(fields[i]) + " fields do not match", verifyFields[i]);
+                addConstraintViolation(context,
+                        LocalizationUtils.getFieldsMatchMessage(fields[i]),
+                        verifyFields[i]);
             }
 
             matches = matches ? tempMatches : matches;

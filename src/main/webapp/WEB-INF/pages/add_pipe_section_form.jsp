@@ -5,7 +5,7 @@
 <jsp:include page="jquery.jsp"/>
 <html>
 <head>
-    <title>Well</title>
+    <title><spring:message code="pipeSection.add"/></title>
     <jsp:include page="bootstrap.jsp"/>
     <script type="text/javascript">
         function addPipeSection() {
@@ -49,30 +49,37 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Adding pipe section</h3>
+            <h3 class="panel-title"><spring:message code="pipeSection.add"/></h3>
         </div>
         <div class="panel-body">
             <div class="input-group">
                 <form class="form-inline" role="form">
                     <div class="form-group">
-                        <label class="sr-only" for="inputLength">Length</label>
-                        <input type="text" class="form-control" id="inputLength" placeholder="Enter length">
+                        <spring:message code="pipeSection.length" var="pipeSectionLength"/>
+                        <label class="sr-only" for="inputLength"><spring:message code="pipeSection.length"/></label>
+                        <input type="text" class="form-control" id="inputLength"
+                               placeholder="${pipeSectionLength}">
                         <form:errors path="length"/>
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="inputOuterDiameter">Outer diameter</label>
+                        <spring:message code="pipeSection.outerDiameter" var="pipeSectionOuterDiameter"/>
+                        <label class="sr-only" for="inputOuterDiameter">
+                            <spring:message code="pipeSection.outerDiameter"/></label>
                         <input type="text" class="form-control" id="inputOuterDiameter"
-                               placeholder="Enter outer diameter">
+                               placeholder="${pipeSectionOuterDiameter}">
                         <form:errors path="outerDiameter"/>
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="inputThickness">Thickness</label>
-                        <input type="text" class="form-control" id="inputThickness" placeholder="Enter thickness">
+                        <spring:message code="pipeSection.thickness" var="pipeSectionThickness"/>
+                        <label class="sr-only" for="inputThickness">
+                            <spring:message code="pipeSection.thickness"/></label>
+                        <input type="text" class="form-control" id="inputThickness"
+                               placeholder="${pipeSectionThickness}">
                         <form:errors path="thickness"/>
                     </div>
                     <button type="button" class="btn btn-default"
                             onclick="addPipeSection()">
-                        Add pipe section
+                        <spring:message code="pipeSection.add"/>
                     </button>
                 </form>
                 <div id="result_panel" class="panel panel-danger" hidden="true">

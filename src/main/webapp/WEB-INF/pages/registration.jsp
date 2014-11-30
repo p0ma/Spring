@@ -7,86 +7,92 @@
 <html>
 <head>
     <jsp:include page="bootstrap.jsp"/>
-    <title>Registration</title>
+    <title><spring:message code='registration'/></title>
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
 
 <div class="container col-lg-4 col-lg-offset-4 col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-7 col-xs-offset-2">
-    <form class="form-horizontal" action='${pageContext.request.contextPath}/user/register' method="POST">
+    <form:form commandName="userRegistrationDTO" class="form-horizontal"
+               action='${pageContext.request.contextPath}/registration' method="POST">
 
         <fieldset>
             <div id=legend>
-                <legend class="">Registration</legend>
+                <legend class=""><spring:message code="registration"/></legend>
             </div>
             <div class="control-group">
                 <!-- Username -->
-                <label class="control-label" for="name">Username</label>
+                <spring:message code='user.name' var="usernamePlaceHolder"/>
+                <label class="control-label" for="name"><spring:message code="user.name"/></label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" type="text" id="name" path="userRegistrationDTO.name"
-                                placeholder="Username"
+                    <form:input cssClass="form-control" type="text" id="name" path="name"
+                                placeholder="${usernamePlaceHolder}"
                                 required="true" autofocus="true"/>
-                    <form:errors for="name" path="userRegistrationDTO.name" cssClass="text-danger has-error"/>
+                    <form:errors for="name" path="name" cssClass="text-danger has-error"/>
                 </div>
             </div>
 
             <div class="control-group">
                 <!-- E-mail -->
-                <label class="control-label" for="email">E-mail</label>
+                <spring:message code='user.email' var="mailPlaceHolder"/>
+                <label class="control-label" for="email"><spring:message code="user.email"/></label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" path="userRegistrationDTO.email" type="text" id="email"
+                    <form:input cssClass="form-control" path="email" type="text" id="email"
                                 name="email"
-                                placeholder="E-mail"/>
-                    <form:errors path="userRegistrationDTO.email" cssClass="text-danger has-error"/>
+                                placeholder="${mailPlaceHolder}"/>
+                    <form:errors path="email" cssClass="text-danger has-error"/>
                 </div>
             </div>
 
             <div class="control-group">
-                <!-- E-mail -->
-                <label class="control-label" for="confirmEmail">E-mail (Confirm)</label>
+                <!-- E-mail (Confirm)-->
+                <spring:message code='user.emailConfirm' var="mailConfirmPlaceHolder"/>
+                <label class="control-label" for="confirmEmail"><spring:message code="user.emailConfirm"/></label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" path="userRegistrationDTO.confirmEmail" type="text"
+                    <form:input cssClass="form-control" path="confirmEmail" type="text"
                                 id="confirmEmail"
                                 name="confirmEmail"
-                                placeholder="E-mail confirmation"/>
-                    <form:errors path="userRegistrationDTO.confirmEmail" cssClass="text-danger has-error"/>
+                                placeholder="${mailConfirmPlaceHolder}"/>
+                    <form:errors path="confirmEmail" cssClass="text-danger has-error"/>
                 </div>
             </div>
 
             <div class="control-group">
                 <!-- Password-->
-                <label class="control-label" for="password">Password</label>
+                <spring:message code='user.password' var="passwordPlaceHolder"/>
+                <label class="control-label" for="password"><spring:message code="user.password"/></label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" path="userRegistrationDTO.password" type="password"
+                    <form:input cssClass="form-control" path="password" type="password"
                                 id="password"
                                 name="password"
-                                required="true" placeholder="Password"/>
-                    <form:errors path="userRegistrationDTO.password" cssClass="text-danger has-error"/>
+                                required="true" placeholder="${passwordPlaceHolder}"/>
+                    <form:errors path="password" cssClass="text-danger has-error"/>
                 </div>
             </div>
 
             <div class="control-group">
                 <!-- Password -->
-                <label class="control-label" for="confirmPassword">Password (Confirm)</label>
+                <spring:message code='user.passwordConfirm' var="passwordConfirmPlaceHolder"/>
+                <label class="control-label" for="confirmPassword"><spring:message code="user.passwordConfirm"/></label>
 
                 <div class="controls">
-                    <form:input cssClass="form-control" path="userRegistrationDTO.confirmPassword" type="password"
+                    <form:input cssClass="form-control" path="confirmPassword" type="password"
                                 id="confirmPassword"
                                 name="confirmPassword"
-                                required="true" placeholder="Password confirmation"/>
-                    <form:errors path="userRegistrationDTO.confirmPassword" cssClass="text-danger has-error"/>
+                                required="true" placeholder="${passwordConfirmPlaceHolder}"/>
+                    <form:errors path="confirmPassword" cssClass="text-danger has-error"/>
                 </div>
             </div>
             <div>
                 <legend class=""></legend>
             </div>
-            <button class="btn btn-lg btn-success btn-block" type="submit">Register</button>
+            <button class="btn btn-lg btn-success btn-block" type="submit"><spring:message code="register"/></button>
         </fieldset>
-    </form>
+    </form:form>
 </div>
 </body>
 </html>

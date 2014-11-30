@@ -18,7 +18,7 @@ public class HelloController {
         if (user != null) {
             return "redirect:/parameters";
         } else {
-            return "redirect:/user/login";
+            return "redirect:/login";
         }
     }
 }

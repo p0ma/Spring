@@ -2,10 +2,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <html>
 <head>
     <jsp:include page="bootstrap.jsp"/>
-    <title>Parameters</title>
+    <title><spring:message code="parameters"/></title>
     <script type="text/javascript">
         $(document).ready(function () {
             $("body").tooltip({selector: '[data-toggle=tooltip]', html: true});
@@ -77,7 +78,7 @@
             </div>
             <c:set var="counter" value='0' scope="page"/>
             <c:set var="isRowed" value='true' scope="page"/>
-            <c:set var="columnsNum" value='4' scope="page"/>
+            <c:set var="columnsNum" value='3' scope="page"/>
             <div id="${group_name_trimmed}" class="panel-collapse collapse in" role="tabpanel"
                  aria-labelledby="headingOne">
                 <div class="panel-body">
@@ -93,7 +94,7 @@
                         <c:if test="${isRowed}">
                             <div class="row">
                         </c:if>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-lg-4">
                             <label class="label label-default label-primary"
                                    for="${parameter.value.getClass().getSimpleName()}"
                                    data-toggle="tooltip" data-placement="top" title="${parameter.value.hint}">
