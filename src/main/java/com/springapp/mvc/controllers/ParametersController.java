@@ -7,6 +7,7 @@ import entities.drilling.model.ParametersModel;
 import entities.drilling.model.parameters.CrossComputingException;
 import entities.drilling.model.parameters.IParameter;
 import entities.drilling.model.well.MyValidationException;
+import localization.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.MediaType;
@@ -51,7 +52,7 @@ public class ParametersController {
                                            Locale locale) {
         try {
             parameterService.setParameterValue(user, parameterDTO);
-            return new AjaxWithLastValDTO(messageSource.getMessage("parameter.has.been.successfully.set", null, locale),
+            return new AjaxWithLastValDTO(LocalizationUtils.getMessage("parameter.has.been.successfully.set"),
                     parameterDTO.getVal(), false);
         } catch (MyValidationException e) {
             try {
@@ -62,7 +63,8 @@ public class ParametersController {
                         parameterDTO.getVal(), true);
             }
         } catch (NumberFormatException e) {
-            return new AjaxWithLastValDTO("Wrong number format", parameterDTO.getVal(), true);
+            return new AjaxWithLastValDTO(LocalizationUtils.getMessage("WrongNumberFormat.message"),
+                    parameterDTO.getVal(), true);
         } catch (Exception e) {
             return new AjaxWithLastValDTO(e.getMessage(), parameterDTO.getVal(), true);
         }
@@ -81,6 +83,6 @@ public class ParametersController {
         } catch (ParametersModelNotFoundException e) {
             e.printStackTrace();
         }
-        return "parameters";
+        return "parameter/parameters";
     }
 }

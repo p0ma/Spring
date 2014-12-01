@@ -48,6 +48,6 @@ public class ChartController {
             ParametersModelNotFoundException, UserNotFoundException {
         ParametersModel parametersModel = parametersModelService.findByUser(user);
         parametersModel.initParameters();
-        return "chart";
+        return "parameter/chart";
     }
 }

@@ -1,7 +1,6 @@
 package service;
 
 import entities.auth.User;
-import entities.drilling.model.dto.PipeSectionDTO;
 import entities.drilling.model.well.MyValidationException;
 import entities.drilling.model.well.PipeSection;
 import entities.drilling.model.well.Well;
@@ -82,12 +81,18 @@ public class WellService {
     }
 
     @Transactional
-    public void addPipeSection(User user, PipeSectionDTO pipeSectionDTO) throws MyValidationException,
+    public void addPipeSection(User user, PipeSection pipeSection) throws MyValidationException,
             UserNotFoundException {
         Well well = userService.findById(user.getId()).getWorkingDataSet().getWell();
-        PipeSection pipeSection = PipeSection.build(pipeSectionDTO);
         pipeSection.setWell(well);
-        pipeSectionService.create(pipeSection);
+        well.addPipeSection(pipeSection);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PipeSection> getPipeSections(User user) throws UserNotFoundException {
+        Well well = userService.findById(user.getId()).getWorkingDataSet().getWell();
+        well.sortByOrder();
+        return well.getPipeSections();
     }
 
     @Transactional

@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Entity
@@ -51,31 +53,6 @@ public class Well {
         return length;
     }
 
-    /*public double getInnerVolume() {
-        double innerVolume = 0;
-        Collections.sort(pipeSections, new Comparator<PipeSection>() {
-            @Override
-            public int compare(PipeSection o1, PipeSection o2) {
-                if (o1.getOrderNumber() == o2.getOrderNumber())
-                    return 0;
-                else if (o1.getOrderNumber() > o2.getOrderNumber())
-                    return 1;
-                else
-                    return -1;
-            }
-
-            @Override
-            public boolean equals(Object obj) {
-                return false;
-            }
-        });
-        for (PipeSection pipeSection : pipeSections) {
-            innerVolume += pipeSection.getInnerVolume();
-        }
-        return innerVolume;
-    }*/
-
-
     public Long getId() {
         return id;
     }
@@ -93,13 +70,35 @@ public class Well {
     }
 
     public PipeSection removePipeSection(Long id) {
+        PipeSection pipeSection = null;
         for (PipeSection p : pipeSections) {
             if (p.getId().equals(id)) {
+                pipeSection = p;
                 pipeSections.remove(p);
-                return p;
+                break;
             }
         }
-        return null;
+        if (pipeSection != null) {
+            reorder();
+        }
+        return pipeSection;
+    }
+
+    public void sortByOrder() {
+        Collections.sort(pipeSections, new Comparator<PipeSection>() {
+            @Override
+            public int compare(PipeSection o1, PipeSection o2) {
+                return new Integer(o1.getOrderNumber()).compareTo(o2.getOrderNumber());
+            }
+        });
+    }
+
+    private void reorder() {
+        sortByOrder();
+        int i = 1;
+        for (PipeSection p : pipeSections) {
+            p.setOrderNumber(i++);
+        }
     }
 
     public static Well build() {
@@ -129,48 +128,7 @@ public class Well {
     }
 
     public void addPipeSection(PipeSection pipeSection) {
+        pipeSection.setOrderNumber(pipeSections.size() + 1);
         pipeSections.add(pipeSection);
     }
-
-    /*public void ComputeMudVolume()
-    {
-        float casingHeightLeft = casing.getHeight();
-        float mudVolumeInPipe = 0, mudVolumeOutPipe = 0;
-        for(PipeSection pipeSection : pipeSections)
-        {
-            if (casingHeightLeft > 0)
-                if (casingHeightLeft > pipeSection.getLength())
-                {
-                    casingHeightLeft -= pipeSection.getLength();
-                    mudVolumeOutPipe += pipeSection.getLength() *
-                            SectionalAreaOutPipe(pipeSection);
-                    mudVolumeInPipe += pipeSection.getLength() *
-                            SectionalAreaInPipe(pipeSection);
-                }
-                else
-                {
-                    mudVolumeOutPipe += casingHeightLeft *
-                            SectionalAreaOutPipe(pipeSection);
-                    mudVolumeInPipe += casingHeightLeft *
-                            SectionalAreaInPipe(pipeSection);
-                    float pipeHeightLeft = pipeSection.getLength() - casingHeightLeft;
-                    casingHeightLeft = 0;
-                    mudVolumeOutPipe += pipeHeightLeft *
-                            SectionalAreaOutPipe(pipeSection);
-                    mudVolumeInPipe += pipeHeightLeft *
-                            SectionalAreaInPipe(pipeSection);
-                }
-            else
-            {
-                mudVolumeOutPipe += pipeSection.getLength() *
-                        SectionalAreaOutPipe(pipeSection);
-                mudVolumeInPipe += pipeSection.getLength() *
-                        SectionalAreaInPipe(pipeSection);
-            }
-        }
-        _mudVolumeInPipe = mudVolumeInPipe;
-        _mudVolumeOutPipe = mudVolumeOutPipe;
-        _mudVolume = _mudVolumeOutPipe + _mudVolumeInPipe;
-        _mudVolumeWithGird = _mudVolume + _oilWell.GirdVolume;
-    }*/
 }

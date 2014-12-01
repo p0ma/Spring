@@ -1,11 +1,14 @@
 package com.springapp.mvc.controllers;
 
+import com.springapp.mvc.media.AjaxDTO;
 import com.springapp.mvc.media.ReorderDTO;
 import entities.auth.User;
 import entities.drilling.model.dto.PipeSectionDTO;
 import entities.drilling.model.well.MyValidationException;
 import entities.drilling.model.well.PipeSection;
+import localization.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
@@ -34,24 +37,27 @@ public class WellController {
     @Autowired
     private PipeSectionService pipeSectionService;
 
-    @RequestMapping(value = "/add_pipe_section", method = RequestMethod.POST,
-            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @Autowired
+    private MessageSource messageSource;
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String addPipeSection(@AuthenticationPrincipal User user, @RequestBody PipeSectionDTO pipeSectionDTO) {
+    public AjaxDTO addPipeSection(@AuthenticationPrincipal User user, @RequestBody PipeSectionDTO pipeSectionDTO) {
         try {
-            wellService.addPipeSection(user, pipeSectionDTO);
-            return "Pipe section has been added";
+            wellService.addPipeSection(user, PipeSection.parse(pipeSectionDTO));
+            return new AjaxDTO(LocalizationUtils.getMessage("pipeSection.successfullyAdded"), false);
         } catch (MyValidationException e) {
-            e.printStackTrace();
-            return e.getMessage();
-        } catch (UserNotFoundException e) {
-            e.printStackTrace();
-            return e.getMessage();
+            return new AjaxDTO(e.getMessage(), true);
+        } catch (NumberFormatException e) {
+            return new AjaxDTO(LocalizationUtils.getMessage("WrongNumberFormat.message"), true);
+        } catch (Exception e) {
+            return new AjaxDTO(e.getMessage(), true);
         }
     }
 
-    @RequestMapping(value = "/delete_pipe_section", method = RequestMethod.DELETE,
-            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE,
+            consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String deletePipeSection(@AuthenticationPrincipal User user, @RequestBody Long id) {
         try {
@@ -84,12 +90,12 @@ public class WellController {
         }
     }
 
-    @RequestMapping(value = "/add_pipe_section_form", method = RequestMethod.GET)
+    @RequestMapping(value = "/add_form", method = RequestMethod.GET)
     public String addPipeSectionForm() {
-        return "add_pipe_section_form";
+        return "well/add_form";
     }
 
-    @RequestMapping(value = "/delete_pipe_section_form", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete_form", method = RequestMethod.GET)
     public String deletePipeSectionForm(@AuthenticationPrincipal User user, ModelMap model) {
         List<PipeSection> pipeSections = null;
         try {
@@ -98,19 +104,19 @@ public class WellController {
         } catch (UserNotFoundException e) {
             e.printStackTrace();
         }
-        return "delete_pipe_section_form";
+        return "well/delete_form";
     }
 
     @RequestMapping(value = "/pipe_sections", method = RequestMethod.GET)
     public String pipeSections(@AuthenticationPrincipal User user, ModelMap model) {
         List<PipeSection> pipeSections = null;
         try {
-            pipeSections = pipeSectionService.getPipeSections(user);
+            pipeSections = wellService.getPipeSections(user);
             model.addAttribute("pipeSections", pipeSections);
         } catch (UserNotFoundException e) {
             e.printStackTrace();
         }
-        return "pipe_sections";
+        return "well/pipe_sections";
     }
 
 }

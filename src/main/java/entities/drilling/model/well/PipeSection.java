@@ -7,10 +7,18 @@ import javax.persistence.*;
 @Entity
 public class PipeSection {
 
-    public static PipeSection build(PipeSectionDTO pipeSectionDTO) throws MyValidationException {
+    public static PipeSection parse(PipeSectionDTO pipeSectionDTO) throws MyValidationException {
+        int length = Integer.parseInt(pipeSectionDTO.getLength());
+        double outerDiameter = Double.parseDouble(pipeSectionDTO.getOuterDiameter());
+        double thickness = Double.parseDouble(pipeSectionDTO.getThickness());
+        return build(length, outerDiameter, thickness);
+    }
+
+
+    public static PipeSection build(int length, double outerDiameter, double thickness) throws MyValidationException {
         PipeSection pipeSection = new PipeSection();
-        pipeSection.setLength(pipeSectionDTO.getLength());
-        pipeSection.setPipeType(PipeType.build(pipeSectionDTO.getOuterDiameter(), pipeSectionDTO.getThickness()));
+        pipeSection.setLength(length);
+        pipeSection.setPipeType(PipeType.build(outerDiameter, thickness));
         return pipeSection;
     }
 
@@ -82,6 +90,4 @@ public class PipeSection {
     public double getInnerVolume() {
         return pipeType.getCrossSectionalArea() * length;
     }
-
-
 }

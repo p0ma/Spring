@@ -33,14 +33,14 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET)
     public String login(Model model) {
         model.addAttribute(new User());
-        return "login";
+        return "auth/login";
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public String signin(ModelMap model, @Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             model.put(BindingResult.class.getName() + ".user", bindingResult);
-            return "login";
+            return "auth/login";
         }
         try {
             Authentication authentication =
@@ -50,11 +50,11 @@ public class LoginController {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
                 return "redirect:/welcome";
             } else {
-                return "login";
+                return "auth/login";
             }
         } catch (AuthenticationException e) {
             bindingResult.rejectValue("password", "error.user", e.getMessage());
-            return "login";
+            return "auth/login";
         }
     }
 }

@@ -105,15 +105,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return dataSource;
     }
 
-    /*@Bean
-    public JpaTransactionManager transactionManager() throws ClassNotFoundException {
-        JpaTransactionManager transactionManager = new JpaTransactionManager();
-
-        transactionManager.setEntityManagerFactory(entityManagerFactoryBean().getObject());
-
-        return transactionManager;
-    }*/
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
@@ -148,7 +139,8 @@ public class AppConfig extends WebMvcConfigurerAdapter {
                 "classpath:messages/months",
                 "classpath:messages/weekdays",
                 "classpath:messages/errors",
-                "classpath:messages/validation");
+                "classpath:messages/validation",
+                "classpath:messages/pipeSection");
         messageSource.setUseCodeAsDefaultMessage(Boolean.parseBoolean(environment.getRequiredProperty(PROPERTY_NAME_MESSAGESOURCE_USE_CODE_AS_DEFAULT_MESSAGE)));
 
         return messageSource;

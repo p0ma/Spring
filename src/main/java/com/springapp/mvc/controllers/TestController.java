@@ -29,7 +29,7 @@ public class TestController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String test1(@AuthenticationPrincipal User user, ModelMap model) {
-        String s = "parameters";
+        String s = "parameter/parameters";
         if (user == null) {
             // s = fastLogin();
         }
@@ -48,9 +48,9 @@ public class TestController {
                         user, user.getPassword()));
         if (authentication != null) {
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            return "hello";
+            return "basic/hello";
         } else {
-            return "hello";
+            return "basic/hello";
         }
     }
 }

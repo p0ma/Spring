@@ -22,7 +22,7 @@ public class ExceptionControllerAdvisor {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(UserNotFoundException.class)
     public String handleUserNotFound() {
-        return "not_found";
+        return "error_pages/not_found";
     }
 
     @ResponseStatus(HttpStatus.CONFLICT)
@@ -33,12 +33,12 @@ public class ExceptionControllerAdvisor {
 
     @RequestMapping("error404")
     public String error404(HttpServletRequest request, HttpServletResponse response, Model model) {
-        return "not_found";
+        return "error_pages/not_found";
     }
 
     @RequestMapping("error403")
     public String error403(HttpServletRequest request, HttpServletResponse response, Model model) {
-        return "access_denied";
+        return "error_pages/access_denied";
     }
 
     @RequestMapping("error500")
@@ -59,7 +59,7 @@ public class ExceptionControllerAdvisor {
         );
 
         model.addAttribute("errorMessage", message);
-        return "500";
+        return "error_pages/500";
     }
 
     private String getExceptionMessage(Throwable throwable, Integer statusCode) {

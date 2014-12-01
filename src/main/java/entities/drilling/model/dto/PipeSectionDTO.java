@@ -1,31 +1,31 @@
 package entities.drilling.model.dto;
 
 public class PipeSectionDTO {
-    private double length;
-    private double outerDiameter;
-    private double thickness;
+    private String length;
+    private String outerDiameter;
+    private String thickness;
 
-    public double getLength() {
+    public String getLength() {
         return length;
     }
 
-    public void setLength(double length) {
+    public void setLength(String length) {
         this.length = length;
     }
 
-    public double getOuterDiameter() {
+    public String getOuterDiameter() {
         return outerDiameter;
     }
 
-    public void setOuterDiameter(double outerDiameter) {
+    public void setOuterDiameter(String outerDiameter) {
         this.outerDiameter = outerDiameter;
     }
 
-    public double getThickness() {
+    public String getThickness() {
         return thickness;
     }
 
-    public void setThickness(double thickness) {
+    public void setThickness(String thickness) {
         this.thickness = thickness;
     }
 }

@@ -37,7 +37,7 @@ public class RegistrationController {
     @RequestMapping(method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute(new UserRegistrationDTO());
-        return "registration";
+        return "auth/registration";
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -45,7 +45,7 @@ public class RegistrationController {
                                BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             model.put(BindingResult.class.getName() + ".user", bindingResult);
-            return "registration";
+            return "auth/registration";
         } else {
             try {
                 User user = userService.register(UserFactory.getUser(userRegistrationDTO));
@@ -61,10 +61,10 @@ public class RegistrationController {
             } catch (UserAlreadyExistsException e) {
                 bindingResult.rejectValue("name", "error.userRegistrationDTO", e.getMessage());
 
-                return "registration";
+                return "auth/registration";
             } catch (UserMailAlreadyUsedException e) {
                 bindingResult.rejectValue("email", "error.userRegistrationDTO", e.getMessage());
-                return "registration";
+                return "auth/registration";
             }
         }
     }
