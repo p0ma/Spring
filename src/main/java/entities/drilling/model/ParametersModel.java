@@ -90,6 +90,10 @@ public class ParametersModel implements IParametersModel {
 
     }
 
+    private int turnsScale(int turns) {
+        return (int) Math.ceil(turns / 50d);
+    }
+
     public ArrayList<PumpPoint> getPoints() {
         double cycleBeginningPressure = getParameterValue(CycleBeginningPressure.class),
                 cycleEndingPressure = getParameterValue(CycleEndingPressure.class),
@@ -97,7 +101,7 @@ public class ParametersModel implements IParametersModel {
                 pumpPerformance = getParameterValue(PumpPerformance.class);
 
         int pumpTurns = getParameterValue(PumpTurns.class).intValue(),
-                turnsScale = 100;
+                turnsScale = turnsScale(pumpTurns);
         ArrayList<PumpPoint> arrayList = new ArrayList<PumpPoint>();
         arrayList.add(new PumpPoint(0, cycleBeginningPressure));
         int pumpTurnsTemp = pumpTurns - turnsScale;

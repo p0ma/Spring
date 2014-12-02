@@ -62,7 +62,7 @@ public class WellController {
     public String deletePipeSection(@AuthenticationPrincipal User user, @RequestBody Long id) {
         try {
             wellService.removePipeSection(user, id);
-            return "Pipe section has been removed";
+            return LocalizationUtils.getMessage("pipeSection.removed");
         } catch (PipeSectionNotFoundException e) {
             e.printStackTrace();
             return e.getMessage();
@@ -84,9 +84,9 @@ public class WellController {
             e.printStackTrace();
         }
         if (newOrder != null) {
-            return "Pipe sections " + newOrder[0] + " and " + newOrder[1] + " has been swapped";
+            return LocalizationUtils.getMessage("pipeSection.reordered", new Object[]{newOrder[0], newOrder[1]});
         } else {
-            return "Pipe sections hasn't been reordered due to internal error";
+            return LocalizationUtils.getMessage("pipeSection.notReordered");
         }
     }
 

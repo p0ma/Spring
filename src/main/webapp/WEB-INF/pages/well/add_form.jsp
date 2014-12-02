@@ -28,7 +28,7 @@
                 success: function (response) {
                     var message = response.message;
                     var hasError = response.hasError;
-                    if (hasError == true) {
+                    if (hasError == false) {
                         result.parent().addClass("panel panel-success");
                         result.parent().removeClass("panel panel-danger");
                         result.html(message);
