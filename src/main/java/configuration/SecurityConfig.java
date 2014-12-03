@@ -13,11 +13,13 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 import javax.servlet.ServletContext;
+import javax.servlet.annotation.WebListener;
 
 
 @EnableWebMvcSecurity
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@WebListener
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
