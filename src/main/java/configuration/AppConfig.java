@@ -98,10 +98,17 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl(environment.getRequiredProperty(PROPERTY_NAME_DATABASE_URL));
-        dataSource.setDriverClassName(environment.getRequiredProperty(PROPERTY_NAME_DATABASE_DRIVER));
-        dataSource.setUsername(environment.getRequiredProperty(PROPERTY_NAME_DATABASE_USERNAME));
-        dataSource.setPassword(environment.getRequiredProperty(PROPERTY_NAME_DATABASE_PASSWORD));
+        try {
+            dataSource.setUrl(environment.getRequiredProperty("OPENSHIFT_MYSQL_DB_USERNAME"));
+            dataSource.setDriverClassName(environment.getRequiredProperty("OPENSHIFT_MYSQL_DB_USERNAME"));
+            dataSource.setUsername(environment.getRequiredProperty("OPENSHIFT_MYSQL_DB_USERNAME"));
+            dataSource.setPassword(environment.getRequiredProperty("OPENSHIFT_MYSQL_DB_USERNAME"));
+        } catch (IllegalStateException e) {
+            dataSource.setUrl(environment.getRequiredProperty(PROPERTY_NAME_DATABASE_URL));
+            dataSource.setDriverClassName(environment.getRequiredProperty(PROPERTY_NAME_DATABASE_DRIVER));
+            dataSource.setUsername(environment.getRequiredProperty(PROPERTY_NAME_DATABASE_USERNAME));
+            dataSource.setPassword(environment.getRequiredProperty(PROPERTY_NAME_DATABASE_PASSWORD));
+        }
         return dataSource;
     }
 
