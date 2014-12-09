@@ -3,7 +3,6 @@ package configuration;
 import com.springapp.mvc.auth.MyAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -38,12 +37,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         new DelegatingFilterProxy("springSecurityFilterChain"))
                 .addMappingForUrlPatterns(null, false, "/*");
     }
-
+/*
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception {
         auth.authenticationProvider(myAuthenticationProvider);
-    }
+    }*/
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
