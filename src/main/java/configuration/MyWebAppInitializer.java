@@ -7,9 +7,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
-import javax.servlet.annotation.WebListener;
 
-@WebListener
 public class MyWebAppInitializer implements WebApplicationInitializer {
 
     @Override
@@ -34,5 +32,4 @@ public class MyWebAppInitializer implements WebApplicationInitializer {
         dispatcher.addMapping("/");
 
     }
-
 }

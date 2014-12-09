@@ -3,6 +3,10 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 	http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd">
 
+    <listener>
+        <listener-class>configuration.SecurityConfig</listener-class>
+    </listener>
+
     <!-- Prior to Servlet 3.0 define either an error-code or an exception-type but not both -->
     <error-page>
         <!-- Define error page to react on Java exception -->

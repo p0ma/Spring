@@ -1,9 +1,8 @@
 package configuration;
 
+import com.springapp.mvc.auth.MyAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,14 +12,14 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 import javax.servlet.ServletContext;
-import javax.servlet.annotation.WebListener;
 
 
 @EnableWebMvcSecurity
-@Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@WebListener
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    MyAuthenticationProvider myAuthenticationProvider;
 
     @Autowired
     public void addFilters(ServletContext servletContext) {
@@ -41,9 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
-    public void configureGlobal(AuthenticationProvider authenticationProvider, AuthenticationManagerBuilder auth)
+    public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception {
-        auth.authenticationProvider(authenticationProvider);
+        auth.authenticationProvider(myAuthenticationProvider);
     }
 
     @Override
