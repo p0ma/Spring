@@ -1,32 +1,25 @@
 package entities.drilling.model;
 
 import com.springapp.mvc.context.provider.ApplicationContextProvider;
-import entities.drilling.model.parameters.*;
-import entities.drilling.model.parameters.Parameter;
-import entities.drilling.model.parameters.actual.parameters.drill_column.DrillColumnInnerVolume;
-import entities.drilling.model.parameters.actual.parameters.pressure.CycleBeginningPressure;
-import entities.drilling.model.parameters.actual.parameters.pressure.CycleEndingPressure;
-import entities.drilling.model.parameters.actual.parameters.pressure.PressureLoss;
-import entities.drilling.model.parameters.actual.parameters.pump.PumpPerformance;
-import entities.drilling.model.parameters.actual.parameters.pump.PumpPoint;
-import entities.drilling.model.parameters.actual.parameters.pump.PumpTurns;
-import entities.drilling.model.well.MyValidationException;
+import entities.drilling.parameters.*;
+import entities.drilling.parameters.Parameter;
+import entities.drilling.parameters.actual.parameters.drill_column.DrillColumnInnerVolume;
+import entities.drilling.well.MyValidationException;
 import org.springframework.context.ApplicationContext;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 @Entity
-public class ParametersModel implements IParametersModel {
+public class ParametersModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Transient
-    private Map<String, IParameter> parameterMap = new HashMap<String, IParameter>();
+    private Map<String, Parameter> parameterMap = new HashMap<String, Parameter>();
 
     @OneToMany(targetEntity = Parameter.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY,
             mappedBy = "parametersModel")
@@ -62,10 +55,6 @@ public class ParametersModel implements IParametersModel {
         this.modelContext = ApplicationContextProvider.getApplicationContext();
     }
 
-    public ParametersModel(ApplicationContext modelContext) {
-        this.modelContext = modelContext;
-    }
-
     public ParametersModel initParameters() {
         for (Map.Entry<String, Function> entry : modelContext.getBeansOfType(Function.class).entrySet()) {
             if (!parameterMap.containsValue(entry.getValue())) {
@@ -86,52 +75,14 @@ public class ParametersModel implements IParametersModel {
         return this;
     }
 
-    public void prepareForSaving() {
-
-    }
-
-    private int turnsScale(int turns) {
-        return (int) Math.ceil(turns / 50d);
-    }
-
-    public ArrayList<PumpPoint> getPoints() {
-        double cycleBeginningPressure = getParameterValue(CycleBeginningPressure.class),
-                cycleEndingPressure = getParameterValue(CycleEndingPressure.class),
-                pressureLoss = getParameterValue(PressureLoss.class),
-                pumpPerformance = getParameterValue(PumpPerformance.class);
-
-        int pumpTurns = getParameterValue(PumpTurns.class).intValue(),
-                turnsScale = turnsScale(pumpTurns);
-        ArrayList<PumpPoint> arrayList = new ArrayList<PumpPoint>();
-        arrayList.add(new PumpPoint(0, cycleBeginningPressure));
-        int pumpTurnsTemp = pumpTurns - turnsScale;
-        while (pumpTurnsTemp > 0) {
-            int turns = pumpTurns - pumpTurnsTemp;
-            double pressure = cycleBeginningPressure - (pressureLoss / pumpTurns) * (turns);
-            arrayList.add(new PumpPoint(
-                    turns,
-                    pressure
-            ));
-            pumpTurnsTemp -= turnsScale;
-        }
-        int turns = pumpTurns;
-        double pressure = cycleBeginningPressure - (pressureLoss / pumpTurns) * (turns);
-        arrayList.add(new PumpPoint(
-                turns,
-                pressure
-        ));
-
-        return arrayList;
-    }
-
-    public Map<String, Map<String, IParameter>> getParametersByGroups() {
-        Map<String, Map<String, IParameter>> map = new HashMap<String, Map<String, IParameter>>();
-        Map<String, IParameter> map2 = getParameterMap();
-        Map<String, IParameter> map3;
-        for (Map.Entry<String, IParameter> entry : map2.entrySet()) {
+    public Map<String, Map<String, Parameter>> getParametersByGroups() {
+        Map<String, Map<String, Parameter>> map = new HashMap<String, Map<String, Parameter>>();
+        Map<String, Parameter> map2 = getParameterMap();
+        Map<String, Parameter> map3;
+        for (Map.Entry<String, Parameter> entry : map2.entrySet()) {
             map3 = map.get(entry.getValue().getGroupName());
             if (map3 == null) {
-                map3 = new HashMap<String, IParameter>();
+                map3 = new HashMap<String, Parameter>();
 
             }
 
@@ -157,11 +108,11 @@ public class ParametersModel implements IParametersModel {
         this.id = id;
     }
 
-    public Map<String, IParameter> getParameterMap() {
+    public Map<String, Parameter> getParameterMap() {
         return parameterMap;
     }
 
-    public void setParameterMap(Map<String, IParameter> parameterMap) {
+    public void setParameterMap(Map<String, Parameter> parameterMap) {
         this.parameterMap = parameterMap;
         setChanged(true);
     }
@@ -183,9 +134,9 @@ public class ParametersModel implements IParametersModel {
         return null;
     }
 
-    public IParameter getParameter(Class<?> key) {
+    public Parameter getParameter(Class<?> key) {
         try {
-            IParameter parameter = parameterMap.get(key.getSimpleName());
+            Parameter parameter = parameterMap.get(key.getSimpleName());
             if (parameter != null) {
                 return parameterMap.get(key.getSimpleName());
             } else {
@@ -212,14 +163,14 @@ public class ParametersModel implements IParametersModel {
         }
     }
 
-    private ParametersModel addParameter(String key, IParameter parameter) {
+    private ParametersModel addParameter(String key, Parameter parameter) {
         parameterMap.put(key, parameter);
         parameter.setParametersModel(this);
         setChanged(true);
         return this;
     }
 
-    public ParametersModel addParameter(IParameter parameter) {
+    public ParametersModel addParameter(Parameter parameter) {
         addParameter(parameter.getClass().getSimpleName(), parameter);
         return this;
     }
@@ -252,12 +203,11 @@ public class ParametersModel implements IParametersModel {
         }
     }
 
-    @Override
     public Map<String, String> getAllValues() {
         Map<String, String> map = new HashMap<String, String>();
         try {
             int size = parameterMap.size();
-            for (IParameter parameter : parameterMap.values()) {
+            for (Parameter parameter : parameterMap.values()) {
                 map.put(parameter.getClass().getSimpleName(), ((Double) (parameter.getValue())).toString());
                 if (parameterMap.values().size() > size) return getAllValues();
             }
@@ -269,7 +219,7 @@ public class ParametersModel implements IParametersModel {
 
     private ParametersModel addInputValue(Class<?> key) {
         if (!inputValueMap.containsKey(key.getSimpleName())) {
-            addParameter((IParameter) modelContext.getBean(key));
+            addParameter((Parameter) modelContext.getBean(key));
 
             inputValueMap.put(key.getSimpleName(), (InputValue) modelContext.getBean(key));
         }
@@ -277,12 +227,12 @@ public class ParametersModel implements IParametersModel {
     }
 
     private ParametersModel addParameter(Class<?> key) {
-        addParameter((IParameter) modelContext.getBean(key));
+        addParameter((Parameter) modelContext.getBean(key));
         return this;
     }
 
     private void renewResults() {
-        for (IParameter parameter : parameterMap.values()) {
+        for (Parameter parameter : parameterMap.values()) {
             if (parameter instanceof Function) {
                 ((Function) parameter).setFinalResult(false);
             }
@@ -290,14 +240,29 @@ public class ParametersModel implements IParametersModel {
     }
 
     public static void main(String[] args) {
-        IParameter parameter = new DrillColumnInnerVolume();
-        System.out.println(parameter instanceof Function);
-        System.out.println(parameter instanceof Parameter);
+        Parameter parameter = new DrillColumnInnerVolume();
 
     }
 
     public static ParametersModel build() {
         return new ParametersModel();
+    }
+
+    public Map<String, Map<String, Parameter>> getInputParametersByGroups() {
+        Map<String, Map<String, Parameter>> map = new HashMap<String, Map<String, Parameter>>();
+        Map<String, InputValue> map2 = getInputValueMap();
+        Map<String, Parameter> map3;
+        for (Map.Entry<String, InputValue> entry : map2.entrySet()) {
+            map3 = map.get(entry.getValue().getGroupName());
+            if (map3 == null) {
+                map3 = new HashMap<String, Parameter>();
+
+            }
+
+            map3.put(entry.getKey(), entry.getValue());
+            map.put(entry.getValue().getGroupName(), map3);
+        }
+        return map;
     }
 
    /* public static class Builder {

@@ -1,7 +1,7 @@
 /*
 package system.decision.support.logic.operations;
 
-import entities.drilling.model.parameters.IComparable;
+import entities.drilling.parameters.IComparable;
 
 import javax.persistence.*;
 import java.util.ArrayList;

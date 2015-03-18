@@ -30,23 +30,23 @@
                     var hasError = response.hasError;
                     var lastVal = response.lastVal;
                     if (hasError == true) {
-                        input.parent().addClass("input-group has-warning");
-                        input.parent().removeClass("input-group has-success");
-                        input.parent().removeClass("input-group has-error");
+                        input.parent().addClass("has-warning");
+                        input.parent().removeClass("has-success");
+                        input.parent().removeClass("has-error");
                         input.val(lastVal);
                     } else {
-                        input.parent().addClass("input-group has-success");
-                        input.parent().removeClass("input-group has-warning");
-                        input.parent().removeClass("input-group has-error");
+                        input.parent().addClass("has-success");
+                        input.parent().removeClass("has-warning");
+                        input.parent().removeClass("has-error");
                     }
                     updateTooltip(input, message, 'bottom');
                 },
                 error: function (response) {
                     var json = JSON.parse(response.responseText);
                     var message = json.message;
-                    input.parent().addClass("input-group has-error");
-                    input.parent().removeClass("input-group has-success");
-                    input.parent().removeClass("input-group has-warning");
+                    input.addClass("has-error");
+                    input.parent().removeClass("has-success");
+                    input.parent().removeClass("has-warning");
                     updateTooltip(input, message, 'bottom');
                 }
             });
@@ -66,35 +66,38 @@
 <body>
 <jsp:include page="../basic/navbar.jsp"/>
 <div class="container">
-    <c:forEach items="${parameterMap}" var="group">
-        <c:set var="group_name_trimmed" value="${fn:replace(group.key, ' ', '_')}" scope="page"/>
-        <div class="panel panel-default" id="accordion">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#${group_name_trimmed}">
-                            ${group.key}
-                    </a>
-                </h3>
-            </div>
-            <c:set var="counter" value='0' scope="page"/>
-            <c:set var="isRowed" value='true' scope="page"/>
-            <c:set var="columnsNum" value='3' scope="page"/>
-            <div id="${group_name_trimmed}" class="panel-collapse collapse in" role="tabpanel"
-                 aria-labelledby="headingOne">
-                <div class="panel-body">
+    <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <c:set var="active" scope="page" value="true"/>
+            <c:forEach items="${parameterMap}" var="group">
+                <c:set var="group_name_trimmed" value="${fn:replace(group.key, ' ', '_')}" scope="page"/>
+                <c:if test="${not active}">
+                    <li role="presentation">
+                </c:if>
+                <c:if test="${active}">
+                    <li role="presentation" class="active">
+                    <c:set var="active" value="${not active}"/>
+                </c:if>
+                <a href="#${group_name_trimmed}" aria-controls="${group_name_trimmed}" role="tab"
+                   data-toggle="tab">${group.key}</a>
+                </li>
+            </c:forEach>
+        </ul>
+
+
+        <div class="tab-content">
+            <c:set var="active" scope="page" value="true"/>
+            <c:forEach items="${parameterMap}" var="group">
+            <c:set var="group_name_trimmed" value="${fn:replace(group.key, ' ', '_')}" scope="page"/>
+            <c:if test="${not active}">
+            <div role="tabpanel" class="tab-pane" id="${group_name_trimmed}">
+                </c:if>
+                <c:if test="${active}">
+                <div role="tabpanel" class="tab-pane active" id="${group_name_trimmed}">
+                    <c:set var="active" value="${not active}"/>
+                    </c:if>
                     <c:forEach items="${group.value}" var="parameter">
-                        <c:if test="${counter lt columnsNum}">
-                            <c:set var="counter" value="${counter + 1}"/>
-                            <c:set var="isRowed" value='false'/>
-                        </c:if>
-                        <c:if test="${not (counter lt columnsNum)}">
-                            <c:set var="counter" value='0'/>
-                            <c:set var="isRowed" value='true'/>
-                        </c:if>
-                        <c:if test="${isRowed}">
-                            <div class="row">
-                        </c:if>
-                        <div class="form-group col-lg-4">
+                        <div class="input-group">
                             <label class="label label-default label-primary"
                                    for="${parameter.value.getClass().getSimpleName()}"
                                    data-toggle="tooltip" data-placement="top" title="${parameter.value.hint}">
@@ -105,17 +108,14 @@
                                            '${parameter.value.getClass().getSimpleName()}',
                                            document.getElementById('${parameter.value.getClass().getSimpleName()}').value)"
                                    class="form-control"
-                                   value="${parameter.value.stringRoundedValue}">
+                                   value="${parameter.value.roundedValue}">
                         </div>
-                        <c:if test="${isRowed}">
-                            </div>
-                        </c:if>
                     </c:forEach>
                 </div>
-            </div>
+                </c:forEach>
         </div>
-    </c:forEach>
-</div>
-​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+        </div>
+    </div>
+    ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 </body>
 </html>

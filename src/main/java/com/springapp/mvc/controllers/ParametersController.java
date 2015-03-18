@@ -4,12 +4,11 @@ import com.springapp.mvc.media.AjaxWithLastValDTO;
 import com.springapp.mvc.media.ParameterDTO;
 import entities.auth.User;
 import entities.drilling.model.ParametersModel;
-import entities.drilling.model.parameters.CrossComputingException;
-import entities.drilling.model.parameters.IParameter;
-import entities.drilling.model.well.MyValidationException;
+import entities.drilling.parameters.CrossComputingException;
+import entities.drilling.parameters.Parameter;
+import entities.drilling.well.MyValidationException;
 import localization.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
@@ -23,22 +22,13 @@ import repositories.exceptions.ParametersModelNotFoundException;
 import repositories.exceptions.UserNotFoundException;
 import service.ParameterService;
 import service.ParametersModelService;
-import service.PipeSectionService;
 
-import java.util.Locale;
 import java.util.Map;
 
 @Controller
-@PreAuthorize("isAuthenticated()")
 @RequestMapping("/parameters")
+@PreAuthorize("isAuthenticated()")
 public class ParametersController {
-
-    @Autowired
-    private MessageSource messageSource;
-
-    @Autowired
-    private PipeSectionService pipeSectionService;
-
     @Autowired
     private ParametersModelService parametersModelService;
 
@@ -48,8 +38,7 @@ public class ParametersController {
     @RequestMapping(value = "/setparam", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public AjaxWithLastValDTO setParameter(@AuthenticationPrincipal User user, @RequestBody ParameterDTO parameterDTO,
-                                           Locale locale) {
+    public AjaxWithLastValDTO setParameter(@AuthenticationPrincipal User user, @RequestBody ParameterDTO parameterDTO) {
         try {
             parameterService.setParameterValue(user, parameterDTO);
             return new AjaxWithLastValDTO(LocalizationUtils.getMessage("parameter.has.been.successfully.set"),
@@ -70,13 +59,29 @@ public class ParametersController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String showParameters(ModelMap model, @AuthenticationPrincipal User user, Locale locale) {
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public String showAllParameters(ModelMap model, @AuthenticationPrincipal User user) {
         ParametersModel parametersModel = null;
         try {
             parametersModel = parametersModelService.findByUser(user);
-            Map<String, Map<String, IParameter>> parameterMap =
+            Map<String, Map<String, Parameter>> parameterMap =
                     parametersModel.getParametersByGroups();
+            model.addAttribute("parameterMap", parameterMap);
+        } catch (UserNotFoundException e) {
+            e.printStackTrace();
+        } catch (ParametersModelNotFoundException e) {
+            e.printStackTrace();
+        }
+        return "parameter/parameters";
+    }
+
+    @RequestMapping(value = "/input", method = RequestMethod.GET)
+    public String showInputParameters(ModelMap model, @AuthenticationPrincipal User user) {
+        ParametersModel parametersModel = null;
+        try {
+            parametersModel = parametersModelService.findByUser(user);
+            Map<String, Map<String, Parameter>> parameterMap =
+                    parametersModel.getInputParametersByGroups();
             model.addAttribute("parameterMap", parameterMap);
         } catch (UserNotFoundException e) {
             e.printStackTrace();

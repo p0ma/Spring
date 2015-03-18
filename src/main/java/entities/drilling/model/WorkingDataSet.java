@@ -1,7 +1,7 @@
 package entities.drilling.model;
 
 import entities.auth.User;
-import entities.drilling.model.well.Well;
+import entities.drilling.well.Well;
 
 import javax.persistence.*;
 

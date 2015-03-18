@@ -1,9 +1,9 @@
 package service;
 
 import entities.auth.User;
-import entities.drilling.model.well.MyValidationException;
-import entities.drilling.model.well.PipeSection;
-import entities.drilling.model.well.Well;
+import entities.drilling.well.MyValidationException;
+import entities.drilling.well.PipeSection;
+import entities.drilling.well.Well;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

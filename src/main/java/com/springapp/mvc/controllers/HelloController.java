@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping({"/", "/welcome"})
 public class HelloController {
-
     //private static final String MODEL_CONFIG_PATH = "classpath*:system/drilling/parametersModel/config.xml";
 
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(@AuthenticationPrincipal User user, ModelMap model) {
         if (user != null) {
-            return "redirect:/parameters";
+            return "basic/hello";
         } else {
             return "redirect:/login";
         }

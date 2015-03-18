@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import system.decision.support.logic.InferenceModel;
-import entities.drilling.model.well.MyValidationException;
+import entities.drilling.well.MyValidationException;
 import service.frozen.InferenceModelService;
 import service.ParametersModelService;
 import service.WellService;

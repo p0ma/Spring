@@ -3,9 +3,9 @@ package com.springapp.mvc.controllers;
 import com.springapp.mvc.media.AjaxDTO;
 import com.springapp.mvc.media.ReorderDTO;
 import entities.auth.User;
-import entities.drilling.model.dto.PipeSectionDTO;
-import entities.drilling.model.well.MyValidationException;
-import entities.drilling.model.well.PipeSection;
+import entities.drilling.dto.PipeSectionDTO;
+import entities.drilling.well.MyValidationException;
+import entities.drilling.well.PipeSection;
 import localization.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -27,10 +27,9 @@ import service.WellService;
 import java.util.List;
 
 @Controller
-@PreAuthorize("isAuthenticated()")
 @RequestMapping("/well")
+@PreAuthorize("isAuthenticated()")
 public class WellController {
-
     @Autowired
     private WellService wellService;
 

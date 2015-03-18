@@ -1,6 +1,5 @@
 package com.springapp.mvc.controllers;
 
-import com.google.common.base.Throwables;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -54,7 +53,7 @@ public class ExceptionControllerAdvisor {
             requestUri = "Unknown";
         }
 
-        String message = MessageFormat.format("{0} returned for {1} with message {3}",
+        String message = MessageFormat.format("{0} returned for {1} with message {2}",
                 statusCode, requestUri, exceptionMessage
         );
 
@@ -64,7 +63,8 @@ public class ExceptionControllerAdvisor {
 
     private String getExceptionMessage(Throwable throwable, Integer statusCode) {
         if (throwable != null) {
-            return Throwables.getRootCause(throwable).getMessage();
+            //return Throwables.getRootCause(throwable).getMessage();
+            return throwable.getLocalizedMessage();
         }
         HttpStatus httpStatus = HttpStatus.valueOf(statusCode);
         return httpStatus.getReasonPhrase();

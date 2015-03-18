@@ -2,8 +2,8 @@ package service;
 
 import com.springapp.mvc.media.ParameterDTO;
 import entities.auth.User;
-import entities.drilling.model.parameters.Parameter;
-import entities.drilling.model.well.MyValidationException;
+import entities.drilling.parameters.Parameter;
+import entities.drilling.well.MyValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

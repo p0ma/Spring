@@ -4,9 +4,9 @@ package system.decision.support.logic.operations;
 import de.congrace.exp4j.ExpressionBuilder;
 import de.congrace.exp4j.UnknownFunctionException;
 import de.congrace.exp4j.UnparsableExpressionException;
-import entities.drilling.model.parameters.CrossComputingException;
-import entities.drilling.model.parameters.IComparable;
-import entities.drilling.model.parameters.IParameter;
+import entities.drilling.parameters.CrossComputingException;
+import entities.drilling.parameters.IComparable;
+import entities.drilling.parameters.IParameter;
 
 import javax.persistence.*;
 
@@ -20,7 +20,7 @@ public class ExpressionWrapper implements IComparable {
     private String expression;
 
 
-    @OneToOne(targetEntity = entities.drilling.model.parameters.Parameter.class, cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = entities.drilling.parameters.Parameter.class, cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "parameter")
     private IParameter parameter;
 

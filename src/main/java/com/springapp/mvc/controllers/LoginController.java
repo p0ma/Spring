@@ -14,7 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import service.UserService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -23,10 +23,6 @@ import javax.validation.Valid;
 @RequestMapping("/login")
 @PreAuthorize("not isAuthenticated()")
 public class LoginController {
-
-    @Autowired
-    private UserService userService;
-
     @Autowired
     private AuthenticationProvider myAuthenticationProvider;
 
@@ -37,7 +33,11 @@ public class LoginController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String signin(ModelMap model, @Valid User user, BindingResult bindingResult) {
+    public String signIn(@RequestParam(required = false) String logout, ModelMap model, @Valid User user,
+                         BindingResult bindingResult) {
+        if (logout != null) {
+            return "redirect:";
+        }
         if (bindingResult.hasErrors()) {
             model.put(BindingResult.class.getName() + ".user", bindingResult);
             return "auth/login";
@@ -45,10 +45,10 @@ public class LoginController {
         try {
             Authentication authentication =
                     myAuthenticationProvider.authenticate(new UsernamePasswordAuthenticationToken(
-                            user, user.getPassword()));
+                            user, user.getPassword(), user.getAuthorities()));
             if (authentication != null) {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
-                return "redirect:/welcome";
+                return "basic/hello";
             } else {
                 return "auth/login";
             }

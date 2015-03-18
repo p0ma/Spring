@@ -39,7 +39,8 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="_spring_security_remember_me"><spring:message code="rememberMe"/>
+                    <input type="checkbox" id="remember-me" name="remember-me" value="true"><spring:message
+                        code="rememberMe"/>
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit"><spring:message code="signIn"/></button>

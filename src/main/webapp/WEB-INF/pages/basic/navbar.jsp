@@ -19,10 +19,38 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <sec:authorize access="isAuthenticated()">
-                    <li>
-                        <a href="${pageContext.request.contextPath}/parameters"><spring:message code="parameters"/></a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <spring:message code="parameters"/><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/parameters/all">
+                                    <spring:message code="parameters.all"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/parameters/input">
+                                    <spring:message code="parameters.input"/>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li><a href="${pageContext.request.contextPath}/chart"><spring:message code="chart"/></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <spring:message code="chart"/><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/chart/borerMethod">
+                                    <spring:message code="chart.borerMethod.header"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/chart/waitingAndWeighting">
+                                    <spring:message code="chart.waitingAndWeighting.header"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <spring:message code="well"/><b class="caret"></b></a>

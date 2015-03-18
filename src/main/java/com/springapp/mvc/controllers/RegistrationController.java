@@ -4,7 +4,6 @@ import com.springapp.mvc.media.UserRegistrationDTO;
 import entities.auth.User;
 import entities.auth.UserFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,10 +22,8 @@ import javax.validation.Valid;
 
 
 @Controller
-@PreAuthorize("not isAuthenticated()")
 @RequestMapping("/registration")
 public class RegistrationController {
-
     @Autowired
     private UserService userService;
 

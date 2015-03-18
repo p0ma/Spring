@@ -1,9 +1,10 @@
+/*
 package com.springapp.mvc.converters;
 
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 import com.springapp.mvc.media.ChartData;
-import entities.drilling.model.parameters.actual.parameters.pump.PumpPoint;
+import entities.drilling.chart.DPoint;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
@@ -40,12 +41,12 @@ public class ChartDataMessageConverter extends AbstractHttpMessageConverter<Char
         CSVReader reader = new CSVReader(new InputStreamReader(httpInputMessage.getBody()));
         List<String[]> rows = reader.readAll();
         int size = rows.size() / 2;
-        PumpPoint[] chartData = new PumpPoint[size];
+        DPoint[] chartData = new DPoint[size];
         int i = 0;
         int j = 0;
         for (String[] row : rows) {
-            chartData[i].setTurn((int) Double.parseDouble(row[j++]));
-            chartData[i].setPressure((int) Double.parseDouble(row[j++]));
+            chartData[i].setX((int) Double.parseDouble(row[j++]));
+            chartData[i].setY((int) Double.parseDouble(row[j++]));
         }
         return new ChartData(chartData);
     }
@@ -54,10 +55,11 @@ public class ChartDataMessageConverter extends AbstractHttpMessageConverter<Char
     protected void writeInternal(ChartData chartData, HttpOutputMessage httpOutputMessage)
             throws IOException, HttpMessageNotWritableException {
         CSVWriter writer = new CSVWriter(new OutputStreamWriter(httpOutputMessage.getBody()));
-        for (PumpPoint pumpPoint : chartData.getChartData()) {
-            writer.writeNext(new String[]{Integer.toString(pumpPoint.getTurn()),
-                    Double.toString(pumpPoint.getPressure())});
+        for (DPoint pumpPoint : chartData.getChartData()) {
+            writer.writeNext(new String[]{Double.toString(pumpPoint.getX()),
+                    Double.toString(pumpPoint.getY())});
         }
         writer.close();
     }
 }
+*/

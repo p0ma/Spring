@@ -12,15 +12,10 @@ import repositories.exceptions.UserAlreadyExistsException;
 import repositories.exceptions.UserMailAlreadyUsedException;
 import repositories.exceptions.UserNotFoundException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
 public class UserService {
-
-    @PersistenceContext
-    public EntityManager entityManager;
 
     @Autowired
     private IUserRepository userRepository;

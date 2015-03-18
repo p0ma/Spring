@@ -1,7 +1,7 @@
 package service;
 
 import entities.auth.User;
-import entities.drilling.model.well.PipeSection;
+import entities.drilling.well.PipeSection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

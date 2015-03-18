@@ -44,7 +44,6 @@ public class ChartLocalization {
         resetZoomTitle = LocalizationUtils.getMessage("chart.resetZoomTitle");
         thousandsSep = LocalizationUtils.getMessage("chart.thousandsSep");
         decimalPoint = LocalizationUtils.getMessage("chart.decimalPoint");
-
     }
 
     public ChartLocalization(String loading, String[] months, String[] weekdays, String[] shortMonth, String exportButtonTitle, String printButtonTitle, String rangeSelectorFrom, String rangeSelectorTo, String rangeSelectorZoom, String printChart, String downloadPNG, String downloadJPEG, String downloadPDF, String downloadSVG, String resetZoom, String resetZoomTitle, String thousandsSep, String decimalPoint) {

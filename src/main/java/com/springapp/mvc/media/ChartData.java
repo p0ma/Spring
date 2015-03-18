@@ -1,6 +1,6 @@
 package com.springapp.mvc.media;
 
-import entities.drilling.model.parameters.actual.parameters.pump.PumpPoint;
+import entities.drilling.chart.DPoint;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,17 +11,17 @@ import entities.drilling.model.parameters.actual.parameters.pump.PumpPoint;
  */
 public class ChartData {
 
-    private PumpPoint[] chartData;
+    private DPoint[] chartData;
 
-    public ChartData(PumpPoint[] chartData) {
+    public ChartData(DPoint[] chartData) {
         this.chartData = chartData;
     }
 
-    public PumpPoint[] getChartData() {
+    public DPoint[] getChartData() {
         return chartData;
     }
 
-    public void setChartData(PumpPoint[] chartData) {
+    public void setChartData(DPoint[] chartData) {
         this.chartData = chartData;
     }
 

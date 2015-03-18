@@ -18,7 +18,6 @@ import service.UserService;
 @Controller
 @RequestMapping("/test1")
 public class TestController {
-
     //private static final String MODEL_CONFIG_PATH = "classpath*:system/drilling/parametersModel/config.xml";
 
     @Autowired

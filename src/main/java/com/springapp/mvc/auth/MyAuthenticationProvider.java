@@ -2,17 +2,14 @@ package com.springapp.mvc.auth;
 
 import entities.auth.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.stereotype.Component;
 import repositories.exceptions.UserNotFoundException;
 import service.UserService;
 
-@Component
-public class MyAuthenticationProvider implements AuthenticationProvider, AuthenticationManager {
+public class MyAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
     private UserService userService;

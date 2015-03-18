@@ -1,19 +1,7 @@
-<web-app version="2.4"
-         xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
-	http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd">
-
-    <listener>
-        <listener-class>configuration.SecurityConfig</listener-class>
-    </listener>
-
-    <!-- Prior to Servlet 3.0 define either an error-code or an exception-type but not both -->
-    <error-page>
-        <!-- Define error page to react on Java exception -->
-        <exception-type>com.springapp.mvc.controllers.exceptions.ResourceNotFoundException</exception-type>
-        <!-- The location of the resource to display in response to the error will point to the Spring MVC handler method -->
-        <location>/error</location>
-    </error-page>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
 
     <error-page>
         <error-code>404</error-code>

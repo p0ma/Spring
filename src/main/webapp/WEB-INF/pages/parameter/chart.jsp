@@ -19,9 +19,10 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var message;
+            var url = "/chart/" + $('#method').text();
             $.ajax({
                 method: 'GET',
-                url: "/chart/getChartData",
+                url: url,
                 headers: {
                     Accept: "application/json; charset=utf-8",
                     "Content-Type": "application/json; charset=utf-8"
@@ -31,28 +32,30 @@
                     var json = response;
                     //var obj = JSON.parse(json.chartData);
 
+                    var header = response.header;
+                    var pointFormat = response.pointFormat;
                     var chartData = response.chartData.chartData;
                     var chartLocalization = response.chartLocalization;
                     var len = chartData.length;
                     var editedChartData = [];
                     for (var i = 0; i < chartData.length; i++) {
-                        editedChartData[i] = [chartData[i].turn, chartData[i].pressure];
+                        editedChartData[i] = [chartData[i].x, chartData[i].y];
                     }
 
-                    drawChart(editedChartData, chartLocalization);
+                    drawChart(editedChartData, chartLocalization, header, pointFormat);
                 },
                 error: function (response) {
                     message = response.responseText;
                 }
             })
-        })
-        function drawChart(chartData, chartLocalization) {
+        });
+        function drawChart(chartData, chartLocalization, header, pointFormat) {
             $('#container').highcharts({
                 chart: {
                     type: 'area'
                 },
                 title: {
-                    text: $('#chartHeader').text()
+                    text: header
                 },
                 subtitle: {
                     text: ''
@@ -67,7 +70,7 @@
                 },
                 yAxis: {
                     title: {
-                        text: $('#pressure').text()
+                        text: $('#y').text()
                     },
                     labels: {
                         formatter: function () {
@@ -77,7 +80,7 @@
                 },
                 tooltip: {
                     headerFormat: '',
-                    pointFormat: $('#pointFormat').text()
+                    pointFormat: pointFormat
                 },
                 plotOptions: {
                     area: {
@@ -106,9 +109,6 @@
                 ]
             });
         }
-        ;
-
-
     </script>
 </head>
 
@@ -123,14 +123,12 @@
 
     </div>
 
-    <div id="pressure" hidden="hidden"><spring:message code="chart.pressure"/></div>
-    <div id="pressureUnit" hidden="hidden"><spring:message code="chart.pressure.unit"/></div>
-    <div id="turns" hidden="hidden"><spring:message code="chart.turns"/></div>
-    <div id="turnsUnit" hidden="hidden"><spring:message code="chart.turns.unit"/></div>
-    <div id="pointFormat" hidden="hidden"><spring:message code="chart.pointFormat"/></div>
-    <div id="chartHeader" hidden="hidden"><spring:message code="chart.header"/></div>
+    <div id="y" hidden="hidden"><spring:message code="chart.y"/></div>
+    <div id="pressureUnit" hidden="hidden"><spring:message code="chart.y.unit"/></div>
+    <div id="turns" hidden="hidden"><spring:message code="chart.x"/></div>
+    <div id="turnsUnit" hidden="hidden"><spring:message code="chart.x.unit"/></div>
+    <div id="method" hidden="hidden">${method}</div>
 
 </div>
-
 </body>
 </html>
