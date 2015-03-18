@@ -1,176 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" name="Default" comment="SecurityConfig: removed configureGlobal">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/chart/BorerMethodChartBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/chart/ChartBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/chart/ChartImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/chart/ChartInfoBuilderImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/chart/IChart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/chart/IChartInfoBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/morph/IntegerMorph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_0_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_instrument_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_instrument_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_instrument_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_instrument_tomcat_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_instrument_tomcat_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_instrument_tomcat_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_0_7_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_1_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/morph/MorphValue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/pump/PumpTurnsForAnnularSpace.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/well/VolumeOpenTrunkAnnularSpace.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/chart/WaitingAndWeightingChartBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/well/WellIntermediateColumnDepth.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/well/WellIntermediateColumnDiameter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\Drilling.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\IParametersModel.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\chart\Chart.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\IParameter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\pump\PumpPoint.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\app_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\chart_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\errors_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\jsp_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\months_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\parameter_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\pipeSection_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\validation_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\IDEs\GitHub\Spring\src\main\resources\messages\weekdays_en.properties" afterPath="" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\configuration\AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/configuration/AppConfig.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\configuration\MyWebAppInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/configuration/MyWebAppInitializer.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\configuration\SecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/configuration/SecurityConfig.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\DPoint.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/chart/DPoint.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\dto\ConclusionDTO.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/dto/ConclusionDTO.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\dto\PipeSectionDTO.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/dto/PipeSectionDTO.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\dto\PredicateDTO.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/dto/PredicateDTO.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\dto\QuestionDTO.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/dto/QuestionDTO.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\CrossComputingException.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/CrossComputingException.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\Function.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/Function.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\IComparable.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/IComparable.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\IListenable.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/IListenable.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\IParameterListener.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/IParameterListener.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\InputValue.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/InputValue.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\Parameter.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/Parameter.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\ParameterChangeEvent.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/ParameterChangeEvent.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\drill_column\DrillColumnInnerVolume.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/drill_column/DrillColumnInnerVolume.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\fluid\FluidInflow.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/fluid/FluidInflow.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\mud\JammingMudDensity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/mud/JammingMudDensity.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\mud\MaximumAllowableDensity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/mud/MaximumAllowableDensity.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\mud\MudDensity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/mud/MudDensity.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\mud\MudVolume.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/mud/MudVolume.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\pressure\CycleBeginningPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/pressure/CycleBeginningPressure.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\pressure\CycleEndingPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/pressure/CycleEndingPressure.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\pressure\PipesPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/pressure/PipesPressure.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\pressure\PressureLoss.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/pressure/PressureLoss.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\pressure\PumpingPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/pressure/PumpingPressure.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\pump\PumpPerformance.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/pump/PumpPerformance.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\pump\PumpTurns.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/pump/PumpTurns.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\shoe\ShoeDiameter.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/shoe/ShoeDiameter.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\shoe\ShoeTrunkDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/shoe/ShoeTrunkDepth.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\shoe\ShoeVerticalDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/shoe/ShoeVerticalDepth.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\solid\MaximumAllowableAdditionalPressure.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/solid/MaximumAllowableAdditionalPressure.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\solid\MudDensityDuringSolidTest.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/solid/MudDensityDuringSolidTest.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\solid\PressureDuringInjectivityTest.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/solid/PressureDuringInjectivityTest.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\well\ActualWellDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/well/ActualWellDepth.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\well\WellDiameter.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/well/WellDiameter.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\well\WellTrunkDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/well/WellTrunkDepth.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\parameters\actual\parameters\well\WellVerticalDepth.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/parameters/actual/parameters/well/WellVerticalDepth.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\well\Casing.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/well/Casing.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\well\MyValidationException.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/well/MyValidationException.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\well\PipeSection.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/well/PipeSection.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\well\PipeType.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/well/PipeType.java" />
-      <change type="MOVED" beforePath="C:\IDEs\GitHub\Spring\src\main\java\entities\drilling\model\well\Well.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/well/Well.java" />
+    <list default="true" id="e9ca5290-0d12-47e5-bd27-a4d71a2fa412" name="Default" comment="Some changes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/com/springapp/mvc/controllers/HelloController.class" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/com/springapp/mvc/controllers/HelloController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/springapp/mvc/controllers/HelloController.class" afterPath="$PROJECT_DIR$/target/classes/com/springapp/mvc/controllers/HelloController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring.war" afterPath="$PROJECT_DIR$/target/Spring.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ChartController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartData.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/converters/ChartDataMessageConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/converters/ChartDataMessageConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartLocalization.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/media/ChartLocalization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ExceptionControllerAdvisor.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ExceptionControllerAdvisor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/ExpressionWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/ExpressionWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/HelloController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/frozen/InferenceController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/frozen/InferenceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/LogicalOperation.java" afterPath="$PROJECT_DIR$/src/main/java/system/decision/support/frozen/logic/operations/LogicalOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/repositories/ParameterRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/ParameterRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/ParameterService.java" afterPath="$PROJECT_DIR$/src/main/java/service/ParameterService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/ParametersController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/drilling/model/ParametersModel.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/ParametersModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/repositories/PipeSectionRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/PipeSectionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/PipeSectionService.java" afterPath="$PROJECT_DIR$/src/main/java/service/PipeSectionService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/frozen/PredicateService.java" afterPath="$PROJECT_DIR$/src/main/java/service/frozen/PredicateService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/frozen/PredicatesController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/frozen/PredicatesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/RegistrationController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/RegistrationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Spring.iml" afterPath="$PROJECT_DIR$/Spring.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Spring_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Spring_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/TestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/TestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/auth/User.java" afterPath="$PROJECT_DIR$/src/main/java/entities/auth/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/WellController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/repositories/WellRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repositories/WellRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/WellService.java" afterPath="$PROJECT_DIR$/src/main/java/service/WellService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/drilling/model/WorkingDataSet.java" afterPath="$PROJECT_DIR$/src/main/java/entities/drilling/model/WorkingDataSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/application.properties" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameter/chart.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameter/chart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/chart.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/chart.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/chart_ua.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/chart_ua.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/jsp.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/jsp.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/jsp_ua.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/jsp_ua.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/auth/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/auth/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basic/navbar.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basic/navbar.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/parameter.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/parameter.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages/parameter_ua.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages/parameter_ua.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameter/parameters.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/parameter/parameters.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Spring/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/Spring/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -274,8 +110,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/configuration/SecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="1800">
-              <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-              <folding />
+              <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -294,8 +132,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -303,7 +143,7 @@
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="933">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="613">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -334,8 +174,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="684">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -364,8 +206,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1656">
-              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding />
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2986,7 +2830,7 @@
       <workItem from="1425374817226" duration="2108000" />
       <workItem from="1425407524760" duration="4752000" />
       <workItem from="1425414770620" duration="2269000" />
-      <workItem from="1426678907686" duration="867000" />
+      <workItem from="1426678907686" duration="920000" />
     </task>
     <task id="LOCAL-00001" summary="commit1">
       <created>1400432074020</created>
@@ -3090,11 +2934,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418127463016</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Some changes">
+      <created>1426679980222</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1426679980222</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327767000" />
+    <option name="totallyTimeSpent" value="327820000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -3120,37 +2970,37 @@
     <frame x="-8" y="-8" width="1932" height="1092" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33367875" sideWeight="0.7852564" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33506763" sideWeight="0.21420941" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33298647" sideWeight="0.21474358" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32746115" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16346154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25641027" sideWeight="0.67022413" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1741453" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.67022413" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39854318" sideWeight="0.8630064" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33298647" sideWeight="0.7852564" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257024" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30593133" sideWeight="0.92102456" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25641027" sideWeight="0.67022413" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.058164354" sideWeight="0.68115944" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39854318" sideWeight="0.8630064" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257024" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30593133" sideWeight="0.92102456" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32674298" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3185,7 +3035,8 @@
     <MESSAGE value="RELEASE 1.0.2" />
     <MESSAGE value="SecurityConfig: removed @Configuration" />
     <MESSAGE value="SecurityConfig: removed configureGlobal" />
-    <option name="LAST_COMMIT_MESSAGE" value="SecurityConfig: removed configureGlobal" />
+    <MESSAGE value="Some changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some changes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -3521,8 +3372,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1656">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3552,9 +3405,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/auth/MyAuthenticationProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="684">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="684">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3569,8 +3424,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/configuration/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="1800">
-          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-          <folding />
+          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3585,8 +3442,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
